@@ -1,0 +1,250 @@
+/* body {
+  margin: 0 30%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.theme-dark {
+  --color-primary: #17ed90;
+  --color-secondary: #243133;
+  --color-accent: #12cdea;
+  --font-color: #ffffff;
+}
+
+.deleteButton {
+  border-radius: 70%;
+  margin-right: 10px;
+  border: none;
+  background: transparent;
+  color: red;
+}
+
+.todoInputBody {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #ececec;
+  padding-bottom: 2px;
+  color: #727272;
+
+  padding-top: 2px;
+  align-items: center;
+  font-size: 25px;
+  background-color: white;
+}
+
+.wholeBody {
+  justify-content: center;
+  align-items: center;
+  color: #e9dbda;
+  background-color: #f4f4f4;
+  box-shadow: 5px 5px 5px 5px #ebebeb;
+}
+.inputArea {
+  padding-left: 25px;
+  width: 94.8%;
+  height: 50px;
+  font-size: 35px;
+  border: 1px solid #ececec;
+  color: #c7c7c7;
+}
+::placeholder {
+  color: #c7c7c7;
+  font-size: 25px;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+}
+
+.outputText {
+  font-size: 35px;
+  color: #c7c7c7;
+}
+
+.headerTodo {
+  display: flex;
+  justify-content: center;
+  font-weight: 150;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.checkBox {
+  width: 1.5em;
+  height: 1.5em;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.checkBox:checked {
+  background-color: #89cabb;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #727272;
+}
+
+.container {
+  width: 100%;
+  min-height: 400px;
+  background-color: #f4f4f4;
+  box-shadow: 5px 5px 5px 5px #ebebeb;
+} */
+
+body {
+  margin: 0% 10%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: #1b1b1b;
+}
+
+
+/* navbar */
+.navBar {
+  display: flex;
+  background-color: #1b1b1b;
+  color: #D4D4D4;
+  width: 100%;
+}
+
+.navbar div {
+  color: #D4D4D4;
+}
+
+.logoHp {
+  width: 20%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.ovo{
+  height:40px;
+
+}
+
+.middleNav {
+  display: flex;
+  background-color: #1b1b1b;
+  color: #D4D4D4;
+  width: 60%;
+  justify-content: center;
+}
+
+.middleNav div {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.rightNav {
+  display: flex;
+  background-color: #1b1b1b;
+  color: #D4D4D4;
+  width: 20%;
+  justify-content: flex-end;
+}
+
+.navbarBtn {
+  color: #D4D4D4;
+  border:none;
+  background-color: transparent;
+  font-size: 15px;
+}
+
+/* left column */
+.leftColumn{
+  margin-top: 20px;
+}
+.leftColumnBtn {
+  margin-bottom: 60px;
+  color:#D4D4D4;
+  background-color: transparent;
+  border:none;
+  font-size:20px;
+}
+
+/* right column */
+.rightcolumn {
+  margin-bottom: 30px;
+  color: #D4D4D4;
+}
+.rightColumn h5 {
+  color: #D4D4D4;
+}
+
+.rightColumn li {
+  color: #D4D4D4;
+}
+
+/* homepage layout */
+.wholeHomepage {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 8.5fr 2fr;
+  justify-items: start;
+}
+
+.homepage-row1 {
+  grid-row: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage-row2 {
+  grid-row: 2;
+  grid-template-columns: 2fr 6fr 2fr;
+  display: grid;
+  width:100%;
+}
+
+.homepage-col1 {
+  grid-column: 1;
+  margin-right:10%;
+}
+
+.homepage-col2 {
+  grid-column: 2;
+  justify-items: center;
+  color: #D4D4D4;
+  border-right:1px solid #303030;
+  border-left:1px solid #303030;
+
+
+}
+.homepage-col3 {
+  grid-column: 3;
+margin-left:10%;
+}
+
+
+/* Footer */
+.row3 {
+  grid-row: 3;
+  width: 100%;
+}
+
+
+
+/* messageMiddle */
+.messageInbox{
+  display:flex;
+}
+
+
+
+
+/* profile bio */
+/* .ProfileBio{
+  display:flex;
+}
+
+.profileAvi{
+  width:100%;
+  border-radius: 55px 55px;
+} */
