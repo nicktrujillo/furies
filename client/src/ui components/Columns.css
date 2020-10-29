@@ -1,0 +1,48 @@
+body {
+  margin: 0% 10%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: #1b1b1b;
+}
+
+
+
+/* left column */
+.leftColumn{
+  margin-top: 20px;
+  margin-left:5%;
+}
+.leftColumnBtn {
+  margin-bottom: 60px;
+  color:#D4D4D4;
+  background-color: transparent;
+  border:none;
+  font-size:20px;
+}
+
+/* right column */
+.rightcolumn {
+  margin-bottom: 30px;
+  color: #D4D4D4;
+  margin-right: 5%;
+}
+.rightColumn h5 {
+  color: #D4D4D4;
+}
+
+.rightColumn li {
+  color: #D4D4D4;
+  font-size:13px;
+}
+
+.topChartBox{
+  margin-bottom: 5%;
+  background-color:#252525;
+  border-radius:5px;
+}
+
+.bottomChartBox{
+  margin-top: 5%;
+  background-color:#252525;
+  border-radius:5px;
+}
