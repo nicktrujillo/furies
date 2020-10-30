@@ -1,0 +1,21 @@
+.fixedColumn {
+  position: fixed;
+}
+
+.leftColumn {
+  background-color: #252525;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.leftColumnItem {
+  padding: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.leftColumnItem:hover {
+  color: #4aa0b5;
+}

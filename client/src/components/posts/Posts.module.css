@@ -1,0 +1,54 @@
+.postsContainer {
+  grid-template-columns: 2fr 6fr 2fr;
+  display: grid;
+  width: 100%;
+  height: 100%;
+}
+
+.fixedColumn {
+  position: fixed;
+}
+
+.leftColumn {
+  background-color: #252525;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.leftColumnItem {
+  padding: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.leftColumnItem:hover {
+  color: #4aa0b5;
+}
+
+.rightColumn {
+  background-color: #252525;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.trendingSongs {
+  color: white;
+  width: 60%;
+  margin: 0 auto;
+  font-size: 12px;
+  text-align: center;
+}
+
+.trendingTitle {
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+
+.trendingSong {
+  padding: 10px;
+}
