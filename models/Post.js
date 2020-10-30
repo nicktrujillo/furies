@@ -9,6 +9,12 @@ const PostSchema = new Schema({
     type: String,
     required: true,
   },
+  soundcloud: {
+    type: String,
+  },
+  youtube: {
+    type: String,
+  },
   name: {
     type: String,
   },

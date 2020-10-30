@@ -24,6 +24,8 @@ router.post(
 
       const newPost = new Post({
         text: req.body.text,
+        soundcloud: req.body.soundcloud,
+        youtube: req.body.youtube,
         name: user.name,
         avatar: user.avatar,
         user: req.user.id,

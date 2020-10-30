@@ -7,6 +7,7 @@ import PostForm from "./PostForm";
 import { getPosts } from "../../actions/post";
 import styles from "./Posts.module.css";
 import LeftSidebar from "../layout/LeftSidebar";
+import ProfileItem from "../profiles/ProfileItem";
 
 const Posts = ({ getPosts, post: { posts } }) => {
   console.log(posts);
