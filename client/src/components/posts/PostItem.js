@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
@@ -29,23 +29,12 @@ const PostItem = ({
 
   const soundcloudWidget = (
     <iframe
-      width='100%'
-      height='166'
+      width='560'
+      height='100'
       scrolling='no'
       frameborder='no'
       allow='autoplay'
       src={soundcloudOne + soundcloud + soundCloudThree}
-    ></iframe>
-  );
-
-  const youtubeWidget = (
-    <iframe
-      width='560'
-      height='315'
-      src='https://www.youtube.com/embed/https://www.youtube.com/watch?v=8SonQgoLxC0'
-      frameborder='0'
-      allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-      allowfullscreen
     ></iframe>
   );
 
@@ -60,13 +49,26 @@ const PostItem = ({
       <div>
         <p className='my-1'>{text}</p>
         {soundcloud ? <p className='my-1'>{soundcloudWidget}</p> : null}
-        {youtube ? <p className='my-1'>{youtubeWidget}</p> : null}
+        {youtube ? (
+          <p className='my-1'>
+            {
+              <iframe
+                width='560'
+                height='315'
+                src={`https://www.youtube.com/embed/${youtube.split("=")[1]}`}
+                frameborder='0'
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                allowfullscreen
+              ></iframe>
+            }
+          </p>
+        ) : null}
         <p className='post-date'>
           Posted on <Moment format='YYYY/MM/DD'>{date}</Moment>
         </p>
 
         {showActions && (
-          <Fragment>
+          <>
             <button
               onClick={() => addLike(_id)}
               type='button'
@@ -97,7 +99,7 @@ const PostItem = ({
                 <i className='fas fa-times' />
               </button>
             )}
-          </Fragment>
+          </>
         )}
       </div>
     </div>

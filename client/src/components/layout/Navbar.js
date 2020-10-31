@@ -10,14 +10,14 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
   const authLinksMiddle = (
     <>
       <>
-        <Link to='/profiles'>Artists</Link>
-      </>
-      <>
         <Link to='/posts'>Home</Link>
       </>
       <>
+        <Link to='/profiles'>Charts</Link>
+      </>
+      <>
         <Link to='/dashboard'>
-          <span className='hide-sm'>Settings</span>
+          <span className='hide-sm'>Services</span>
         </Link>
       </>
     </>

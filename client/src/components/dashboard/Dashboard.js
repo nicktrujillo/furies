@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import DashboardActions from "./DashboardActions";
 import { getCurrentProfile, deleteAccount } from "../../actions/profile";
+import styles from "./Dashboard.module.css";
 
 const Dashboard = ({
   getCurrentProfile,
@@ -17,8 +18,8 @@ const Dashboard = ({
 
   return (
     <>
-      <h1 className='large text-primary'>Dashboard</h1>
-      <p className='lead'>
+      <h1 className='large text-primary'>Settings</h1>
+      <p className={styles.welcome}>
         <i className='fas fa-user' /> Welcome {user && user.name}
       </p>
       {profile !== null ? (

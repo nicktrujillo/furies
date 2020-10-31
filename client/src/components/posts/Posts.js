@@ -9,8 +9,7 @@ import styles from "./Posts.module.css";
 import LeftSidebar from "../layout/LeftSidebar";
 import ProfileItem from "../profiles/ProfileItem";
 
-const Posts = ({ getPosts, post: { posts } }) => {
-  console.log(posts);
+const Posts = ({ getPosts, post: { posts }, auth: { user } }) => {
   useEffect(() => {
     getPosts();
   }, [getPosts]);
@@ -21,7 +20,7 @@ const Posts = ({ getPosts, post: { posts } }) => {
         <div className={styles.leftColumn}>
           <div className={styles.fixedColumn}>
             <div className={styles.leftColumnItem}>
-              <Link to={`/profile/`}>
+              <Link to={`/profile/${user._id}`}>
                 <i class='fas fa-user'></i> Profile
               </Link>
             </div>
@@ -32,7 +31,9 @@ const Posts = ({ getPosts, post: { posts } }) => {
               <i class='fas fa-envelope-open-text'></i> Messages
             </div>
             <div className={styles.leftColumnItem}>
-              <i class='fas fa-cog'></i> Settings
+              <Link to='/dashboard'>
+                <i class='fas fa-cog'></i> Settings
+              </Link>
             </div>
           </div>
         </div>
@@ -71,10 +72,12 @@ const Posts = ({ getPosts, post: { posts } }) => {
 Posts.propTypes = {
   getPosts: PropTypes.func.isRequired,
   post: PropTypes.object.isRequired,
+  auth: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   post: state.post,
+  auth: state.auth,
 });
 
 export default connect(mapStateToProps, { getPosts })(Posts);
