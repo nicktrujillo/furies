@@ -34,13 +34,7 @@ router.get("/me", auth, async (req, res) => {
 // @access   Private
 router.post(
   "/",
-  [
-    auth,
-    [
-      check("status", "Status is required").not().isEmpty(),
-      check("skills", "Skills is required").not().isEmpty(),
-    ],
-  ],
+  [auth, [check("status", "Profile Type is required").not().isEmpty()]],
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -48,39 +42,35 @@ router.post(
     }
 
     const {
-      company,
       location,
       website,
       bio,
-      skills,
+      genres,
       status,
-      githubusername,
       youtube,
+      soundcloud,
       twitter,
       instagram,
-      linkedin,
       facebook,
     } = req.body;
 
     // Build profile object
     const profileFields = {
       user: req.user.id,
-      company,
       location,
       website:
         website && website !== ""
           ? normalize(website, { forceHttps: true })
           : "",
       bio,
-      skills: Array.isArray(skills)
-        ? skills
-        : skills.split(",").map((skill) => " " + skill.trim()),
+      genres: Array.isArray(genres)
+        ? genres
+        : genres.split(",").map((skill) => " " + skill.trim()),
       status,
-      githubusername,
     };
 
     // Build social object and add to profileFields
-    const socialfields = { youtube, twitter, instagram, linkedin, facebook };
+    const socialfields = { youtube, soundcloud, twitter, instagram, facebook };
 
     for (const [key, value] of Object.entries(socialfields)) {
       if (value && value.length > 0)

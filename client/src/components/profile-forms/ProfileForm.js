@@ -5,16 +5,14 @@ import { connect } from "react-redux";
 import { createProfile, getCurrentProfile } from "../../actions/profile";
 
 const initialState = {
-  company: "",
   website: "",
   location: "",
   status: "",
-  skills: "",
-  githubusername: "",
+  genres: "",
   bio: "",
   twitter: "",
   facebook: "",
-  linkedin: "",
+  soundcloud: "",
   youtube: "",
   instagram: "",
 };
@@ -46,16 +44,14 @@ const ProfileForm = ({
   }, [loading, getCurrentProfile, profile]);
 
   const {
-    company,
     website,
     location,
     status,
-    skills,
-    githubusername,
+    genres,
     bio,
     twitter,
     facebook,
-    linkedin,
+    soundcloud,
     youtube,
     instagram,
   } = formData;
@@ -78,31 +74,14 @@ const ProfileForm = ({
       <form className='form' onSubmit={onSubmit}>
         <div className='form-group'>
           <select name='status' value={status} onChange={onChange}>
-            <option>* Select Professional Status</option>
-            <option value='Developer'>Developer</option>
-            <option value='Junior Developer'>Junior Developer</option>
-            <option value='Senior Developer'>Senior Developer</option>
-            <option value='Manager'>Manager</option>
-            <option value='Student or Learning'>Student or Learning</option>
-            <option value='Instructor'>Instructor or Teacher</option>
-            <option value='Intern'>Intern</option>
+            <option>* Select Profile Type</option>
+            <option value='Artist'>Artist</option>
+            <option value='Producer'>Producer</option>
+            <option value='DJ'>DJ</option>
+            <option value='Listener'>Listener</option>
             <option value='Other'>Other</option>
           </select>
-          <small className='form-text'>
-            Give us an idea of where you are at in your career
-          </small>
-        </div>
-        <div className='form-group'>
-          <input
-            type='text'
-            placeholder='Company'
-            name='company'
-            value={company}
-            onChange={onChange}
-          />
-          <small className='form-text'>
-            Could be your own company or one you work for
-          </small>
+          <small className='form-text'>Give us an idea of who you are</small>
         </div>
         <div className='form-group'>
           <input
@@ -113,7 +92,7 @@ const ProfileForm = ({
             onChange={onChange}
           />
           <small className='form-text'>
-            Could be your own or a company website
+            Could be your own or a label website
           </small>
         </div>
         <div className='form-group'>
@@ -131,26 +110,14 @@ const ProfileForm = ({
         <div className='form-group'>
           <input
             type='text'
-            placeholder='* Skills'
-            name='skills'
-            value={skills}
+            placeholder='* Genres'
+            name='genres'
+            value={genres}
             onChange={onChange}
           />
           <small className='form-text'>
-            Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
-          </small>
-        </div>
-        <div className='form-group'>
-          <input
-            type='text'
-            placeholder='Github Username'
-            name='githubusername'
-            value={githubusername}
-            onChange={onChange}
-          />
-          <small className='form-text'>
-            If you want your latest repos and a Github link, include your
-            username
+            Please use comma separated values (eg. Hip-Hop, R & B, Rock, Pop,
+            Electronic)
           </small>
         </div>
         <div className='form-group'>
@@ -177,6 +144,28 @@ const ProfileForm = ({
         {displaySocialInputs && (
           <>
             <div className='form-group social-input'>
+              <i className='fab fa-soundcloud'></i>
+              <input
+                type='text'
+                placeholder='SoundCloud URL'
+                name='soundcloud'
+                value={soundcloud}
+                onChange={onChange}
+              />
+            </div>
+
+            <div className='form-group social-input'>
+              <i className='fab fa-youtube fa-2x' />
+              <input
+                type='text'
+                placeholder='YouTube URL'
+                name='youtube'
+                value={youtube}
+                onChange={onChange}
+              />
+            </div>
+
+            <div className='form-group social-input'>
               <i className='fab fa-twitter fa-2x' />
               <input
                 type='text'
@@ -194,28 +183,6 @@ const ProfileForm = ({
                 placeholder='Facebook URL'
                 name='facebook'
                 value={facebook}
-                onChange={onChange}
-              />
-            </div>
-
-            <div className='form-group social-input'>
-              <i className='fab fa-youtube fa-2x' />
-              <input
-                type='text'
-                placeholder='YouTube URL'
-                name='youtube'
-                value={youtube}
-                onChange={onChange}
-              />
-            </div>
-
-            <div className='form-group social-input'>
-              <i className='fab fa-linkedin fa-2x' />
-              <input
-                type='text'
-                placeholder='Linkedin URL'
-                name='linkedin'
-                value={linkedin}
                 onChange={onChange}
               />
             </div>

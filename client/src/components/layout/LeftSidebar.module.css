@@ -1,0 +1,9 @@
+.leftColumnItem {
+  padding: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.leftColumnItem:hover {
+  color: #4aa0b5;
+}

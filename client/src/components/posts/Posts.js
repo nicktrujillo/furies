@@ -4,12 +4,11 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import PostItem from "./PostItem";
 import PostForm from "./PostForm";
+import LeftSidebar from "../layout/LeftSidebar";
 import { getPosts } from "../../actions/post";
 import styles from "./Posts.module.css";
-import LeftSidebar from "../layout/LeftSidebar";
-import ProfileItem from "../profiles/ProfileItem";
 
-const Posts = ({ getPosts, post: { posts }, auth: { user } }) => {
+const Posts = ({ getPosts, post: { posts } }) => {
   useEffect(() => {
     getPosts();
   }, [getPosts]);
@@ -19,22 +18,7 @@ const Posts = ({ getPosts, post: { posts }, auth: { user } }) => {
       <div className={styles.postsContainer}>
         <div className={styles.leftColumn}>
           <div className={styles.fixedColumn}>
-            <div className={styles.leftColumnItem}>
-              <Link to={`/profile/${user._id}`}>
-                <i class='fas fa-user'></i> Profile
-              </Link>
-            </div>
-            <div className={styles.leftColumnItem}>
-              <i class='fas fa-bell'></i> Notifications
-            </div>
-            <div className={styles.leftColumnItem}>
-              <i class='fas fa-envelope-open-text'></i> Messages
-            </div>
-            <div className={styles.leftColumnItem}>
-              <Link to='/dashboard'>
-                <i class='fas fa-cog'></i> Settings
-              </Link>
-            </div>
+            <LeftSidebar />
           </div>
         </div>
         <div className={styles.middleColumn}>
@@ -72,12 +56,10 @@ const Posts = ({ getPosts, post: { posts }, auth: { user } }) => {
 Posts.propTypes = {
   getPosts: PropTypes.func.isRequired,
   post: PropTypes.object.isRequired,
-  auth: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   post: state.post,
-  auth: state.auth,
 });
 
 export default connect(mapStateToProps, { getPosts })(Posts);
