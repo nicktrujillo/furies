@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import { connect } from "react-redux";
 import { addLike, removeLike, deletePost } from "../../actions/post";
+import styles from "./PostItem.css";
 
 const PostItem = ({
   addLike,
@@ -39,7 +40,7 @@ const PostItem = ({
   );
 
   return (
-    <div className='post bg-white p-1 my-1'>
+    <div className='post p-1 postContainer'>
       <div>
         <Link to={`/profile/${user}`}>
           <img className='round-img' src={avatar} alt='' />
@@ -47,7 +48,7 @@ const PostItem = ({
         </Link>
       </div>
       <div>
-        <p className='my-1'>{text}</p>
+        <p className='my-1 postText'>{text}</p>
         {soundcloud ? <p className='my-1'>{soundcloudWidget}</p> : null}
         {youtube ? (
           <p className='my-1'>
@@ -57,13 +58,13 @@ const PostItem = ({
                 height='315'
                 src={`https://www.youtube.com/embed/${youtube.split("=")[1]}`}
                 frameborder='0'
-                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen'
                 allowfullscreen
               ></iframe>
             }
           </p>
         ) : null}
-        <p className='post-date'>
+        <p className='post-date postDate'>
           Posted on <Moment format='YYYY/MM/DD'>{date}</Moment>
         </p>
 

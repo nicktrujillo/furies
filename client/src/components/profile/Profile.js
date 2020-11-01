@@ -6,12 +6,10 @@ import Spinner from "../layout/Spinner";
 import ProfileTop from "./ProfileTop";
 import ProfileAbout from "./ProfileAbout";
 import { getProfileById } from "../../actions/profile";
-import { getCurrentProfile } from "../../actions/profile";
 
 const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
   useEffect(() => {
     getProfileById(match.params.id);
-    getCurrentProfile();
   }, [getProfileById, match.params.id]);
 
   return (

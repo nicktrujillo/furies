@@ -1,0 +1,76 @@
+.post-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.songLinks {
+  display: flex;
+  justify-content: center;
+}
+
+.or {
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 3px;
+}
+
+.newPost {
+  width: 45%;
+  margin: 0 auto;
+}
+
+.newPostText {
+  width: 100%;
+  background-color: #252525;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  outline: none;
+  padding: 5px;
+}
+
+.songLinks {
+  padding: 14px;
+}
+
+.fa-soundcloud {
+  color: var(--primary-color);
+  font-size: 2rem;
+}
+
+.fa-youtube {
+  color: var(--primary-color);
+  font-size: 2rem;
+}
+
+.soundCloudText {
+  width: 80%;
+  margin-left: 5%;
+  padding: 5px;
+  background-color: #252525;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  outline: none;
+}
+
+.youtubeText {
+  width: 80%;
+  margin-right: 5%;
+  padding: 5px;
+  background-color: #252525;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  outline: none;
+}
+
+.newPostSubmit {
+  background-color: #252525;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  margin: 0 auto;
+  color: white;
+  border-radius: 10px;
+  margin-left: 5%;
+  cursor: pointer;
+  outline: none;
+}
