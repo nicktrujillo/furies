@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addPost } from "../../actions/post";
 import styles from "./PostForm.css";
+import logo from "../../img/logo.png";
 
 const PostForm = ({ addPost }) => {
   const [text, setText] = useState("");
@@ -11,8 +12,8 @@ const PostForm = ({ addPost }) => {
 
   return (
     <div className='post-form'>
-      <div className='bg-primary p'>
-        <h3>Post Something...</h3>
+      <div className='homeLogoContainer'>
+        <img className='homeLogo' src={logo} />
       </div>
       <form
         className='my-1'
@@ -66,7 +67,11 @@ const PostForm = ({ addPost }) => {
             </label>
           </div>
         </div>
-        <input type='submit' className='newPostSubmit' value='Submit' />
+        <div className='newPostSubmitContainer'>
+          <div>
+            <input type='submit' className='newPostSubmit' value='Submit' />
+          </div>
+        </div>
       </form>
     </div>
   );

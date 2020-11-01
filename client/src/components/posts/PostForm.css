@@ -1,19 +1,25 @@
-.post-form {
-  display: flex;
-  flex-direction: column;
+.homeLogo {
+  width: 8%;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+.homeLogoContainer {
+  margin-bottom: -1rem;
 }
 
 .songLinks {
   display: flex;
   justify-content: center;
-  padding: 24px;
+  padding: 18px;
 }
 
 .or {
   color: white;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 3px;
+  padding-left: 8px;
+  padding-right: 14px;
+  padding-top: 4px;
+  font-weight: lighter;
 }
 
 .newPost {
@@ -24,7 +30,7 @@
 .newPostText {
   width: 100%;
   background-color: #252525;
-  box-shadow: 0 0 10px var(--primary-color);
+  box-shadow: 0 0 6px var(--primary-color);
   border-radius: 5px;
   outline: none;
   padding: 5px;
@@ -47,7 +53,7 @@
   margin-left: 5%;
   padding: 5px;
   background-color: #252525;
-  box-shadow: 0 0 10px var(--primary-color);
+  box-shadow: 0 0 6px var(--primary-color);
   border: none;
   border-radius: 5px;
   outline: none;
@@ -59,11 +65,17 @@
   margin-right: 5%;
   padding: 5px;
   background-color: #252525;
-  box-shadow: 0 0 10px var(--primary-color);
+  box-shadow: 0 0 6px var(--primary-color);
   border-radius: 5px;
   outline: none;
   color: white;
   border: none;
+}
+
+.newPostSubmitContainer {
+  display: flex;
+  justify-content: flex-end;
+  width: 94%;
 }
 
 .newPostSubmit {
