@@ -29,7 +29,7 @@ const PostForm = ({ addPost }) => {
             className='newPostText'
             name='text'
             rows='3'
-            placeholder='Create a post'
+            placeholder='create a post'
             value={text}
             onChange={(e) => setText(e.target.value)}
             required
@@ -57,7 +57,7 @@ const PostForm = ({ addPost }) => {
               name='text'
               cols='30'
               rows='1'
-              placeholder='Insert YouTube Link'
+              placeholder='insert youtube link'
               value={youtube}
               onChange={(e) => setYoutube(e.target.value)}
             />

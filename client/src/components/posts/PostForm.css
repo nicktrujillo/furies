@@ -23,10 +23,12 @@
 .newPostText {
   width: 100%;
   background-color: #252525;
-  border: 1px solid var(--primary-color);
+  box-shadow: 0 0 12px var(--primary-color);
   border-radius: 5px;
   outline: none;
   padding: 5px;
+  color: white;
+  border: none;
 }
 
 .songLinks {
@@ -48,9 +50,11 @@
   margin-left: 5%;
   padding: 5px;
   background-color: #252525;
-  border: 1px solid var(--primary-color);
+  box-shadow: 0 0 12px var(--primary-color);
+  border: none;
   border-radius: 5px;
   outline: none;
+  color: white;
 }
 
 .youtubeText {
@@ -58,9 +62,11 @@
   margin-right: 5%;
   padding: 5px;
   background-color: #252525;
-  border: 1px solid var(--primary-color);
+  box-shadow: 0 0 12px var(--primary-color);
   border-radius: 5px;
   outline: none;
+  color: white;
+  border: none;
 }
 
 .newPostSubmit {
