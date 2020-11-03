@@ -8,27 +8,60 @@ import PropTypes from "prop-types";
 const Register = ({ setAlert, register, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     name: "",
+    avatar: "",
     email: "",
     password: "",
     password2: "",
   });
 
-  const { name, email, password, password2 } = formData;
+  const { name, avatar, email, password, password2 } = formData;
+
+  const NAME_OF_UPLOAD_PRESET = "p86aftxy";
+  const YOUR_CLOUDINARY_ID = "dyzy5y1cw";
+  async function uploadImage(file) {
+    const data = new FormData();
+    data.append("file", file);
+    data.append("upload_preset", NAME_OF_UPLOAD_PRESET);
+    const res = await fetch(
+      `https://api.cloudinary.com/v1_1/${YOUR_CLOUDINARY_ID}/image/upload`,
+      {
+        method: "POST",
+        body: data,
+      }
+    );
+    const avatar = await res.json();
+    console.log(avatar.secure_url);
+    return avatar.secure_url;
+  }
+  const [uploadingAvatar, setUploadingAvatar] = useState(false);
+  const handleFileChange = async (event) => {
+    const [file] = event.target.files;
+    if (!file) return;
+    setUploadingAvatar(true);
+    const uploadedUrl = await uploadImage(file);
+    setFormData({ ...formData, avatar: uploadedUrl });
+    setUploadingAvatar(false);
+    console.log(formData);
+  };
 
   const onChange = (e) =>
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
 
   const onSubmit = async (e) => {
     e.preventDefault();
     if (password !== password2) {
       setAlert("Passwords do not match", "danger");
     } else {
-      register({ name, email, password });
+      register({ name, avatar, email, password });
+      if (uploadingAvatar) return;
     }
   };
 
   if (isAuthenticated) {
-    return <Redirect to='/posts' />;
+    return <Redirect to='/dashboard' />;
   }
 
   return (
@@ -48,6 +81,16 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
           />
         </div>
         <div className='form-group'>
+          <label className='form-label'>Choose an Image</label>
+          <input
+            type='file'
+            className='form-input'
+            name='image'
+            onChange={handleFileChange}
+            disabled={uploadingAvatar}
+          />
+        </div>
+        <div className='form-group'>
           <input
             type='email'
             placeholder='Email Address'
@@ -55,10 +98,6 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             value={email}
             onChange={onChange}
           />
-          <small className='form-text'>
-            This site uses Gravatar so if you want a profile image, use a
-            Gravatar email
-          </small>
         </div>
         <div className='form-group'>
           <input

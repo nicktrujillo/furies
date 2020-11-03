@@ -11,6 +11,8 @@ import Posts from "../posts/Posts";
 import Post from "../post/Post";
 import NotFound from "../layout/NotFound";
 import PrivateRoute from "../routing/PrivateRoute";
+import Homepage from "../services/Homepage";
+import Youtube from "../services/Youtube";
 
 const Routes = (props) => {
   return (
@@ -21,6 +23,8 @@ const Routes = (props) => {
         <Route exact path='/login' component={Login} />
         <Route exact path='/profiles' component={Profiles} />
         <Route exact path='/profile/:id' component={Profile} />
+        <Route exact path='/services' component={Homepage} />
+        <Route exact path='/youtube' component={Youtube} />
         <PrivateRoute exact path='/dashboard' component={Dashboard} />
         <PrivateRoute exact path='/create-profile' component={ProfileForm} />
         <PrivateRoute exact path='/edit-profile' component={ProfileForm} />

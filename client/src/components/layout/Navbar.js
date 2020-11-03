@@ -16,7 +16,7 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
         <Link to='/profiles'>Charts</Link>
       </>
       <>
-        <Link to='/dashboard'>
+        <Link to='/services'>
           <span className='hide-sm'>Services</span>
         </Link>
       </>

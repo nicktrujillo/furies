@@ -1,0 +1,373 @@
+/* HOMEPAGE / SERVICES SECTION */
+
+@import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
+/* font-family: 'Bentham', serif; */
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Ubuntu", sans-serif;
+}
+body {
+  background-color: lightgrey;
+} */
+
+.service-container {
+  margin: auto;
+  width: 100%;
+  margin-top: 2%;
+}
+
+.main {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  width: 18%;
+  height: 40%;
+  margin: 2% auto;
+  border-radius: 7px;
+  -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+}
+
+.badge {
+  position: absolute;
+  top: 1.42857rem;
+  left: 0.71429rem;
+  padding: 0.28571rem 0.64286rem 0.21429rem 0.64286rem;
+  /* text-transform: uppercase; */
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 0.78571rem;
+}
+
+.product-img {
+  width: 100%;
+  height: auto;
+}
+
+.product-img img {
+  width: 90%;
+  margin: 5%;
+  border-radius: 7px;
+}
+
+.product-info {
+  text-align: center;
+  color: #474747;
+}
+
+.product-info .title {
+  font-size: 1rem;
+}
+
+.product-info .sub-title {
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #d2d2d2;
+  letter-spacing: 0.2em;
+}
+
+.product-info .description {
+  height: 25%;
+  color: #8d8d8d;
+  line-height: 1.8em;
+  font-size: 15px;
+  font-weight: lighter;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  /* overflow: hidden; */
+  text-overflow: ellipsis;
+}
+
+.product-info img {
+  width: 30%;
+}
+
+.product-price p {
+  margin-bottom: 0;
+}
+
+.product-price span {
+  font-size: 14px;
+}
+
+.product-price-btn {
+  height: 40px;
+  width: 120px;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  background-color: #bb86ff;
+  cursor: pointer;
+  outline: none;
+  margin-bottom: 15%;
+  padding-top: 5px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  padding-bottom: 0;
+}
+
+.product-price-btn:hover {
+  background: lightgrey;
+}
+
+/* 11/2/20 new YouTube SECTION */
+.nav1 {
+  width: 100vw;
+  height: 5%;
+  background-color: #bb86fc;
+  color: #bb86fc;
+}
+.nav2 {
+  width: 100vw;
+  height: 30%;
+  background-color: #121212;
+  color: #bb86ff;
+  font-size: 2.6rem;
+  text-align: center;
+  font-family: "Bentham", serif;
+  font-weight: lighter;
+}
+.logo {
+  width: 10%;
+  position: relative;
+  bottom: 72px;
+  left: 45px;
+}
+
+.top-container {
+  display: flex;
+  justify-content: space-around;
+  width: 95%;
+  margin: auto;
+  margin-top: 1%;
+}
+.left-img {
+  width: 30%;
+  margin-right: 0;
+}
+
+.left-img img {
+  width: 95%;
+
+  border-radius: 7px 7px 7px 7px;
+  -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+}
+
+.right-info {
+  width: 60%;
+}
+
+.product-price {
+  padding: 4%;
+  font-size: 1.5rem;
+  color: #474747;
+}
+
+.product-price-btn {
+  height: 30px;
+  width: 120px;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  background-color: #bb86fc;
+  cursor: pointer;
+  outline: none;
+  margin-bottom: 5%;
+}
+
+.product-price-btn:hover {
+  background-color: lightgrey;
+}
+
+.right-info h1 {
+  padding: 1% 0 2% 0;
+  font-size: 30px;
+  color: #474747;
+}
+
+h3 {
+  padding: 3% 0 1% 0;
+  font-size: 20px;
+  color: #474747;
+}
+
+/* li {
+  text-indent: 20px;
+}
+
+.right-info p,
+li {
+  color: #8d8d8d;
+  line-height: 1.8em;
+  font-size: 18px;
+  font-weight: lighter;
+} */
+
+.bottom-container {
+  width: 80%;
+  padding-left: 10%;
+  position: relative;
+  right: 40px;
+  bottom: 170px;
+  margin-bottom: 0;
+}
+
+/* Price Table */
+
+.wrapper {
+  /* margin-top: 55px; */
+  text-align: center;
+  /* line-height: 10px; */
+}
+
+.pricing_wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pricing_item {
+  background: #fff;
+  margin: 5px 10px;
+  margin-bottom: 30px;
+  padding: 20px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
+  border-radius: 7px 7px 7px 7px;
+}
+.pricing_item:hover {
+  background-color: black;
+}
+.type {
+  font-size: 26px;
+}
+
+.pricing_item p {
+  color: #bebebe;
+}
+
+.pricing-table-price {
+  color: #474747;
+  padding: 20px;
+  margin: auto;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+/* PAYPAL SECTION */
+
+.mainPaypal {
+  width: 45%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 5px;
+}
+
+/* img {
+  max-height: 220px;
+  max-width: 220px;
+  padding: 10px;
+  border: 1px dashed #999;
+} */
+.images {
+  display: flex;
+  justify-content: center;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.delete {
+  position: relative;
+  top: 16px;
+  right: 15px;
+}
+
+/* Animations */
+/* .fadein {
+  animation: fadein 2s;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+} */
+/* order btn */
+
+/* .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+} */
+/* 
+.paypal-logo {
+  font-family: Verdana, Tahoma;
+  font-weight: bold;
+  font-size: 26px;
+}
+.paypal i:first-child {
+  color: #253b80;
+}
+.paypal i:last-child {
+  color: #179bd7;
+}
+.paypal-button {
+  padding: 5px;
+  border: 1px solid #ff9933;
+  border-radius: 5px;
+  background-image: linear-gradient(#fff0a8, #f9b421);
+  margin: 0 auto;
+  display: block;
+  min-width: 80px;
+  position: relative;
+}
+.paypal-title {
+  font-size: 14px;
+  color: #505050;
+  vertical-align: baseline;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
+}
+.paypal-logo {
+  display: inline-block;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
+  font-size: 20px;
+}
+.thanks {
+  border: 1px solid #6200ee;
+  border-radius: 10px;
+  padding: 15px 0;
+  transition: all 150ms ease-in-out;
+  font-size: 12px;
+  color: white;
+  width: 80%;
+  background-color: #4b00d1;
+}
+ */

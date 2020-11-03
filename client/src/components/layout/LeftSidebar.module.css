@@ -5,5 +5,5 @@
 }
 
 .leftColumnItem:hover {
-  color: #4aa0b5;
+  color: var(--primary-color);
 }
