@@ -1,6 +1,6 @@
 /* Global Styles */
 :root {
-  --primary-color: #40916c;
+  --primary-color: #52b788;
   --dark-color: #343a40;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
@@ -17,7 +17,7 @@ body {
   margin: 0 5%;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  background-color: #000201;
+  background-color: #030f0b;
   height: 100vh;
 }
 

@@ -10,7 +10,7 @@
 }
 
 .leftColumn {
-  background-color: #252525;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,7 +30,7 @@
 }
 
 .rightColumn {
-  background-color: #252525;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   align-items: center;
