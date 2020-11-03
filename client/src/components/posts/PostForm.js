@@ -12,9 +12,6 @@ const PostForm = ({ addPost }) => {
 
   return (
     <div className='post-form'>
-      <div className='homeLogoContainer'>
-        <img className='homeLogo' src={logo} />
-      </div>
       <form
         className='my-1'
         onSubmit={(e) => {

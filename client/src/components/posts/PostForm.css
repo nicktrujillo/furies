@@ -1,11 +1,5 @@
-.homeLogo {
-  width: 8%;
-  margin-left: 2%;
-  margin-top: 2%;
-}
-
-.homeLogoContainer {
-  margin-bottom: -1rem;
+.post-form {
+  padding-top: 1rem;
 }
 
 .songLinks {
