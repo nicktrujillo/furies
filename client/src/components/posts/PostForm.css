@@ -1,8 +1,7 @@
 .post-form {
-  padding: 1rem;
-  background-color: rgb(37, 37, 37, 0.95);
-  border-radius: 8px;
-  margin: 5px;
+  padding: 1.4rem;
+  background-color: rgb(28, 28, 28, 0.4);
+  margin-bottom: -0.3em;
   /* border-radius: 8px;
   display: flex;
   justify-content: flex-start;
@@ -11,18 +10,17 @@
 
 .postForm {
   width: 60%;
-  margin: 0 auto;
 }
 
 ::placeholder {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  color: var(--primary-color);
+  color: rgb(161, 161, 161);
 }
 .newPostText {
   width: 100%;
-  background-color: #504f4f;
-  border-radius: 6px;
+  background-color: #696969;
+  border-radius: 8px;
   outline: none;
   padding: 10px;
   color: white;
@@ -48,9 +46,9 @@
 .soundCloudText {
   width: 64%;
   padding: 10px;
-  background-color: #504f4f;
+  background-color: #696969;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   outline: none;
   color: white;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -59,8 +57,8 @@
 .youtubeText {
   width: 64%;
   padding: 10px;
-  background-color: #504f4f;
-  border-radius: 6px;
+  background-color: #696969;
+  border-radius: 8px;
   outline: none;
   color: white;
   border: none;
@@ -70,18 +68,18 @@
 
 .newPostSubmitContainer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .newPostSubmit {
-  background-color: #504f4f;
+  background-color: #333333;
   padding: 10px;
   border: none;
   color: var(--primary-color);
   border-radius: 6px;
   cursor: pointer;
   outline: none;
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 .newPostSubmit:hover {
   background-color: var(--primary-color);

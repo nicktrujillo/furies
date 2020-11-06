@@ -14,7 +14,6 @@
 }
 .navbarLogo {
   width: 20%;
-  display: flex;
 }
 .navbarLogoTwo {
   width: 18%;
@@ -43,4 +42,38 @@
   width: 10%;
   justify-content: space-between;
   font-weight: bold;
+}
+
+.middleLink {
+  color: white;
+}
+
+.middleLink:hover {
+  color: var(--primary-color);
+}
+
+.middleLink:active {
+  color: white;
+}
+
+.middleLink:visited {
+  color: white;
+}
+
+.rightLink {
+  color: white;
+}
+
+.rightLink:hover {
+  color: var(--primary-color);
+}
+
+.rightLinkGuest {
+  color: white;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.rightLinkGuest:hover {
+  color: var(--primary-color);
 }

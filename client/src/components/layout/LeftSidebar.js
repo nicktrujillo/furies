@@ -11,26 +11,29 @@ const LeftSidebar = ({
 }) => {
   return (
     <>
-      <div className={styles.leftColumnItem}>
-        <Link to={`/profile/${_id}`}>
+      <Link to={`/profile/${_id}`}>
+        <div className={styles.leftColumnItem}>
           <i class='fas fa-user'></i>&nbsp;&nbsp; Profile
-        </Link>
-      </div>
-      <div className={styles.leftColumnItem}>
-        <Link to={`/notifications/${_id}`}>
+        </div>
+      </Link>
+
+      <Link to={`/notifications/${_id}`}>
+        <div className={styles.leftColumnItem}>
           <i class='fas fa-bell'></i>&nbsp;&nbsp; Notifications
-        </Link>
-      </div>
-      <div className={styles.leftColumnItem}>
-        <Link to='/chat'>
+        </div>
+      </Link>
+
+      <Link to='/chat'>
+        <div className={styles.leftColumnItem}>
           <i class='fas fa-envelope-open-text'></i>&nbsp;&nbsp; Messages
-        </Link>
-      </div>
-      <div className={styles.leftColumnItem}>
-        <Link to='/dashboard'>
+        </div>
+      </Link>
+
+      <Link to='/dashboard'>
+        <div className={styles.leftColumnItem}>
           <i class='fas fa-cog'></i>&nbsp;&nbsp; Settings
-        </Link>
-      </div>
+        </div>
+      </Link>
     </>
   );
 };

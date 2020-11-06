@@ -3,14 +3,15 @@
   color: white;
   cursor: pointer;
   font-weight: bold;
+  font-size: 18px;
 }
 
-Link:active {
+.leftColumnItem:active {
   color: white;
   text-decoration: none;
 }
 
-Link:visited {
+.leftColumnItem:visited {
   color: white;
   text-decoration: none;
 }

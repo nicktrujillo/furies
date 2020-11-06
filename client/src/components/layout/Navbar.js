@@ -9,23 +9,23 @@ import styles from "./Navbar.module.css";
 const Navbar = ({ auth: { isAuthenticated }, logout }) => {
   const authLinksMiddle = (
     <>
-      <>
-        <Link to='/posts'>Home</Link>
-      </>
-      <>
-        <Link to='/profiles'>Charts</Link>
-      </>
-      <>
-        <Link to='/services'>
-          <span className='hide-sm'>Services</span>
-        </Link>
-      </>
+      <Link to='/posts'>
+        <div className={styles.middleLink}>Home</div>
+      </Link>
+
+      <Link to='/profiles'>
+        <div className={styles.middleLink}>Charts</div>
+      </Link>
+
+      <Link to='/services'>
+        <div className={styles.middleLink}>Services</div>
+      </Link>
     </>
   );
 
   const authLinksRight = (
     <>
-      <a onClick={logout} href='/'>
+      <a className={styles.rightLink} onClick={logout} href='/'>
         <i className='fas fa-sign-out-alt' />{" "}
         <span className='hide-sm'>Logout</span>
       </a>
@@ -34,12 +34,13 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
 
   const guestLinks = (
     <>
-      <>
-        <Link to='/register'>Register</Link>
-      </>
-      <>
-        <Link to='/login'>Login</Link>
-      </>
+      <Link to='/register'>
+        <div className={styles.rightLinkGuest}>Register</div>
+      </Link>
+
+      <Link to='/login'>
+        <div className={styles.rightLinkGuest}>Login</div>
+      </Link>
     </>
   );
 

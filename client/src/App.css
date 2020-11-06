@@ -149,13 +149,13 @@ img {
 .badge-primary,
 .alert-primary {
   background: var(--primary-color);
-  color: #fff;
+  color: #333;
 }
 .btn-light,
 .bg-light,
 .badge-light,
 .alert-light {
-  background: var(--light-color);
+  background: #696969;
   color: #333;
 }
 .btn-dark,
@@ -303,8 +303,7 @@ button {
 /* Landing Page */
 .landing {
   position: relative;
-  background: #1b1b1b;
-  height: 75vh;
+  height: 100vh;
 }
 .landing-logo {
   width: 30%;
@@ -424,15 +423,16 @@ button {
   width: 60px;
 }
 .post .comment-count {
-  background: var(--light-color);
+  background: #696969;
   color: var(--primary-color);
   padding: 0.1rem 0.2rem;
-  border-radius: 5px;
+  border-radius: 6px;
   font-size: 0.8rem;
 }
 .post .post-date {
-  color: #aaa;
+  color: #585858;
   font-size: 0.8rem;
+  margin-top: 0.2rem;
   margin-bottom: 0.5rem;
 }
 /* Mobile Styles */

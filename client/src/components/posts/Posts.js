@@ -17,7 +17,7 @@ const Posts = ({ getPosts, post: { posts } }) => {
     <>
       <div className={styles.postsContainer}>
         <div className={styles.leftColumn}>
-          <div className={styles.fixedColumn}>
+          <div className={styles.fixedColumnLeft}>
             <LeftSidebar />
           </div>
         </div>
@@ -30,7 +30,7 @@ const Posts = ({ getPosts, post: { posts } }) => {
           </div>
         </div>
         <div className={styles.rightColumn}>
-          <div className={styles.fixedColumn}>
+          <div className={styles.fixedColumnRight}>
             <h5 className={styles.trendingTitle}>Trending Weekly Top 10</h5>
             <div className={styles.trendingSongs}>
               <ol>
