@@ -13,18 +13,22 @@ const LeftSidebar = ({
     <>
       <div className={styles.leftColumnItem}>
         <Link to={`/profile/${_id}`}>
-          <i class='fas fa-user'></i> Profile
+          <i class='fas fa-user'></i>&nbsp;&nbsp; Profile
         </Link>
       </div>
       <div className={styles.leftColumnItem}>
-        <i class='fas fa-bell'></i> Notifications
+        <Link to={`/notifications/${_id}`}>
+          <i class='fas fa-bell'></i>&nbsp;&nbsp; Notifications
+        </Link>
       </div>
       <div className={styles.leftColumnItem}>
-        <i class='fas fa-envelope-open-text'></i> Messages
+        <Link to='/chat'>
+          <i class='fas fa-envelope-open-text'></i>&nbsp;&nbsp; Messages
+        </Link>
       </div>
       <div className={styles.leftColumnItem}>
         <Link to='/dashboard'>
-          <i class='fas fa-cog'></i> Settings
+          <i class='fas fa-cog'></i>&nbsp;&nbsp; Settings
         </Link>
       </div>
     </>

@@ -1,43 +1,35 @@
 .postsContainer {
-  grid-template-columns: 2fr 6fr 2fr;
+  grid-template-columns: 2fr 4fr 2fr;
   display: grid;
   width: 100%;
   height: 100%;
 }
-
 .fixedColumn {
   position: fixed;
 }
-
 .leftColumn {
-  background-color: transparent;
+  /* background-color: #252525; */
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 40px;
-  border-right: 1px solid rgb(182, 182, 182);
   z-index: 1;
 }
-
 .leftColumnItem {
   padding: 20px;
   color: white;
   cursor: pointer;
 }
-
 .leftColumnItem:hover {
   color: #4aa0b5;
 }
-
 .rightColumn {
-  background-color: transparent;
+  /* background-color: #252525; */
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 40px;
-  border-left: 1px solid rgb(182, 182, 182);
 }
-
 .trendingSongs {
   color: white;
   width: 60%;
@@ -45,13 +37,17 @@
   font-size: 12px;
   text-align: center;
 }
-
 .trendingTitle {
   text-align: center;
   padding: 20px;
   color: white;
 }
-
 .trendingSong {
   padding: 10px;
+}
+.middleColumn {
+  background-image: url("https://images.unsplash.com/photo-1512917860049-18d416baa831?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+  background-position-x: 16rem;
+  background-size: fill;
+  background-attachment: fixed;
 }

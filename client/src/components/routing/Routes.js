@@ -13,6 +13,8 @@ import NotFound from "../layout/NotFound";
 import PrivateRoute from "../routing/PrivateRoute";
 import Homepage from "../services/Homepage";
 import Youtube from "../services/Youtube";
+import Notifications from "../notifications/Notifications";
+import ChatPage from "../chatpage/ChatPage";
 
 const Routes = (props) => {
   return (
@@ -30,6 +32,12 @@ const Routes = (props) => {
         <PrivateRoute exact path='/edit-profile' component={ProfileForm} />
         <PrivateRoute exact path='/posts' component={Posts} />
         <PrivateRoute exact path='/posts/:id' component={Post} />
+        <PrivateRoute
+          exact
+          path='/notifications/:id'
+          component={Notifications}
+        />
+        <PrivateRoute exact path='/chat' component={ChatPage} />
         <Route component={NotFound} />
       </Switch>
     </section>

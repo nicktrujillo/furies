@@ -13,7 +13,7 @@ const PostForm = ({ addPost }) => {
   return (
     <div className='post-form'>
       <form
-        className='my-1'
+        className='my-1 postForm'
         onSubmit={(e) => {
           e.preventDefault();
           addPost({ text, soundcloud, youtube });
@@ -31,43 +31,33 @@ const PostForm = ({ addPost }) => {
             value={text}
             onChange={(e) => setText(e.target.value)}
             required
+            autocomplete='off'
           />
         </div>
-        <div className='songLinks'>
-          <div>
-            <label>
-              <i className='fab fa-soundcloud'></i>
-            </label>
-            <textarea
-              className='soundCloudText'
-              name='text'
-              cols='30'
-              rows='1'
-              placeholder='insert soundcloud link'
-              value={soundcloud}
-              onChange={(e) => setSoundcloud(e.target.value)}
-            />
-          </div>
-          <h4 className='or'>or</h4>
-          <div>
-            <textarea
-              className='youtubeText'
-              name='text'
-              cols='30'
-              rows='1'
-              placeholder='insert youtube link'
-              value={youtube}
-              onChange={(e) => setYoutube(e.target.value)}
-            />
-            <label>
-              <i className='fab fa-youtube'></i>
-            </label>
-          </div>
+        <div>
+          <input
+            className='soundCloudText'
+            name='text'
+            placeholder='soundcloud link'
+            value={soundcloud}
+            onChange={(e) => setSoundcloud(e.target.value)}
+            autocomplete='off'
+          />
+          <i className='fab fa-soundcloud'></i>
+        </div>
+        <div>
+          <input
+            className='youtubeText'
+            name='text'
+            placeholder='youtube link'
+            value={youtube}
+            onChange={(e) => setYoutube(e.target.value)}
+            autocomplete='off'
+          />
+          <i className='fab fa-youtube'></i>
         </div>
         <div className='newPostSubmitContainer'>
-          <div>
-            <input type='submit' className='newPostSubmit' value='Submit' />
-          </div>
+          <input type='submit' className='newPostSubmit' value='Submit' />
         </div>
       </form>
     </div>

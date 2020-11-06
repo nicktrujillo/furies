@@ -1,85 +1,89 @@
 .post-form {
-  padding-top: 1rem;
-}
-
-.songLinks {
+  padding: 1rem;
+  background-color: rgb(37, 37, 37, 0.95);
+  border-radius: 8px;
+  margin: 5px;
+  /* border-radius: 8px;
   display: flex;
-  justify-content: center;
-  padding: 18px;
+  justify-content: flex-start;
+  width: 100%; */
 }
 
-.or {
-  color: white;
-  padding-left: 8px;
-  padding-right: 14px;
-  padding-top: 4px;
-  font-weight: lighter;
-}
-
-.newPost {
-  width: 45%;
+.postForm {
+  width: 60%;
   margin: 0 auto;
 }
 
+::placeholder {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: var(--primary-color);
+}
 .newPostText {
   width: 100%;
-  background-color: #252525;
-  box-shadow: 0 0 6px var(--primary-color);
-  border-radius: 5px;
+  background-color: #504f4f;
+  border-radius: 6px;
   outline: none;
-  padding: 5px;
+  padding: 10px;
   color: white;
   border: none;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-bottom: -2px;
 }
-
 .fa-soundcloud {
   color: var(--primary-color);
   font-size: 2rem;
+  position: relative;
+  top: 6px;
+  margin-left: 2%;
 }
-
 .fa-youtube {
   color: var(--primary-color);
   font-size: 2rem;
+  position: relative;
+  top: 6px;
+  margin-left: 2%;
 }
-
 .soundCloudText {
-  width: 80%;
-  margin-left: 5%;
-  padding: 5px;
-  background-color: #252525;
-  box-shadow: 0 0 6px var(--primary-color);
+  width: 64%;
+  padding: 10px;
+  background-color: #504f4f;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   outline: none;
   color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-
 .youtubeText {
-  width: 80%;
-  margin-right: 5%;
-  padding: 5px;
-  background-color: #252525;
-  box-shadow: 0 0 6px var(--primary-color);
-  border-radius: 5px;
+  width: 64%;
+  padding: 10px;
+  background-color: #504f4f;
+  border-radius: 6px;
   outline: none;
   color: white;
   border: none;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .newPostSubmitContainer {
   display: flex;
   justify-content: flex-end;
-  width: 94%;
 }
 
 .newPostSubmit {
-  background-color: #252525;
+  background-color: #504f4f;
   padding: 10px;
-  border: 1px solid var(--primary-color);
-  margin: 0 auto;
-  color: white;
-  border-radius: 10px;
-  margin-left: 5%;
+  border: none;
+  color: var(--primary-color);
+  border-radius: 6px;
   cursor: pointer;
   outline: none;
+  margin-top: 1em;
+}
+.newPostSubmit:hover {
+  background-color: var(--primary-color);
+  color: black;
 }

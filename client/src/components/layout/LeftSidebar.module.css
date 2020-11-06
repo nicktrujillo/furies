@@ -1,7 +1,18 @@
 .leftColumnItem {
-  padding: 20px;
+  padding: 30px;
   color: white;
   cursor: pointer;
+  font-weight: bold;
+}
+
+Link:active {
+  color: white;
+  text-decoration: none;
+}
+
+Link:visited {
+  color: white;
+  text-decoration: none;
 }
 
 .leftColumnItem:hover {
