@@ -1,21 +1,8 @@
 import axios from "axios";
 import api from "../utils/api";
 import { GET_CHATS, AFTER_POST_MESSAGE } from "./types";
-// import { CHAT_SERVER } from "../components/chatpage/Config";
 
-// export function getChats() {
-//   const request = axios
-//     .get("/api/chat/getChats")
-//     .then((response) => response.data)
-//     .catch((err) => console.log(err));
-
-//   return {
-//     type: GET_CHATS,
-//     payload: request,
-//   };
-// }
-
-// Get chats by id
+// Get chats by ID
 export const getChats = (recipientId) => async (dispatch) => {
   try {
     const res = await api.get(`/chat/${recipientId}`);

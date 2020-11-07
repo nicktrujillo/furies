@@ -12,10 +12,11 @@ import styles from "./ChatPage.css";
 
 const socket = io.connect("http://localhost:5000");
 
-function ChatPage({ getChats, chats }) {
+function ChatPage({ getChats, chats, auth }) {
   const { id } = useParams();
+
   useEffect(() => {
-    socket.on("Output Chat Message", (messageFromBackEnd) => {
+    socket.on("Output Chat Message", () => {
       getChats(id);
     });
   }, []);
@@ -26,24 +27,34 @@ function ChatPage({ getChats, chats }) {
 
   const [chatMessage, setChatMessage] = useState("");
 
-  //   let message = chatMessage;
-  //   let sender = auth.user._id;
-  //   let recipient = req.params.id;
+  let message = chatMessage;
+  let sender = auth.user._id;
+  let recipient = id;
 
   const sendMessage = () => {
     socket.emit("Input Chat Message", {
-      message: "yo tyler hows it going",
-      sender: "5f9741cd4f4ed319cb62e48d",
-      recipient: "5fa58c9233bac95d7f094f07",
+      message,
+      sender,
+      recipient,
     });
+    setChatMessage("");
   };
 
   return (
     <div>
       <p>chatpage</p>
+      <input
+        name='text'
+        placeholder='send a message'
+        value={chatMessage}
+        onChange={(e) => setChatMessage(e.target.value)}
+        autocomplete='off'
+      />
       <button onClick={sendMessage}>click me</button>
       {chats.map((msg) => (
-        <p>{msg.message}</p>
+        <div>
+          <p>{msg.message}</p>
+        </div>
       ))}
     </div>
   );

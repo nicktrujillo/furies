@@ -1,7 +1,7 @@
 /* navbar */
 .navbar {
   display: flex;
-  background-color: #0f0c04;
+  background-color: var(--dark-color);
   color: #d4d4d4;
   align-items: center;
   justify-content: space-between;
@@ -45,7 +45,7 @@
 }
 
 .middleLink {
-  color: white;
+  color: var(--light-color);
 }
 
 .middleLink:hover {
@@ -53,15 +53,15 @@
 }
 
 .middleLink:active {
-  color: white;
+  color: var(--light-color);
 }
 
 .middleLink:visited {
-  color: white;
+  color: var(--light-color);
 }
 
 .rightLink {
-  color: white;
+  color: var(--light-color);
 }
 
 .rightLink:hover {
@@ -69,7 +69,7 @@
 }
 
 .rightLinkGuest {
-  color: white;
+  color: var(--light-color);
   padding-left: 1em;
   padding-right: 1em;
 }

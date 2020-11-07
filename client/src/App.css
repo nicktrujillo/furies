@@ -1,8 +1,8 @@
 /* Global Styles */
 :root {
-  --primary-color: #df8e32;
-  --dark-color: #343a40;
-  --light-color: #f4f4f4;
+  --primary-color: #7544f2;
+  --dark-color: #080613;
+  --light-color: #f0e7fc;
   --danger-color: #dc3545;
   --success-color: #28a745;
 }
@@ -15,9 +15,9 @@ body {
   margin: 0 5%;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  background-color: #0f0c04;
+  background-color: var(--dark-color);
   height: 100vh;
-  color: white;
+  color: var(--light-color);
 }
 /* body {
   font-family: "Raleway", sans-serif;

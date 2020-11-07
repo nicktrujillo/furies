@@ -1,5 +1,5 @@
 .postContainer {
-  background-color: rgba(28, 28, 28, 0.9);
+  background-color: rgba(28, 28, 28, 0.96);
   border-radius: 8px;
   margin: 5px;
 }
@@ -26,7 +26,7 @@
   background: none;
   outline: none;
   border: 1px solid var(--primary-color);
-  box-shadow: 0 0 4px #696969;
+  box-shadow: 0 0 2px #696969;
   border-radius: 10px;
   padding: 0.4rem;
   color: #696969;
@@ -36,5 +36,5 @@
 
 .postButton:hover {
   background: #696969;
-  color: var(--primary-color);
+  color: var(--light-color);
 }

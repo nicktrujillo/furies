@@ -1,18 +1,18 @@
 .leftColumnItem {
   padding: 30px;
-  color: white;
+  color: var(--light-color);
   cursor: pointer;
   font-weight: bold;
   font-size: 18px;
 }
 
 .leftColumnItem:active {
-  color: white;
+  color: var(--light-color);
   text-decoration: none;
 }
 
 .leftColumnItem:visited {
-  color: white;
+  color: var(--light-color);
   text-decoration: none;
 }
 
