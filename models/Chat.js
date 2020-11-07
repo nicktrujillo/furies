@@ -17,18 +17,18 @@ const Schema = mongoose.Schema;
 //   { timestamps: true }
 // );
 
-const chatSchema = mongoose.Schema(
+const ChatSchema = mongoose.Schema(
   {
     message: {
       type: String,
       required: true,
     },
-    receiver: {
+    sender: {
       type: Schema.Types.ObjectId,
       ref: "user",
       required: true,
     },
-    sender: {
+    recipient: {
       type: Schema.Types.ObjectId,
       ref: "user",
       required: true,
@@ -40,5 +40,5 @@ const chatSchema = mongoose.Schema(
   }
 );
 
-const Chat = mongoose.model("Chat", chatSchema);
+const Chat = mongoose.model("Chat", ChatSchema);
 module.exports = Chat;

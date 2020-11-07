@@ -15,10 +15,10 @@ import { GET_CHATS, AFTER_POST_MESSAGE } from "./types";
 //   };
 // }
 
-// Get chats
-export const getChats = () => async (dispatch) => {
+// Get chats by id
+export const getChats = (recipientId) => async (dispatch) => {
   try {
-    const res = await api.get("/api/chat");
+    const res = await api.get(`/chat/${recipientId}`);
 
     dispatch({
       type: GET_CHATS,

@@ -1,4 +1,5 @@
-import React, { Component, useEffect } from "react";
+import React, { Component, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { Form, Icon, Input, Button, Row, Col } from "antd";
 import io from "socket.io-client";
 import { connect } from "react-redux";
@@ -7,22 +8,33 @@ import { getChats, afterPostMessage } from "../../actions/chat";
 import ChatCard from "./ChatCard";
 import Dropzone from "react-dropzone";
 import Axios from "axios";
+import styles from "./ChatPage.css";
 
 const socket = io.connect("http://localhost:5000");
 
-function ChatPage() {
+function ChatPage({ getChats, chats }) {
+  const { id } = useParams();
   useEffect(() => {
-    socket.on("Output Chat Message", () => {
-      console.log("connected");
+    socket.on("Output Chat Message", (messageFromBackEnd) => {
+      getChats(id);
     });
   }, []);
 
+  useEffect(() => {
+    getChats(id);
+  }, [getChats]);
+
+  const [chatMessage, setChatMessage] = useState("");
+
+  //   let message = chatMessage;
+  //   let sender = auth.user._id;
+  //   let recipient = req.params.id;
+
   const sendMessage = () => {
     socket.emit("Input Chat Message", {
-      chatMessage: "hello",
-      receiver: "5f9741cd4f4ed319cb62e48d",
+      message: "yo tyler hows it going",
       sender: "5f9741cd4f4ed319cb62e48d",
-      commonId: "5f9741cd4f4ed319cb62e48d5f9741cd4f4ed319cb62e48d",
+      recipient: "5fa58c9233bac95d7f094f07",
     });
   };
 
@@ -30,11 +42,22 @@ function ChatPage() {
     <div>
       <p>chatpage</p>
       <button onClick={sendMessage}>click me</button>
+      {chats.map((msg) => (
+        <p>{msg.message}</p>
+      ))}
     </div>
   );
 }
 
-export default ChatPage;
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    auth: state.auth,
+    chats: state.chats.chats,
+  };
+};
+
+export default connect(mapStateToProps, { getChats })(ChatPage);
 
 // export class ChatPage extends Component {
 //   state = {
@@ -111,12 +134,12 @@ export default ChatPage;
 //     //   return alert("Please Log in first");
 //     // }
 
-//     let chatMessage = this.state.chatMessage;
-//     let userId = this.props.auth.user._id;
-//     let userName = this.props.auth.user.name;
-//     let userImage = this.props.auth.user.avatar;
-//     let nowTime = moment();
-//     let type = "Text";
+// let chatMessage = this.state.chatMessage;
+// let userId = this.props.auth.user._id;
+// let userName = this.props.auth.user.name;
+// let userImage = this.props.auth.user.avatar;
+// let nowTime = moment();
+// let type = "Text";
 
 //     this.socket.emit("Input Chat Message", {
 //       chatMessage,

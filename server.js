@@ -1,5 +1,6 @@
 const express = require("express");
 const connectDB = require("./config/db");
+const auth = require("./middleware/auth");
 
 const app = express();
 
@@ -21,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-const { Chat } = require("./models/Chat");
+const Chat = require("./models/Chat");
 
 app.use("/api/chat", require("./routes/api/chat"));
 
@@ -30,9 +31,10 @@ io.on("connection", (socket) => {
     connectDB().then((db) => {
       try {
         let chat = new Chat({
-          message: msg.chatMessage,
-          sender: msg.userId,
-          receiver: msg.receiverId,
+          message: msg.message,
+          sender: msg.sender,
+          recipient: msg.recipient,
+          // recipient: msg.receiverId,
         });
         chat.save((err, doc) => {
           console.log(doc);

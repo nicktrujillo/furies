@@ -37,7 +37,7 @@ const Routes = (props) => {
           path='/notifications/:id'
           component={Notifications}
         />
-        <PrivateRoute exact path='/chat' component={ChatPage} />
+        <PrivateRoute exact path='/chat/:id' component={ChatPage} />
         <Route component={NotFound} />
       </Switch>
     </section>

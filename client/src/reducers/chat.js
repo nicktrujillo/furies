@@ -1,6 +1,6 @@
-import { GET_CHATS, AFTER_POST_MESSAGE } from "../../actions/types";
+import { GET_CHATS, AFTER_POST_MESSAGE } from "../actions/types";
 
-export default function (state = {}, action) {
+export default function (state = { chats: [] }, action) {
   switch (action.type) {
     case GET_CHATS:
       return { ...state, chats: action.payload };
