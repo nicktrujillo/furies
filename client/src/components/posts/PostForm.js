@@ -31,7 +31,7 @@ const PostForm = ({ addPost }) => {
             value={text}
             onChange={(e) => setText(e.target.value)}
             required
-            autocomplete='off'
+            autoComplete='off'
           />
         </div>
         <div>
@@ -41,9 +41,9 @@ const PostForm = ({ addPost }) => {
             placeholder='soundcloud link'
             value={soundcloud}
             onChange={(e) => setSoundcloud(e.target.value)}
-            autocomplete='off'
+            autoComplete='off'
           />
-          <i className='fab fa-soundcloud'></i>
+          <i className='fab fa-soundcloud scIconForm'></i>
         </div>
         <div>
           <input
@@ -52,9 +52,9 @@ const PostForm = ({ addPost }) => {
             placeholder='youtube link'
             value={youtube}
             onChange={(e) => setYoutube(e.target.value)}
-            autocomplete='off'
+            autoComplete='off'
           />
-          <i className='fab fa-youtube'></i>
+          <i className='fab fa-youtube ytIconForm'></i>
         </div>
         <div className='newPostSubmitContainer'>
           <input type='submit' className='newPostSubmit' value='Submit' />

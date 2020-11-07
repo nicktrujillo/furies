@@ -33,14 +33,14 @@ const PostItem = ({
       width='560'
       height='100'
       scrolling='no'
-      frameborder='no'
+      frameBorder='no'
       allow='autoplay'
       src={soundcloudOne + soundcloud + soundCloudThree}
     ></iframe>
   );
 
   return (
-    <div className='post p-1 postContainer'>
+    <div className='post postContainer'>
       <div>
         <Link to={`/profile/${user}`}>
           <div className='nameAndAvi'>
@@ -59,9 +59,8 @@ const PostItem = ({
                 width='560'
                 height='315'
                 src={`https://www.youtube.com/embed/${youtube.split("=")[1]}`}
-                frameborder='0'
+                frameBorder='0'
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen'
-                allowfullscreen
               ></iframe>
             }
           </p>
@@ -105,7 +104,9 @@ const PostItem = ({
             )}
           </div>
           <p className='post-date postDate'>
-            <Moment format='MM/DD/YYYY'>{date}</Moment>
+            <Moment startof='hour' fromNow>
+              {date}
+            </Moment>
           </p>
         </div>
       </div>

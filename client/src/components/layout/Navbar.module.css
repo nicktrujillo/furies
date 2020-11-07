@@ -17,6 +17,7 @@
 }
 .navbarLogoTwo {
   width: 18%;
+  filter: opacity(0.88);
 }
 .middleNav {
   display: flex;

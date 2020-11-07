@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { Component, useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { Form, Icon, Input, Button, Row, Col } from "antd";
 import io from "socket.io-client";
@@ -8,12 +8,15 @@ import { getChats, afterPostMessage } from "../../actions/chat";
 import ChatCard from "./ChatCard";
 import Dropzone from "react-dropzone";
 import Axios from "axios";
-import styles from "./ChatPage.css";
+import styles from "./ChatPage.module.css";
+import Moment from "react-moment";
+import LeftSidebar from "../layout/LeftSidebar";
 
 const socket = io.connect("http://localhost:5000");
 
 function ChatPage({ getChats, chats, auth }) {
   const { id } = useParams();
+  const endMessage = useRef();
 
   useEffect(() => {
     socket.on("Output Chat Message", () => {
@@ -38,25 +41,64 @@ function ChatPage({ getChats, chats, auth }) {
       recipient,
     });
     setChatMessage("");
+    endMessage.current.scrollIntoView();
   };
 
   return (
-    <div>
-      <p>chatpage</p>
-      <input
-        name='text'
-        placeholder='send a message'
-        value={chatMessage}
-        onChange={(e) => setChatMessage(e.target.value)}
-        autocomplete='off'
-      />
-      <button onClick={sendMessage}>click me</button>
-      {chats.map((msg) => (
-        <div>
-          <p>{msg.message}</p>
+    <>
+      <div className={styles.pageContainer}>
+        <div className={styles.leftColumn}>
+          <div className={styles.fixedColumnLeft}>
+            <LeftSidebar />
+          </div>
         </div>
-      ))}
-    </div>
+        <div className={styles.chatContainer}>
+          <div className={styles.chatList}>
+            <h1 className={styles.chatListHeading}>All Chats</h1>
+            <ul>
+              <li>chat list</li>
+            </ul>
+          </div>
+          <div className={styles.directChat}>
+            <div className={styles.directChatGrid}>
+              <div className={styles.directChatHeading}>
+                {chats[0] ? (
+                  <h1>{chats[0].recipient.name}</h1>
+                ) : (
+                  <h1>Start a New Conversation</h1>
+                )}
+              </div>
+              <div className={styles.directChatBody}>
+                {chats.map((msg) => (
+                  <div>
+                    <p ref={endMessage}>{msg.message}</p>
+                    <p>{msg.sender.name}</p>
+                    <img
+                      className={styles.chatAvatar}
+                      src={msg.sender.avatar}
+                    />
+                    <Moment format='MM/DD/YYYY, h:mm A'>{msg.createdAt}</Moment>
+                  </div>
+                ))}
+              </div>
+              <div className={styles.messageForm}>
+                <input
+                  className={styles.messageInput}
+                  name='text'
+                  placeholder='start a new message'
+                  value={chatMessage}
+                  onChange={(e) => setChatMessage(e.target.value)}
+                  autoComplete='off'
+                />
+                <button className={styles.submitButton} onClick={sendMessage}>
+                  send
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 

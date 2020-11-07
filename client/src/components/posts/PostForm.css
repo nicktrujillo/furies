@@ -28,14 +28,14 @@
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   margin-bottom: -2px;
 }
-.fa-soundcloud {
+.scIconForm {
   color: var(--primary-color);
   font-size: 2rem;
   position: relative;
   top: 6px;
   margin-left: 2%;
 }
-.fa-youtube {
+.ytIconForm {
   color: var(--primary-color);
   font-size: 2rem;
   position: relative;

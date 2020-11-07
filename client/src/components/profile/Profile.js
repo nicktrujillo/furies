@@ -3,10 +3,12 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import Spinner from "../layout/Spinner";
-import ProfileTop from "./ProfileTop";
-import ProfileAbout from "./ProfileAbout";
+import UpdatedProfileTop from "./ProfileTop";
 import { getProfileById } from "../../actions/profile";
 import { getPosts, getPost } from "../../actions/post";
+import styles from "../posts/Posts.module.css";
+import PostItem from "../posts/PostItem";
+import LeftSidebar from "../layout/LeftSidebar";
 const Profile = ({
   getProfileById,
   profile: { profile },
@@ -35,26 +37,34 @@ const Profile = ({
   );
   const youtubeOne = "https://www.youtube.com/embed/";
   return (
-    <>
+    <div className='profile-page-container'>
       {profile === null ? (
         <Spinner />
       ) : (
         <>
-          <Link to='/profiles' className='btn btn-light'>
-            Back To Profiles
-          </Link>
-          {auth.isAuthenticated &&
-            auth.loading === false &&
-            auth.user._id === profile.user._id && (
-              <Link to='/edit-profile' className='btn btn-dark'>
-                Edit Profile
-              </Link>
-            )}
-          <div className='profile-grid my-1'>
-            <ProfileTop profile={profile} />
-            <ProfileAbout profile={profile} />
+          <div className='profile-homepage-col-1'>
+            <div className={styles.leftColumn}>
+              <div className={styles.fixedColumnLeft}>
+                <LeftSidebar />
+              </div>
+            </div>
           </div>
+        </>
+      )}
+      <div className='profile-homepage-col-2'>
+        {auth.isAuthenticated &&
+          auth.loading === false &&
+          auth.user._id === profile.user._id && (
+            <Link to='/edit-profile' className='editProfile'>
+              Edit Profile
+            </Link>
+          )}
+        <div className='profile-content'>
           <div>
+            {" "}
+            <UpdatedProfileTop profile={profile} />
+          </div>
+          <div className='posts'>
             {posts
               .filter((allPosts) => {
                 return allPosts.user === profile.user._id;
@@ -62,42 +72,14 @@ const Profile = ({
               .map((allPosts) => {
                 return (
                   <div>
-                    {allPosts.soundcloud ? (
-                      <div>
-                        <iframe
-                          width='560'
-                          height='100'
-                          scrolling='no'
-                          frameborder='no'
-                          allow='autoplay'
-                          src={
-                            soundcloudOne +
-                            allPosts.soundcloud +
-                            soundCloudThree
-                          }
-                        ></iframe>
-                      </div>
-                    ) : null}
-                    {allPosts.youtube ? (
-                      <div>
-                        <iframe
-                          width='560'
-                          height='315'
-                          src={youtubeOne + allPosts.youtube.split("=")[1]}
-                          frameborder='0'
-                          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen'
-                          allowfullscreen
-                        ></iframe>
-                      </div>
-                    ) : null}
+                    <PostItem key={allPosts._id} post={allPosts} />
                   </div>
                 );
               })}
-            ;
           </div>
-        </>
-      )}
-    </>
+        </div>
+      </div>
+    </div>
   );
 };
 Profile.propTypes = {
@@ -113,3 +95,56 @@ const mapStateToProps = (state) => ({
   post: state.post,
 });
 export default connect(mapStateToProps, { getProfileById, getPosts })(Profile);
+
+// import React, { useEffect } from "react";
+// import PropTypes from "prop-types";
+// import { Link } from "react-router-dom";
+// import { connect } from "react-redux";
+// import Spinner from "../layout/Spinner";
+// import ProfileTop from "./ProfileTop";
+// import ProfileAbout from "./ProfileAbout";
+// import { getProfileById } from "../../actions/profile";
+
+// const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
+//   useEffect(() => {
+//     getProfileById(match.params.id);
+//   }, [getProfileById, match.params.id]);
+
+//   return (
+//     <>
+//       {profile === null ? (
+//         <Spinner />
+//       ) : (
+//         <>
+//           <Link to='/profiles' className='btn btn-light'>
+//             Back To Profiles
+//           </Link>
+//           {auth.isAuthenticated &&
+//             auth.loading === false &&
+//             auth.user._id === profile.user._id && (
+//               <Link to='/edit-profile' className='btn btn-dark'>
+//                 Edit Profile
+//               </Link>
+//             )}
+//           <div className='profile-grid my-1'>
+//             <ProfileTop profile={profile} />
+//             <ProfileAbout profile={profile} />
+//           </div>
+//         </>
+//       )}
+//     </>
+//   );
+// };
+
+// Profile.propTypes = {
+//   getProfileById: PropTypes.func.isRequired,
+//   profile: PropTypes.object.isRequired,
+//   auth: PropTypes.object.isRequired,
+// };
+
+// const mapStateToProps = (state) => ({
+//   profile: state.profile,
+//   auth: state.auth,
+// });
+
+// export default connect(mapStateToProps, { getProfileById })(Profile);
