@@ -78,25 +78,41 @@
   color: var(--grey);
 }
 .profile-section-message {
-  border-radius: 12px;
-  border: none;
-  padding: 2px 15px;
+  font-size: 2rem;
+  padding: 0.5rem;
 }
 
 .editProfile {
   display: flex;
   justify-content: flex-end;
   position: relative;
-  top: 30px;
-  right: 10px;
-  margin-top: -1rem;
+  top: 4rem;
+  margin-top: -4rem;
   /* width: 10%; */
+}
+
+.editProfileButton {
+  background-color: rgba(28, 28, 28, 0.97);
+  outline: none;
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 0 2px var(--grey);
+  border-radius: 10px;
+  padding: 0.4rem;
+  color: var(--grey);
+  margin-right: 0.4rem;
+  cursor: pointer;
+  margin: 1rem;
+}
+
+.editProfileButton:hover {
+  background: var(--grey);
+  color: var(--light-color);
 }
 
 .profileLinksFlex {
   display: flex;
   align-items: center;
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
 }
 
 .profileLinks {
@@ -104,8 +120,7 @@
 }
 
 .profileLinks a {
-  margin-left: 0.1rem;
-  margin-right: 0.4rem;
+  margin-right: 0.5rem;
 }
 
 .profileTitle {
@@ -121,11 +136,13 @@
 }
 
 .profileLocation {
-  margin-top: 0.6rem;
+  margin-top: 0.4rem;
+  font-weight: bold;
 }
 
 .profileGenres {
-  margin-top: 0.5rem;
+  margin-top: 0.6rem;
+  display: flex;
 }
 
 /* .profileName {

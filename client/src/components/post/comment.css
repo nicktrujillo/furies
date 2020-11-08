@@ -4,7 +4,7 @@
   padding: 8px 10px 0 10px;
   background-color: var(--grey);
   border: none;
-  border-radius: 14px;
+  border-radius: 8px;
   outline: none;
   color: var(--light-color);
   resize: none;
@@ -106,7 +106,7 @@
   cursor: pointer;
   margin: 1rem;
   position: relative;
-  top: 0.55rem;
+  top: 0.6rem;
 }
 
 .backHome:hover {

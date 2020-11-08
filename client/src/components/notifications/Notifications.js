@@ -47,15 +47,18 @@ const Notifications = ({
         <div className={styles.middleColumn}>
           <div className='comments'>
             {commentsExist ? (
-              posts.map((allPosts) => {
-                return allPosts.comments.map((comments) => {
-                  return (
-                    <Link to={`/posts/${allPosts._id}`}>
-                      <CommentItem comment={comments} />
-                    </Link>
-                  );
-                });
-              })
+              posts
+                .slice(0)
+                .reverse()
+                .map((allPosts) => {
+                  return allPosts.comments.map((comments) => {
+                    return (
+                      <Link to={`/posts/${allPosts._id}`}>
+                        <CommentItem comment={comments} />
+                      </Link>
+                    );
+                  });
+                })
             ) : (
               <div className={styles.noDiscussions}>
                 <h1>No Discussions Yet</h1>

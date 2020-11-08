@@ -36,7 +36,9 @@ function ChatPage({ getChats, chats, auth }) {
       recipient,
     });
     setChatMessage("");
-    endMessage.current.scrollIntoView();
+    if (chats.length > 0) {
+      endMessage.current.scrollIntoView();
+    }
   };
 
   return (

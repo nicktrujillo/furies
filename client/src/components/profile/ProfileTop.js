@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getProfileById } from "../../actions/profile";
 import styles from "./profile.css";
+import { Link } from "react-router-dom";
 
 const ProfileTop = ({
   profile: {
@@ -12,7 +13,7 @@ const ProfileTop = ({
     social,
     bio,
     genres,
-    user: { name, avatar },
+    user: { name, avatar, _id },
   },
 }) => {
   return (
@@ -30,7 +31,12 @@ const ProfileTop = ({
                 <img className='profileAvi' src={avatar} alt='' />
               </div>
               <div>
-                <button className='profile-section-message'>Message</button>{" "}
+                <Link
+                  to={`/messages/${_id}`}
+                  className='profile-section-message'
+                >
+                  <i className='fa fa-envelope' aria-hidden='true'></i>
+                </Link>
               </div>
             </div>
             <div className='profile-info-section'>
@@ -42,12 +48,14 @@ const ProfileTop = ({
                 <p>{status}</p>
               </div>
               <p className='profileLocation'>
-                {location && <span>Location: {location}</span>}
+                <i className='fas fa-map-marker-alt'></i>&nbsp;
+                {location && <span>{location}</span>}
               </p>
               <div className='profileGenres'>
                 {genres.map((genre, index) => (
                   <div key={index}>
-                    Genres: <i className='fas fa-music'></i> {genre}
+                    <i className='fas fa-music'></i>
+                    {genre}&nbsp;&nbsp;
                   </div>
                 ))}
               </div>
@@ -78,7 +86,7 @@ const ProfileTop = ({
                   )}{" "}
                   {social && social.soundcloud && (
                     <a
-                      href={social.linkedin}
+                      href={social.soundcloud}
                       target='_blank'
                       rel='noopener noreferrer'
                     >

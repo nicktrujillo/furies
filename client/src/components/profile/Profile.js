@@ -61,9 +61,11 @@ const Profile = ({
             {auth.isAuthenticated &&
               auth.loading === false &&
               auth.user._id === profile.user._id && (
-                <Link to='/edit-profile' className='editProfile'>
-                  Edit Profile
-                </Link>
+                <div className='editProfile'>
+                  <Link to='/edit-profile' className='editProfileButton'>
+                    Edit Profile
+                  </Link>
+                </div>
               )}
             <div className='profile-content'>
               <div>
@@ -72,9 +74,8 @@ const Profile = ({
               </div>
               <div className='posts'>
                 {posts
-                  // .filter((allPosts) => {
-                  //   return allPosts.user === profile.user._id;
-                  // })
+                  .slice(0)
+                  .reverse()
                   .map((allPosts) => {
                     return (
                       <div>

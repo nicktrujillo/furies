@@ -1,0 +1,9 @@
+.profileFormPage {
+  height: 100%;
+  overflow: auto;
+}
+
+.profileFormContainer {
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+}
