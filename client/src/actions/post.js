@@ -28,6 +28,23 @@ export const getPosts = () => async (dispatch) => {
   }
 };
 
+// Get profile by ID
+export const getPostsById = (userId) => async (dispatch) => {
+  try {
+    const res = await api.get(`/posts/user/${userId}`);
+
+    dispatch({
+      type: GET_POSTS,
+      payload: res.data,
+    });
+  } catch (err) {
+    dispatch({
+      type: POST_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status },
+    });
+  }
+};
+
 // Add like
 export const addLike = (id) => async (dispatch) => {
   try {

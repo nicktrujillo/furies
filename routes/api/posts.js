@@ -54,6 +54,28 @@ router.get("/", auth, async (req, res) => {
   }
 });
 
+// @route    GET api/posts
+// @desc     Get user's posts
+// @access   Private
+router.get(
+  "/user/:user_id",
+  checkObjectId("user_id"),
+  async ({ params: { user_id } }, res) => {
+    try {
+      const profile = await Post.find({ user: { $in: [user_id] } }).populate(
+        "user"
+      );
+
+      if (!profile) return res.status(400).json({ msg: "Profile not found" });
+
+      return res.json(profile);
+    } catch (err) {
+      console.error(err.message);
+      return res.status(500).json({ msg: "Server error" });
+    }
+  }
+);
+
 // @route    GET api/posts/:id
 // @desc     Get post by ID
 // @access   Private

@@ -3,26 +3,32 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import Spinner from "../layout/Spinner";
-import UpdatedProfileTop from "./ProfileTop";
+import ProfileTop from "./ProfileTop";
 import { getProfileById } from "../../actions/profile";
-import { getPosts, getPost } from "../../actions/post";
+import { getPostsById } from "../../actions/post";
 import styles from "../posts/Posts.module.css";
 import PostItem from "../posts/PostItem";
 import LeftSidebar from "../layout/LeftSidebar";
+
 const Profile = ({
   getProfileById,
   profile: { profile },
   auth,
   match,
-  getPosts,
+  getPostsById,
   post: { posts },
 }) => {
+  console.log(auth);
+  console.log(profile);
+
   useEffect(() => {
     getProfileById(match.params.id);
   }, [getProfileById, match.params.id]);
+
   useEffect(() => {
-    getPosts();
-  }, [getPosts]);
+    getPostsById(match.params.id);
+  }, [getPostsById, match.params.id]);
+
   const soundcloudOne = "https://w.soundcloud.com/player/?url=";
   const soundCloudThree = "?//api.soundcloud.com/tracks/293";
   const soundcloudWidget = (
@@ -49,52 +55,60 @@ const Profile = ({
               </div>
             </div>
           </div>
+
+          <div className='profile-homepage-col-2'>
+            {auth.isAuthenticated &&
+              auth.loading === false &&
+              auth.user._id === profile.user._id && (
+                <Link to='/edit-profile' className='editProfile'>
+                  Edit Profile
+                </Link>
+              )}
+            <div className='profile-content'>
+              <div>
+                {" "}
+                <ProfileTop profile={profile} />
+              </div>
+              <div className='posts'>
+                {posts
+                  // .filter((allPosts) => {
+                  //   return allPosts.user === profile.user._id;
+                  // })
+                  .map((allPosts) => {
+                    return (
+                      <div>
+                        <PostItem key={allPosts._id} post={allPosts} />
+                      </div>
+                    );
+                  })}
+              </div>
+            </div>
+          </div>
         </>
       )}
-      <div className='profile-homepage-col-2'>
-        {auth.isAuthenticated &&
-          auth.loading === false &&
-          auth.user._id === profile.user._id && (
-            <Link to='/edit-profile' className='editProfile'>
-              Edit Profile
-            </Link>
-          )}
-        <div className='profile-content'>
-          <div>
-            {" "}
-            <UpdatedProfileTop profile={profile} />
-          </div>
-          <div className='posts'>
-            {posts
-              .filter((allPosts) => {
-                return allPosts.user === profile.user._id;
-              })
-              .map((allPosts) => {
-                return (
-                  <div>
-                    <PostItem key={allPosts._id} post={allPosts} />
-                  </div>
-                );
-              })}
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
 Profile.propTypes = {
   getProfileById: PropTypes.func.isRequired,
+  getPostsById: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
   getPosts: PropTypes.func.isRequired,
   post: PropTypes.object.isRequired,
 };
-const mapStateToProps = (state) => ({
-  profile: state.profile,
-  auth: state.auth,
-  post: state.post,
-});
-export default connect(mapStateToProps, { getProfileById, getPosts })(Profile);
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    profile: state.profile,
+    auth: state.auth,
+    post: state.post,
+  };
+};
+export default connect(mapStateToProps, {
+  getProfileById,
+  getPostsById,
+})(Profile);
 
 // import React, { useEffect } from "react";
 // import PropTypes from "prop-types";

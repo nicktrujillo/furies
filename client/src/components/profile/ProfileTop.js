@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-const UpdatedProfileTop = ({
+import { connect } from "react-redux";
+import { getProfileById } from "../../actions/profile";
+
+const ProfileTop = ({
   profile: {
     status,
     location,
@@ -33,13 +36,13 @@ const UpdatedProfileTop = ({
               <h1>{name}</h1>
               <p>{status}</p>
               <p>{location && <span>Location: {location}</span>}</p>
-              <p>
+              <div>
                 {genres.map((genre, index) => (
                   <div key={index}>
                     Genres: <i className='fas fa-music'></i> {genre}
                   </div>
                 ))}
-              </p>
+              </div>
               <div>
                 Links:{" "}
                 {website && (
@@ -100,10 +103,12 @@ const UpdatedProfileTop = ({
     </div>
   );
 };
-UpdatedProfileTop.propTypes = {
+
+ProfileTop.propTypes = {
   profile: PropTypes.object.isRequired,
 };
-export default UpdatedProfileTop;
+
+export default ProfileTop;
 
 // import React from "react";
 // import PropTypes from "prop-types";

@@ -1,13 +1,8 @@
-import React, { Component, useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
-import { Form, Icon, Input, Button, Row, Col } from "antd";
 import io from "socket.io-client";
 import { connect } from "react-redux";
-import moment from "moment";
 import { getChats, afterPostMessage } from "../../actions/chat";
-import ChatCard from "./ChatCard";
-import Dropzone from "react-dropzone";
-import Axios from "axios";
 import styles from "./ChatPage.module.css";
 import Moment from "react-moment";
 import LeftSidebar from "../layout/LeftSidebar";

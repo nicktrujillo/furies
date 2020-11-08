@@ -516,7 +516,7 @@ button {
   display: grid;
   grid-template-columns: 1.4fr 6fr;
   width: 100%;
-  height: 90%;
+  height: 93%;
   overflow: auto;
 }
 .profile-homepage-col-1 {

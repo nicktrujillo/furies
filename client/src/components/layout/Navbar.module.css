@@ -5,7 +5,7 @@
   color: #d4d4d4;
   align-items: center;
   justify-content: space-between;
-  padding: 0.7rem 2rem;
+  padding: 0.7rem 2rem 0 2rem;
   position: fixed;
   z-index: 2;
   width: 90%;
