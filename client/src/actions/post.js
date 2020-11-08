@@ -28,7 +28,7 @@ export const getPosts = () => async (dispatch) => {
   }
 };
 
-// Get profile by ID
+// Get posts by ID
 export const getPostsById = (userId) => async (dispatch) => {
   try {
     const res = await api.get(`/posts/user/${userId}`);

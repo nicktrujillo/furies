@@ -9,6 +9,7 @@ import { getPostsById } from "../../actions/post";
 import styles from "../posts/Posts.module.css";
 import PostItem from "../posts/PostItem";
 import LeftSidebar from "../layout/LeftSidebar";
+import styling from "./profile.css";
 
 const Profile = ({
   getProfileById,

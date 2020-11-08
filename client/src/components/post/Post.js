@@ -7,6 +7,9 @@ import PostItem from "../posts/PostItem";
 import CommentForm from "../post/CommentForm";
 import CommentItem from "../post/CommentItem";
 import { getPost } from "../../actions/post";
+import LeftSidebar from "../layout/LeftSidebar";
+import styles from "../posts/Posts.module.css";
+import styling from "./comment.css";
 
 const Post = ({ getPost, post: { post, loading }, match }) => {
   useEffect(() => {
@@ -17,17 +20,61 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
     <Spinner />
   ) : (
     <>
-      <Link to='/posts' className='btn'>
-        Back To Posts
-      </Link>
-      <PostItem post={post} showActions={false} />
-      <CommentForm postId={post._id} />
-      <div className='comments'>
-        {post.comments.map((comment) => (
-          <CommentItem key={comment._id} comment={comment} postId={post._id} />
-        ))}
+      <div className={styles.postsContainer}>
+        <div className={styles.leftColumn}>
+          <div className={styles.fixedColumnLeft}>
+            <LeftSidebar />
+          </div>
+        </div>
+        <div className={styles.middleColumn}>
+          <Link to='/posts' className='backHome'>
+            <i class='fa fa-arrow-left' aria-hidden='true'></i> back to posts
+          </Link>
+          <PostItem post={post} showActions={false} />
+          <CommentForm postId={post._id} />
+          <div className='comments'>
+            {post.comments.map((comment) => (
+              <CommentItem
+                key={comment._id}
+                comment={comment}
+                postId={post._id}
+              />
+            ))}
+          </div>
+        </div>
+        <div className={styles.rightColumn}>
+          <div className={styles.fixedColumnRight}>
+            <h5 className={styles.trendingTitle}>Trending Weekly Top 10</h5>
+            <div className={styles.trendingSongs}>
+              <ol>
+                <li className={styles.trendingSong}> Nick Lace - Kobe</li>
+                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
+                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
+                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
+                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
+                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
+                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
+                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
+                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
+                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
+              </ol>
+            </div>
+          </div>
+        </div>
       </div>
     </>
+    // <div className='postPage'>
+    //   <Link to='/posts' className='backHome'>
+    //     <i class='fa fa-arrow-left' aria-hidden='true'></i> back to posts
+    //   </Link>
+    //   <PostItem post={post} showActions={false} />
+    //   <CommentForm postId={post._id} />
+    //   <div className='comments'>
+    //     {post.comments.map((comment) => (
+    //       <CommentItem key={comment._id} comment={comment} postId={post._id} />
+    //     ))}
+    //   </div>
+    // </div>
   );
 };
 

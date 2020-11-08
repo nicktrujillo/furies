@@ -27,7 +27,7 @@
 }
 .fixedColumnRight {
   position: fixed;
-  background-color: rgb(28, 28, 28, 0.95);
+  background-color: rgb(28, 28, 28, 0.97);
   border-radius: 8px;
   width: 22%;
   padding-bottom: 2rem;
@@ -56,9 +56,19 @@
 }
 .middleColumn {
   background-image: url("https://images.unsplash.com/photo-1602251043436-6bc82c7230d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+  /* background-image: url("https://images.unsplash.com/photo-1516889782132-fb580815f8f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"); */
   background-position-x: 16rem;
-  background-size: fill;
+  background-size: cover;
   background-attachment: fixed;
+  padding-bottom: 1rem;
   /* height: 100vh; */
   /* overflow-y: auto; */
+}
+
+.noDiscussions {
+  text-align: center;
+  background-color: rgba(28, 28, 28, 0.97);
+  border-radius: 8px;
+  margin: 5px;
+  padding: 3rem;
 }

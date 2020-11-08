@@ -45,7 +45,14 @@ const PostItem = ({
         <Link to={`/profile/${user}`}>
           <div className='nameAndAvi'>
             <img className='round-img' src={avatar} alt='' />
-            <h4 className='postItemName'>{name}</h4>
+            <div className='postNameAndDate'>
+              <h4 className='postItemName'>{name}</h4>
+              <p className='post-date postDate'>
+                <Moment startof='hour' fromNow>
+                  {date}
+                </Moment>
+              </p>
+            </div>
           </div>
         </Link>
       </div>
@@ -103,11 +110,6 @@ const PostItem = ({
               </>
             )}
           </div>
-          <p className='post-date postDate'>
-            <Moment startof='hour' fromNow>
-              {date}
-            </Moment>
-          </p>
         </div>
       </div>
     </div>

@@ -1,6 +1,5 @@
 const express = require("express");
 const connectDB = require("./config/db");
-const auth = require("./middleware/auth");
 
 const app = express();
 

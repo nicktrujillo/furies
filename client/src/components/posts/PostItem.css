@@ -1,11 +1,11 @@
 .postContainer {
-  background-color: rgba(28, 28, 28, 0.96);
+  background-color: rgba(28, 28, 28, 0.97);
   border-radius: 8px;
   margin: 5px;
   padding: 1.4rem;
 }
 .postText {
-  color: white;
+  color: var(--light-color);
   margin-bottom: 1rem;
 }
 .nameAndAvi {
@@ -14,7 +14,15 @@
 }
 
 .postItemName {
+  width: 100%;
+}
+
+.postNameAndDate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin-left: 2%;
+  margin-top: 1%;
 }
 
 .postBottom {
@@ -27,15 +35,15 @@
   background: none;
   outline: none;
   border: 1px solid var(--primary-color);
-  box-shadow: 0 0 2px #696969;
+  box-shadow: 0 0 2px var(--grey);
   border-radius: 10px;
   padding: 0.4rem;
-  color: #696969;
+  color: var(--grey);
   margin-right: 0.4rem;
   cursor: pointer;
 }
 
 .postButton:hover {
-  background: #696969;
+  background: var(--grey);
   color: var(--light-color);
 }

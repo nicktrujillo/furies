@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getProfileById } from "../../actions/profile";
+import styles from "./profile.css";
 
 const ProfileTop = ({
   profile: {
@@ -33,68 +34,76 @@ const ProfileTop = ({
               </div>
             </div>
             <div className='profile-info-section'>
-              <h1>{name}</h1>
-              <p>{status}</p>
-              <p>{location && <span>Location: {location}</span>}</p>
-              <div>
+              <div className='profileTitle'>
+                <h1 className='profileName'>{name}</h1>
+
+                <h4 className='titleSeperator'>&nbsp;|&nbsp;</h4>
+
+                <p>{status}</p>
+              </div>
+              <p className='profileLocation'>
+                {location && <span>Location: {location}</span>}
+              </p>
+              <div className='profileGenres'>
                 {genres.map((genre, index) => (
                   <div key={index}>
                     Genres: <i className='fas fa-music'></i> {genre}
                   </div>
                 ))}
               </div>
-              <div>
-                Links:{" "}
-                {website && (
-                  <a href={website} target='_blank' rel='noopener noreferrer'>
-                    <i className='fas fa-globe fa-2x' />
-                  </a>
-                )}{" "}
-                {social && social.twitter && (
-                  <a
-                    href={social.twitter}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    <i className='fab fa-twitter fa-2x' />
-                  </a>
-                )}{" "}
-                {social && social.facebook && (
-                  <a
-                    href={social.facebook}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    <i className='fab fa-facebook fa-2x' />
-                  </a>
-                )}{" "}
-                {social && social.soundcloud && (
-                  <a
-                    href={social.linkedin}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    <i className='fab fa-soundcloud'></i>
-                  </a>
-                )}{" "}
-                {social && social.youtube && (
-                  <a
-                    href={social.youtube}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    <i className='fab fa-youtube fa-2x' />
-                  </a>
-                )}{" "}
-                {social && social.instagram && (
-                  <a
-                    href={social.instagram}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    <i className='fab fa-instagram fa-2x' />
-                  </a>
-                )}
+              <div className='profileLinksFlex'>
+                <div className='profileLinks'>
+                  {website && (
+                    <a href={website} target='_blank' rel='noopener noreferrer'>
+                      <i className='fas fa-globe fa-2x' />
+                    </a>
+                  )}{" "}
+                  {social && social.twitter && (
+                    <a
+                      href={social.twitter}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      <i className='fab fa-twitter fa-2x' />
+                    </a>
+                  )}{" "}
+                  {social && social.facebook && (
+                    <a
+                      href={social.facebook}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      <i className='fab fa-facebook fa-2x' />
+                    </a>
+                  )}{" "}
+                  {social && social.soundcloud && (
+                    <a
+                      href={social.linkedin}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      <i className='fab fa-soundcloud'></i>
+                    </a>
+                  )}{" "}
+                  {social && social.youtube && (
+                    <a
+                      href={social.youtube}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      <i className='fab fa-youtube fa-2x' />
+                    </a>
+                  )}{" "}
+                  {social && social.instagram && (
+                    <a
+                      href={social.instagram}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      <i className='fab fa-instagram fa-2x' />
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           </div>

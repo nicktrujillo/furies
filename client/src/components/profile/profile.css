@@ -1,0 +1,133 @@
+/* profile homepage */
+.profile-page-container {
+  display: grid;
+  grid-template-columns: 1.4fr 6fr;
+  width: 100%;
+  height: 93%;
+  overflow: auto;
+}
+.profile-homepage-col-1 {
+  grid-column: 1;
+  width: 100%;
+}
+.profile-homepage-col-2 {
+  grid-column: 2;
+  width: 100%;
+  padding-bottom: 1rem;
+  padding-top: 0.8rem;
+}
+.card-in-profile {
+  color: var(--grey);
+  background-color: #252525;
+  border-radius: 8px;
+  margin-left: 10px;
+  padding: 10px;
+  align-items: center;
+}
+.profileAvi {
+  border-radius: 50%;
+  height: 125px;
+  width: 125px;
+  position: relative;
+  top: -105px;
+}
+.updated-profile-bio-container {
+  display: grid;
+  width: 100%;
+}
+.updated-profile-bio-container-row-1 {
+  grid-row: 1;
+  height: 400px;
+  width: 99%;
+  margin: 0 auto;
+  border-radius: 16px;
+}
+.profileBanner {
+  height: 50%;
+  width: 100%;
+  /* border-bottom: 1px solid var(--light-color); */
+  /* border-bottom: 1px solid rgb(88, 42, 255, 0.5); */
+}
+.bannerAvi {
+  height: 100%;
+}
+.bannerAvi img {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px 8px 0px 0px;
+}
+.profile-page-info {
+  background-color: #1a1a19;
+  width: 100%;
+  height: 50%;
+  padding: 2%;
+  border-radius: 0px 0px 8px 8px;
+}
+.profile-page-info p {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  color: var(--grey);
+}
+.avatarSectionProfile {
+  display: flex;
+  justify-content: space-between;
+  height: 25px;
+}
+.profile-info-section {
+  position: relative;
+  color: var(--grey);
+}
+.profile-section-message {
+  border-radius: 12px;
+  border: none;
+  padding: 2px 15px;
+}
+
+.editProfile {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  top: 30px;
+  right: 10px;
+  margin-top: -1rem;
+  /* width: 10%; */
+}
+
+.profileLinksFlex {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.profileLinks {
+  font-size: 14px;
+}
+
+.profileLinks a {
+  margin-left: 0.1rem;
+  margin-right: 0.4rem;
+}
+
+.profileTitle {
+  display: flex;
+  align-items: center;
+  margin-top: 0.6rem;
+}
+
+.titleSeperator {
+  font-weight: bolder;
+  font-size: 22px;
+  color: var(--primary-color);
+}
+
+.profileLocation {
+  margin-top: 0.6rem;
+}
+
+.profileGenres {
+  margin-top: 0.5rem;
+}
+
+/* .profileName {
+    color: var(--light-color);
+  } */

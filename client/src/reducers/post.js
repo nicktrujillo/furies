@@ -10,7 +10,6 @@ import {
 } from "../actions/types";
 
 const initialState = {
-  userPosts: [],
   posts: [],
   post: null,
   loading: true,
