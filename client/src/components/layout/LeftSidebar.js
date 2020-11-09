@@ -23,7 +23,7 @@ const LeftSidebar = ({
         </div>
       </Link>
 
-      <Link to='/chat'>
+      <Link to='/messages'>
         <div className={styles.leftColumnItem}>
           <i class='fas fa-envelope-open-text'></i>&nbsp;&nbsp;&nbsp;Messages
         </div>

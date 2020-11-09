@@ -15,6 +15,7 @@ import Homepage from "../services/Homepage";
 import Youtube from "../services/Youtube";
 import Notifications from "../notifications/Notifications";
 import ChatPage from "../chatpage/ChatPage";
+import ChatHome from "../chatpage/ChatHome";
 
 const Routes = (props) => {
   return (
@@ -37,6 +38,7 @@ const Routes = (props) => {
           path='/notifications/:id'
           component={Notifications}
         />
+        <PrivateRoute exact path='/messages' component={ChatHome} />
         <PrivateRoute exact path='/messages/:id' component={ChatPage} />
         <Route component={NotFound} />
       </Switch>

@@ -6,12 +6,22 @@ import { getChats, afterPostMessage } from "../../actions/chat";
 import styles from "./ChatPage.module.css";
 import Moment from "react-moment";
 import LeftSidebar from "../layout/LeftSidebar";
+import chat from "../../reducers/chat";
+import ChatListComponent from "./ChatListComponent";
 
 const socket = io.connect("http://localhost:5000");
 
 function ChatPage({ getChats, chats, auth }) {
   const { id } = useParams();
   let messagesEndRef = useRef(null);
+
+  // const findName = () => {
+  //   chats.forEach((chat) => {
+  //     if (chat.recipient.name !== auth.user.name) {
+  //       return chat.recipient.name;
+  //     }
+  //   });
+  // };
 
   useEffect(() => {
     socket.on("Output Chat Message", () => {
@@ -24,7 +34,7 @@ function ChatPage({ getChats, chats, auth }) {
   }, [getChats]);
 
   useEffect(() => {
-    if (chats.length > 2) {
+    if (chats.length > 1) {
       scrollToBottom();
     }
   }, [chats]);
@@ -61,10 +71,10 @@ function ChatPage({ getChats, chats, auth }) {
         </div>
         <div className={styles.chatContainer}>
           <div className={styles.chatList}>
-            <h1 className={styles.chatListHeading}>All Chats</h1>
-            <ul>
-              <li>chat list</li>
-            </ul>
+            <h1 className={styles.chatListHeading}>Messages</h1>
+            <div className={styles.chatListBody}>
+              <ChatListComponent />
+            </div>
           </div>
           <div className={styles.directChat}>
             <div className={styles.directChatHeading}>
@@ -77,7 +87,9 @@ function ChatPage({ getChats, chats, auth }) {
                   <h1>{chats[0].recipient.name}</h1>
                 </div>
               ) : (
-                <h1>Start a New Conversation</h1>
+                <h1 className={styles.newConversationTitle}>
+                  Start a New Conversation
+                </h1>
               )}
             </div>
             <div className={styles.directChatBody}>
@@ -85,17 +97,35 @@ function ChatPage({ getChats, chats, auth }) {
                 .slice(0)
                 .reverse()
                 .map((msg) => (
-                  <div className={styles.messageFlexSent}>
-                    <div className={styles.messageContainerSent}>
-                      <div className={styles.bubbleSent}>{msg.message}</div>
-                      <Moment
-                        className={styles.messageDate}
-                        format='MM/DD/YYYY, h:mm A'
-                      >
-                        {msg.createdAt}
-                      </Moment>
-                    </div>
-                  </div>
+                  <>
+                    {msg.sender._id === sender ? (
+                      <div className={styles.messageFlexSent}>
+                        <div className={styles.messageContainerSent}>
+                          <div className={styles.bubbleSent}>{msg.message}</div>
+                          <Moment
+                            className={styles.messageDate}
+                            format='MM/DD/YYYY, h:mm A'
+                          >
+                            {msg.createdAt}
+                          </Moment>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className={styles.messageFlexReceived}>
+                        <div className={styles.messageContainerReceived}>
+                          <div className={styles.bubbleReceived}>
+                            {msg.message}
+                          </div>
+                          <Moment
+                            className={styles.messageDate}
+                            format='MM/DD/YYYY, h:mm A'
+                          >
+                            {msg.createdAt}
+                          </Moment>
+                        </div>
+                      </div>
+                    )}
+                  </>
                 ))}
               <div ref={messagesEndRef} />
             </div>
@@ -109,7 +139,7 @@ function ChatPage({ getChats, chats, auth }) {
                 autoComplete='off'
               />
               <button className={styles.submitButton} onClick={sendMessage}>
-                send
+                <i class='fa fa-paper-plane' aria-hidden='true'></i>
               </button>
             </div>
           </div>
