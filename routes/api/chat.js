@@ -16,6 +16,8 @@ router.get(
     await Chat.find({ recipient: { $in: [user_id] }, sender: { $in: [id] } })
       .populate("sender")
       .populate("recipient")
+      .sort({ updatedAt: -1 })
+      // .limit(5)
       .exec((err, chats) => {
         console.log(err);
         if (err) return res.status(400).send(err);

@@ -11,7 +11,7 @@ const socket = io.connect("http://localhost:5000");
 
 function ChatPage({ getChats, chats, auth }) {
   const { id } = useParams();
-  const endMessage = useRef();
+  let messagesEndRef = useRef(null);
 
   useEffect(() => {
     socket.on("Output Chat Message", () => {
@@ -23,11 +23,24 @@ function ChatPage({ getChats, chats, auth }) {
     getChats(id);
   }, [getChats]);
 
+  useEffect(() => {
+    if (chats.length > 2) {
+      scrollToBottom();
+    }
+  }, [chats]);
+
   const [chatMessage, setChatMessage] = useState("");
 
   let message = chatMessage;
   let sender = auth.user._id;
   let recipient = id;
+
+  const scrollToBottom = () => {
+    messagesEndRef.current.scrollIntoView({
+      block: "end",
+      // behavior: "smooth",
+    });
+  };
 
   const sendMessage = () => {
     socket.emit("Input Chat Message", {
@@ -36,9 +49,6 @@ function ChatPage({ getChats, chats, auth }) {
       recipient,
     });
     setChatMessage("");
-    if (chats.length > 0) {
-      endMessage.current.scrollIntoView();
-    }
   };
 
   return (
@@ -57,40 +67,50 @@ function ChatPage({ getChats, chats, auth }) {
             </ul>
           </div>
           <div className={styles.directChat}>
-            <div className={styles.directChatGrid}>
-              <div className={styles.directChatHeading}>
-                {chats[0] ? (
+            <div className={styles.directChatHeading}>
+              {chats[0] ? (
+                <div className={styles.nameAndAvi}>
+                  <img
+                    className={styles.chatAvatar}
+                    src={chats[0].recipient.avatar}
+                  ></img>
                   <h1>{chats[0].recipient.name}</h1>
-                ) : (
-                  <h1>Start a New Conversation</h1>
-                )}
-              </div>
-              <div className={styles.directChatBody}>
-                {chats.map((msg) => (
-                  <div>
-                    <p ref={endMessage}>{msg.message}</p>
-                    <p>{msg.sender.name}</p>
-                    <img
-                      className={styles.chatAvatar}
-                      src={msg.sender.avatar}
-                    />
-                    <Moment format='MM/DD/YYYY, h:mm A'>{msg.createdAt}</Moment>
+                </div>
+              ) : (
+                <h1>Start a New Conversation</h1>
+              )}
+            </div>
+            <div className={styles.directChatBody}>
+              {chats
+                .slice(0)
+                .reverse()
+                .map((msg) => (
+                  <div className={styles.messageFlexSent}>
+                    <div className={styles.messageContainerSent}>
+                      <div className={styles.bubbleSent}>{msg.message}</div>
+                      <Moment
+                        className={styles.messageDate}
+                        format='MM/DD/YYYY, h:mm A'
+                      >
+                        {msg.createdAt}
+                      </Moment>
+                    </div>
                   </div>
                 ))}
-              </div>
-              <div className={styles.messageForm}>
-                <input
-                  className={styles.messageInput}
-                  name='text'
-                  placeholder='start a new message'
-                  value={chatMessage}
-                  onChange={(e) => setChatMessage(e.target.value)}
-                  autoComplete='off'
-                />
-                <button className={styles.submitButton} onClick={sendMessage}>
-                  send
-                </button>
-              </div>
+              <div ref={messagesEndRef} />
+            </div>
+            <div className={styles.messageForm}>
+              <input
+                className={styles.messageInput}
+                name='text'
+                placeholder='start a new message'
+                value={chatMessage}
+                onChange={(e) => setChatMessage(e.target.value)}
+                autoComplete='off'
+              />
+              <button className={styles.submitButton} onClick={sendMessage}>
+                send
+              </button>
             </div>
           </div>
         </div>
