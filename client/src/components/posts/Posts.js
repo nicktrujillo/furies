@@ -7,6 +7,7 @@ import PostForm from "./PostForm";
 import LeftSidebar from "../layout/LeftSidebar";
 import { getPosts } from "../../actions/post";
 import styles from "./Posts.module.css";
+import TopTenCard from "../trendingcard/TopTenCard";
 
 const Posts = ({ getPosts, post: { posts } }) => {
   useEffect(() => {
@@ -29,25 +30,7 @@ const Posts = ({ getPosts, post: { posts } }) => {
             ))}
           </div>
         </div>
-        <div className={styles.rightColumn}>
-          <div className={styles.fixedColumnRight}>
-            <h5 className={styles.trendingTitle}>Trending Weekly Top 10</h5>
-            <div className={styles.trendingSongs}>
-              <ol>
-                <li className={styles.trendingSong}> Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-              </ol>
-            </div>
-          </div>
-        </div>
+        <TopTenCard />
       </div>
     </>
   );

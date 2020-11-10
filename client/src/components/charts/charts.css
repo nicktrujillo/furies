@@ -1,0 +1,81 @@
+/* charts page */
+.chartsContainer {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    1deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(143, 101, 246, 1) 0%,
+    rgba(25, 25, 26, 1) 100%
+  );
+  border-radius: 16px;
+  display: grid;
+  grid-template-rows: 1fr 1.5% 7fr;
+  overflow: auto;
+  height: 90%;
+  width: 90%;
+  margin: 2rem auto;
+}
+.charts-row-1 {
+  grid-row: 1;
+  display: flex;
+  margin: 3%;
+}
+.chartsAvi {
+  background-image: url("https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+  height: 225px;
+  width: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 3%;
+}
+.charts-subtext {
+  font-size: 25px;
+}
+.charts-subtext-2 {
+  font-size: 125px;
+}
+.charts-row-2 {
+  margin: 3%;
+  grid-row: 2;
+  display: flex;
+}
+.charts-title-text {
+  margin-left: 5%;
+}
+.charts-nav {
+  display: flex;
+  width: 100%;
+}
+.charts-number-sign {
+  width: 5%;
+}
+.charts-song-title {
+  width: 50%;
+}
+.charts-date-added {
+  width: 25%;
+}
+.charts-song-length {
+  width: 20%;
+}
+.charts-row-3 {
+  margin: 3%;
+  grid-row: 3;
+}
+.chart-content {
+  display: flex;
+  width: 100%;
+  padding-bottom: 1%;
+}
+.charts-ranking {
+  width: 5%;
+}
+.charts-song {
+  width: 50%;
+}
+.charts-date {
+  width: 25%;
+}
+.charts-length {
+  width: 20%;
+}

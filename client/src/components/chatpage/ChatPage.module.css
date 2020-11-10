@@ -32,14 +32,14 @@
 
 .chatList {
   grid-column: 1;
-  border-left: 1px solid rgb(88, 42, 255);
-  border-right: 1px solid rgb(88, 42, 255);
+  border-left: 1px solid var(--light-color);
+  border-right: 1px solid var(--light-color);
   position: relative;
 }
 
 .directChat {
   grid-column: 2;
-  border-right: 1px solid rgb(88, 42, 255);
+  border-right: 1px solid var(--light-color);
   position: relative;
 }
 
@@ -50,8 +50,8 @@
   padding: 1rem;
   width: 100%;
   background-color: #1a1a19;
-  color: var(--primary-color);
-  border-bottom: 1px solid rgb(88, 42, 255);
+  color: var(--light-color);
+  border-bottom: 1px solid var(--light-color);
 }
 
 .newConversationTitle {
@@ -221,8 +221,8 @@
   padding: 2rem;
   width: 100%;
   background-color: #1a1a19;
-  color: var(--primary-color);
-  border-bottom: 1px solid rgb(88, 42, 255);
+  color: var(--light-color);
+  border-bottom: 1px solid var(--light-color);
   font-size: 28px;
 }
 
@@ -244,11 +244,7 @@
 }
 
 .messagePreviewContainer:hover {
-  background-color: var(--grey);
-}
-
-.messagePreviewContainer:hover .messagePreview {
-  color: rgba(28, 28, 28, 0.97);
+  background-color: rgba(44, 44, 44, 0.97);
 }
 
 .chatListAvi {

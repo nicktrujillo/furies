@@ -13,7 +13,7 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
         <div className={styles.middleLink}>Home</div>
       </Link>
 
-      <Link to='/profiles'>
+      <Link to='/charts'>
         <div className={styles.middleLink}>Charts</div>
       </Link>
 

@@ -16,6 +16,7 @@ import Youtube from "../services/Youtube";
 import Notifications from "../notifications/Notifications";
 import ChatPage from "../chatpage/ChatPage";
 import ChatHome from "../chatpage/ChatHome";
+import Charts from "../charts/Charts";
 
 const Routes = (props) => {
   return (
@@ -28,6 +29,7 @@ const Routes = (props) => {
         <Route exact path='/profile/:id' component={Profile} />
         <Route exact path='/services' component={Homepage} />
         <Route exact path='/youtube' component={Youtube} />
+        <Route exact path='/charts' component={Charts} />
         <PrivateRoute exact path='/dashboard' component={Dashboard} />
         <PrivateRoute exact path='/create-profile' component={ProfileForm} />
         <PrivateRoute exact path='/edit-profile' component={ProfileForm} />

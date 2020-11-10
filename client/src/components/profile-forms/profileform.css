@@ -1,4 +1,4 @@
-.profileFormPage {
+/* .profileFormPage {
   height: 100%;
   overflow: auto;
 }
@@ -6,4 +6,112 @@
 .profileFormContainer {
   margin-top: 1rem;
   margin-bottom: 5rem;
+} */
+
+.profileFormPage {
+  height: 100%;
+  overflow: auto;
+}
+.profileFormContainer {
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  background: white;
+  width: 50%;
+}
+.goback {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+}
+.editHeading {
+  color: #303030;
+  padding-top: 1%;
+  font-weight: lighter;
+  font-size: 28px;
+}
+.message {
+  margin-top: 0 !important;
+}
+textarea,
+select,
+.input {
+  margin: 20px auto 5px auto !important;
+}
+.form select,
+textarea,
+input[type="text"] {
+  font-size: 18px !important;
+}
+.form {
+  position: relative;
+  z-index: 1;
+  /* height: auto; */
+  overflow-x: auto;
+  height: calc(100vh - 8.6rem);
+  background: white;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  border-radius: 7px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.form .input,
+select,
+textarea {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin-top: 20px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 12px;
+  padding-bottom: 0;
+}
+.form button:hover,
+.form button:active,
+.form button:focus {
+  background: #8f65f6;
+}
+.form .message {
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #8f65f6;
+  text-decoration: none;
+}
+.edit-submit-btn button {
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+  background: transparent;
+  padding: 6px 15px;
+  border: 3px solid #fff;
+  border-radius: 50px;
+  background-clip: padding-box;
+  position: relative;
+  color: #fff;
+  /* background-color: #bb86ff; */
+  background: #8f65f6;
+  transition: all 0.25s;
+  font-size: 16px;
+  margin: 10px;
+}
+.add-social button {
+  cursor: pointer;
+  outline: none;
+  box-sizing: border-box;
+  padding: 6px 15px;
+  border: 3px solid #fff;
+  border-radius: 50px;
+  background-clip: padding-box;
+  position: relative;
+  color: #fff;
+  transition: all 0.25s;
+  font-size: 16px;
+  margin: 10px;
+  background: grey;
 }
