@@ -33,7 +33,7 @@
   margin: 5%;
   border-radius: 7px;
   height: 10rem;
-  background-color: #571fe5;
+  background-color: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,7 +73,7 @@
   line-height: 1.5em;
   font-size: 14px;
   font-weight: lighter;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.1rem;
   /* overflow: hidden; */
   text-overflow: ellipsis;
 }
@@ -81,7 +81,7 @@
   width: 30%;
 }
 .product-price p {
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.8rem;
   font-size: 18px;
 }
 .product-price span {
@@ -96,7 +96,7 @@
   /* text-transform: uppercase; */
   letter-spacing: 0.1em;
   color: #ffffff;
-  background-color: #bb86ff;
+  background-color: var(--primary-color);
   cursor: pointer;
   outline: none;
   padding: 7px 15px;

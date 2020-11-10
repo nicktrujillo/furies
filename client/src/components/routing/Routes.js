@@ -17,6 +17,7 @@ import Notifications from "../notifications/Notifications";
 import ChatPage from "../chatpage/ChatPage";
 import ChatHome from "../chatpage/ChatHome";
 import Charts from "../charts/Charts";
+import Landing from "../layout/Landing";
 
 const Routes = (props) => {
   return (
