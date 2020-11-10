@@ -56,6 +56,14 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
       if (uploadingAvatar) return;
     }
   };
+
+  const enterPressed = (e) => {
+    let code = e.keyCode || e.which;
+    if (code === 13) {
+      onSubmit(e);
+    }
+  };
+
   if (isAuthenticated) {
     return <Redirect to='/dashboard' />;
   }
@@ -128,6 +136,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                   name='image'
                   onChange={handleFileChange}
                   disabled={uploadingAvatar}
+                  className='fileUpload'
                 />
                 <label>Choose an Image</label>
               </div>
@@ -155,6 +164,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                   name='password2'
                   value={password2}
                   onChange={onChange}
+                  onKeyPress={enterPressed}
                 />
                 <label>Confirm password</label>
               </div>

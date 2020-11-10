@@ -8,6 +8,7 @@ import { getPostsById } from "../../actions/post";
 import styles from "../posts/Posts.module.css";
 import CommentItem from "../post/CommentItem";
 import { getProfileById, getCurrentProfile } from "../../actions/profile";
+import TopTenCard from "../trendingcard/TopTenCard";
 // import posts from "../posts/Posts"
 // import post from "../post/Post"
 
@@ -21,8 +22,11 @@ const Notifications = ({
   auth: { user },
 }) => {
   useEffect(() => {
-    getPostsById(match.params.id);
     checkComments();
+  }, []);
+
+  useEffect(() => {
+    getPostsById(match.params.id);
   }, [getPostsById, match.params.id]);
 
   const [commentsExist, setCommentsExist] = useState(false);
@@ -68,25 +72,7 @@ const Notifications = ({
             )}
           </div>
         </div>
-        <div className={styles.rightColumn}>
-          <div className={styles.fixedColumnRight}>
-            <h5 className={styles.trendingTitle}>Trending Weekly Top 10</h5>
-            <div className={styles.trendingSongs}>
-              <ol>
-                <li className={styles.trendingSong}> Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-              </ol>
-            </div>
-          </div>
-        </div>
+        <TopTenCard />
       </div>
     </>
   );

@@ -14,6 +14,7 @@ function Charts() {
       frameBorder='no'
       allow='autoplay'
       src={soundcloudOne + soundCloudTwo + soundCloudThree}
+      className='scWidget'
     ></iframe>
   );
   return (

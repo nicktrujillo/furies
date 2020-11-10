@@ -209,6 +209,10 @@ img {
   background: #ccc;
   margin: 1.5rem 0;
 }
+.settingsEdit {
+  color: var(--dark-color);
+}
+
 /* Overlay */
 .dark-overlay {
   background-color: rgba(0, 0, 0, 0.7);

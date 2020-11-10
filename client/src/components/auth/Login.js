@@ -17,6 +17,14 @@ const Login = ({ login, isAuthenticated }) => {
     e.preventDefault();
     login(email, password);
   };
+
+  const enterPressed = (e) => {
+    let code = e.keyCode || e.which;
+    if (code === 13) {
+      onSubmit(e);
+    }
+  };
+
   if (isAuthenticated) {
     return <Redirect to='/posts' />;
   }
@@ -55,6 +63,7 @@ const Login = ({ login, isAuthenticated }) => {
                   value={password}
                   onChange={onChange}
                   minLength='6'
+                  onKeyPress={enterPressed}
                 />
                 <label>Password</label>
               </div>

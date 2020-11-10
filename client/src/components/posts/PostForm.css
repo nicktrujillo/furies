@@ -6,7 +6,7 @@
 
 .post-form {
   padding: 1.4rem;
-  background-color: rgba(28, 28, 28, 0.96);
+  background-color: rgba(28, 28, 28, 0.9);
   border-radius: 8px;
   margin: 5px;
 }
@@ -35,6 +35,7 @@
   position: relative;
   top: 6px;
   margin-left: 2%;
+  margin-top: -10%;
 }
 .ytIconForm {
   color: var(--primary-color);
@@ -53,6 +54,7 @@
   color: white;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-bottom: 0.2rem;
 }
 .youtubeText {
   width: 91%;

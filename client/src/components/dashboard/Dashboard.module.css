@@ -2,41 +2,49 @@
   color: var(--light-color);
   margin-bottom: 5%;
 }
-.settingsHomepage {
-  display: grid;
-  grid-template-columns: 0.5fr 2fr;
-  width: 100%;
-}
-.settingsCol1 {
-  grid-column: 1;
-}
-.settingsCol2 {
-  grid-column: 2;
-  padding-top: 1rem;
-}
 .deleteBtn {
   padding: 4px 12px;
   color: white;
-  background-color: red;
+  background-color: rgb(255, 145, 145);
   border-radius: 16px;
   padding: 4px 12px;
   border: none;
   margin-top: 5%;
 }
-.leftColumn {
-  /* background-color: #252525; */
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  padding-left: 0.4rem;
-  padding-top: 1rem;
-  z-index: 1;
-}
-.fixedColumnLeft {
-  position: fixed;
-}
-.editProfileBTN {
+.editProfileBtn {
   border-radius: 16px;
   border: none;
   padding: 4px 12px;
+  width: 12rem;
+  margin-top: 2rem;
+  background: var(--grey);
+  color: var(--dark-color);
+  border: 2px solid var(--primary-color);
+}
+
+.editProfileBtn:hover {
+  background: var(--light-color);
+}
+
+.editUserBtn {
+  border-radius: 16px;
+  border: none;
+  padding: 4px 12px;
+  width: 12rem;
+  background: var(--grey);
+  color: var(--dark-color);
+  border: 2px solid var(--primary-color);
+}
+
+.editUserBtn:hover {
+  background: var(--light-color);
+}
+
+.settingsTitle {
+  text-align: center;
+}
+
+.editButtons {
+  display: flex;
+  flex-direction: column;
 }

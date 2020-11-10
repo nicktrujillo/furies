@@ -1,8 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
+import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 import io from "socket.io-client";
 import { connect } from "react-redux";
 import { getChats, afterPostMessage } from "../../actions/chat";
+import { getProfileById } from "../../actions/profile";
 import styles from "./ChatPage.module.css";
 import Moment from "react-moment";
 import LeftSidebar from "../layout/LeftSidebar";
@@ -11,17 +13,20 @@ import ChatListComponent from "./ChatListComponent";
 
 const socket = io.connect("http://localhost:5000");
 
-function ChatPage({ getChats, chats, auth }) {
+function ChatPage({
+  getChats,
+  getProfileById,
+  chats,
+  auth,
+  profile: { profile },
+}) {
   const { id } = useParams();
   let messagesEndRef = useRef(null);
 
-  // const findName = () => {
-  //   chats.forEach((chat) => {
-  //     if (chat.recipient.name !== auth.user.name) {
-  //       return chat.recipient.name;
-  //     }
-  //   });
-  // };
+  useEffect(() => {
+    getProfileById(id);
+    console.log(profile);
+  }, [getProfileById, id]);
 
   useEffect(() => {
     socket.on("Output Chat Message", () => {
@@ -31,7 +36,7 @@ function ChatPage({ getChats, chats, auth }) {
 
   useEffect(() => {
     getChats(id);
-  }, [getChats]);
+  }, [getChats, id]);
 
   useEffect(() => {
     if (chats.length > 1) {
@@ -61,6 +66,13 @@ function ChatPage({ getChats, chats, auth }) {
     setChatMessage("");
   };
 
+  const enterPressed = (e) => {
+    let code = e.keyCode || e.which;
+    if (code === 13) {
+      sendMessage();
+    }
+  };
+
   return (
     <>
       <div className={styles.pageContainer}>
@@ -78,19 +90,13 @@ function ChatPage({ getChats, chats, auth }) {
           </div>
           <div className={styles.directChat}>
             <div className={styles.directChatHeading}>
-              {chats[0] ? (
-                <div className={styles.nameAndAvi}>
-                  <img
-                    className={styles.chatAvatar}
-                    src={chats[0].recipient.avatar}
-                  ></img>
-                  <h1>{chats[0].recipient.name}</h1>
-                </div>
-              ) : (
-                <h1 className={styles.newConversationTitle}>
-                  Start a New Conversation
-                </h1>
-              )}
+              <div className={styles.nameAndAvi}>
+                <img
+                  className={styles.chatAvatar}
+                  src={profile.user.avatar}
+                ></img>
+                <h1>{profile.user.name}</h1>
+              </div>
             </div>
             <div className={styles.directChatBody}>
               {chats
@@ -137,6 +143,7 @@ function ChatPage({ getChats, chats, auth }) {
                 value={chatMessage}
                 onChange={(e) => setChatMessage(e.target.value)}
                 autoComplete='off'
+                onKeyPress={enterPressed}
               />
               <button className={styles.submitButton} onClick={sendMessage}>
                 <i class='fa fa-paper-plane' aria-hidden='true'></i>
@@ -154,10 +161,11 @@ const mapStateToProps = (state) => {
   return {
     auth: state.auth,
     chats: state.chats.chats,
+    profile: state.profile,
   };
 };
 
-export default connect(mapStateToProps, { getChats })(ChatPage);
+export default connect(mapStateToProps, { getChats, getProfileById })(ChatPage);
 
 // export class ChatPage extends Component {
 //   state = {

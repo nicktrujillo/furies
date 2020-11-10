@@ -37,15 +37,15 @@ export const register = (formData) => async (dispatch) => {
     });
     dispatch(loadUser());
   } catch (err) {
-    const errors = err.response.data.errors;
+    // const errors = err.response.data.errors;
 
-    if (errors) {
-      errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
-    }
+    // if (errors) {
+    //   errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
+    // }
 
-    dispatch({
-      type: REGISTER_FAIL,
-    });
+    // dispatch({
+    //   type: REGISTER_FAIL,
+    // });
     window.location.reload();
   }
 };

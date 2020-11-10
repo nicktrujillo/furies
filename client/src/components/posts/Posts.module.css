@@ -27,36 +27,22 @@
 }
 .fixedColumnRight {
   position: fixed;
-  background-color: rgb(28, 28, 28, 0.97);
+  background-color: rgb(28, 28, 28, 0.95);
   border-radius: 8px;
   width: 22%;
   padding-bottom: 2rem;
-  height: 80%;
+  height: 84%;
   overflow: auto;
-  margin: 2rem auto;
+  margin: 0.6rem auto;
 }
 .rightColumn {
   /* background-color: #252525; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 2rem;
+  padding-top: 0.8rem;
 }
-.trendingSongs {
-  color: white;
-  width: 90%;
-  margin: 0 auto;
-  font-size: 12px;
-  text-align: center;
-}
-.trendingTitle {
-  text-align: center;
-  padding: 20px;
-  color: white;
-}
-.trendingSong {
-  padding: 10px;
-}
+
 .middleColumn {
   /* background-image: url("https://images.unsplash.com/photo-1516889782132-fb580815f8f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"); */
   background-image: url("https://images.unsplash.com/photo-1516889782132-fb580815f8f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
@@ -70,7 +56,7 @@
 
 .noDiscussions {
   text-align: center;
-  background-color: rgba(28, 28, 28, 0.97);
+  background-color: rgba(28, 28, 28, 0.95);
   border-radius: 8px;
   margin: 5px;
   padding: 3rem;
@@ -101,4 +87,74 @@
   padding-bottom: 1rem;
   /* height: 100vh; */
   /* overflow-y: auto; */
+}
+
+.trendingSongs {
+  color: var(--light-color);
+  width: 79%;
+  margin: 0 auto;
+  font-size: 12px;
+}
+.trendingTitle {
+  text-align: center;
+  font-size: 21px;
+  padding: 1.4rem;
+  margin-bottom: 0.8rem;
+  color: var(--light-color);
+}
+.trendingSong {
+  margin-bottom: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.trendingSongLabel {
+  font-size: 12px;
+  /* margin-top: 0.2rem; */
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+.scWidget {
+  filter: opacity(80%) hue-rotate(250deg);
+}
+
+/* -------- SETTINGS --------- */
+.settingsTitle {
+  text-align: center;
+  font-size: 38px;
+  padding: 1.5rem;
+  background-color: rgba(28, 28, 28, 0.95);
+  margin-bottom: 1rem;
+  color: var(--grey);
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.welcome {
+  text-align: center;
+  font-size: 38px;
+  padding: 1.5rem;
+}
+
+.deleteBtn {
+  color: white;
+  background-color: rgb(224, 85, 85);
+  border-radius: 16px;
+  padding: 4px 12px;
+  border: none;
+  display: flex;
+  width: 12rem;
+  margin-top: 2rem;
+}
+
+.deleteBtn:hover {
+  background-color: rgb(223, 121, 121);
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
 }

@@ -36,6 +36,7 @@ const PostItem = ({
       frameBorder='no'
       allow='autoplay'
       src={soundcloudOne + soundcloud + soundCloudThree}
+      className='scWidget'
     ></iframe>
   );
 

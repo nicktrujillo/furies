@@ -1,5 +1,5 @@
 .postContainer {
-  background-color: rgba(28, 28, 28, 0.97);
+  background-color: rgba(28, 28, 28, 0.9);
   border-radius: 8px;
   margin: 5px;
   padding: 1.4rem;
@@ -46,4 +46,8 @@
 .postButton:hover {
   background: var(--grey);
   color: var(--light-color);
+}
+
+.scWidget {
+  filter: opacity(84%) hue-rotate(250deg);
 }

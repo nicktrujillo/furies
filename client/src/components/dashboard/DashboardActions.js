@@ -1,13 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Dashboard.module.css";
+
 const DashboardActions = () => {
   return (
     <div className='dash-buttons'>
       <Link to='/edit-profile'>
-        <button className={styles.editProfileBTN}>
-          <i className='fas fa-user-circle text-primary' /> Edit Profile
-        </button>
+        <div className={styles.editButtons}>
+          <button className={styles.editUserBtn}>
+            <i className='fas fa-user-circle settingsEdit' /> Edit User Info
+          </button>
+          <button className={styles.editProfileBtn}>
+            <i class='fas fa-edit settingsEdit'></i> Edit Profile
+          </button>
+        </div>
       </Link>
     </div>
   );
