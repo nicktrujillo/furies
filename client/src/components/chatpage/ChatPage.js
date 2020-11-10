@@ -10,6 +10,7 @@ import Moment from "react-moment";
 import LeftSidebar from "../layout/LeftSidebar";
 import chat from "../../reducers/chat";
 import ChatListComponent from "./ChatListComponent";
+import Spinner from "../layout/Spinner";
 
 const socket = io.connect("http://localhost:5000");
 
@@ -39,7 +40,7 @@ function ChatPage({
   }, [getChats, id]);
 
   useEffect(() => {
-    if (chats.length > 1) {
+    if (chats.length > 1 && profile !== null) {
       scrollToBottom();
     }
   }, [chats]);
@@ -88,68 +89,74 @@ function ChatPage({
               <ChatListComponent />
             </div>
           </div>
-          <div className={styles.directChat}>
-            <div className={styles.directChatHeading}>
-              <div className={styles.nameAndAvi}>
-                <img
-                  className={styles.chatAvatar}
-                  src={profile.user.avatar}
-                ></img>
-                <h1>{profile.user.name}</h1>
+          {profile === null ? (
+            <Spinner />
+          ) : (
+            <div className={styles.directChat}>
+              <div className={styles.directChatHeading}>
+                <div className={styles.nameAndAvi}>
+                  <img
+                    className={styles.chatAvatar}
+                    src={profile.user.avatar}
+                  ></img>
+                  <h1>{profile.user.name}</h1>
+                </div>
+              </div>
+              <div className={styles.directChatBody}>
+                {chats
+                  .slice(0)
+                  .reverse()
+                  .map((msg) => (
+                    <>
+                      {msg.sender._id === sender ? (
+                        <div className={styles.messageFlexSent}>
+                          <div className={styles.messageContainerSent}>
+                            <div className={styles.bubbleSent}>
+                              {msg.message}
+                            </div>
+                            <Moment
+                              className={styles.messageDate}
+                              format='MM/DD/YYYY, h:mm A'
+                            >
+                              {msg.createdAt}
+                            </Moment>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className={styles.messageFlexReceived}>
+                          <div className={styles.messageContainerReceived}>
+                            <div className={styles.bubbleReceived}>
+                              {msg.message}
+                            </div>
+                            <Moment
+                              className={styles.messageDate}
+                              format='MM/DD/YYYY, h:mm A'
+                            >
+                              {msg.createdAt}
+                            </Moment>
+                          </div>
+                        </div>
+                      )}
+                    </>
+                  ))}
+                <div ref={messagesEndRef} />
+              </div>
+              <div className={styles.messageForm}>
+                <input
+                  className={styles.messageInput}
+                  name='text'
+                  placeholder='start a new message'
+                  value={chatMessage}
+                  onChange={(e) => setChatMessage(e.target.value)}
+                  autoComplete='off'
+                  onKeyPress={enterPressed}
+                />
+                <button className={styles.submitButton} onClick={sendMessage}>
+                  <i class='fa fa-paper-plane' aria-hidden='true'></i>
+                </button>
               </div>
             </div>
-            <div className={styles.directChatBody}>
-              {chats
-                .slice(0)
-                .reverse()
-                .map((msg) => (
-                  <>
-                    {msg.sender._id === sender ? (
-                      <div className={styles.messageFlexSent}>
-                        <div className={styles.messageContainerSent}>
-                          <div className={styles.bubbleSent}>{msg.message}</div>
-                          <Moment
-                            className={styles.messageDate}
-                            format='MM/DD/YYYY, h:mm A'
-                          >
-                            {msg.createdAt}
-                          </Moment>
-                        </div>
-                      </div>
-                    ) : (
-                      <div className={styles.messageFlexReceived}>
-                        <div className={styles.messageContainerReceived}>
-                          <div className={styles.bubbleReceived}>
-                            {msg.message}
-                          </div>
-                          <Moment
-                            className={styles.messageDate}
-                            format='MM/DD/YYYY, h:mm A'
-                          >
-                            {msg.createdAt}
-                          </Moment>
-                        </div>
-                      </div>
-                    )}
-                  </>
-                ))}
-              <div ref={messagesEndRef} />
-            </div>
-            <div className={styles.messageForm}>
-              <input
-                className={styles.messageInput}
-                name='text'
-                placeholder='start a new message'
-                value={chatMessage}
-                onChange={(e) => setChatMessage(e.target.value)}
-                autoComplete='off'
-                onKeyPress={enterPressed}
-              />
-              <button className={styles.submitButton} onClick={sendMessage}>
-                <i class='fa fa-paper-plane' aria-hidden='true'></i>
-              </button>
-            </div>
-          </div>
+          )}
         </div>
       </div>
     </>

@@ -10,14 +10,15 @@ export default function Homepage() {
           {/* Song review */}
           <div className='service-card'>
             <div className='product-img'>
-              <img src='https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' />
+              <i class='fas fa-headphones'></i>
             </div>
             <div className='product-info'>
-              <h1 className='title'>Song Review</h1>
-              <h2 className='sub-title'>by professionals</h2>
-              <p className='description'>Receive an objective feedback</p>
+              <h1 className='title'>Mixing and Mastering</h1>
+              <p className='description'>Make your music sound great</p>
               <div className='product-price'>
-                <p>Free</p>
+                <p>
+                  <span>from $</span>30
+                </p>
                 <Link to={"/youtube/"} className='productBtn' type='button'>
                   more info
                 </Link>
@@ -27,12 +28,11 @@ export default function Homepage() {
           {/* youtube */}
           <div className='service-card'>
             <div className='product-img'>
-              <img src='https://images.unsplash.com/photo-1602274063798-7e74bf76e780?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' />
+              <i class='fab fa-youtube'></i>
             </div>
             <div className='product-info'>
               <h1 className='title'>YouTube Promotion</h1>
-              <h2 className='sub-title'>By Studio</h2>
-              <p className='description'>Get more views!</p>{" "}
+              <p className='description'>Get more views</p>{" "}
               <div className='product-price'>
                 <p>
                   <span>from $</span>30
@@ -45,12 +45,11 @@ export default function Homepage() {
           </div>
           <div className='service-card'>
             <div className='product-img'>
-              <img src='https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' />
+              <i class='fab fa-facebook-f'></i>
             </div>
             <div className='product-info'>
               <h1 className='title'>Facebook Promotion</h1>
-              <h2 className='sub-title'>by professionals</h2>
-              <p className='description'>Grow you fanbase!</p>
+              <p className='description'>Grow you fanbase</p>
               <div className='product-price'>
                 <p>
                   <span>from $</span>30
@@ -69,12 +68,11 @@ export default function Homepage() {
           {/* mastering */}
           <div className='service-card'>
             <div className='product-img'>
-              <img src='https://ch20webmaster.com/wp-content/uploads/2018/01/Band-Backgrounds-Ch086bq.jpg' />
+              <i class='fab fa-spotify'></i>
             </div>
             <div className='product-info'>
-              <h1 className='title'>Mixing & Mastering</h1>
-              <h2 className='sub-title'>by studio</h2>
-              <p className='description'>Make your music sound great!</p>
+              <h1 className='title'>Spotify Promotion</h1>
+              <p className='description'>Get more streams</p>
               <div className='product-price'>
                 <p>
                   <span>from $</span>30
@@ -87,12 +85,11 @@ export default function Homepage() {
           </div>
           <div className='service-card'>
             <div className='product-img'>
-              <img src='https://www.openmicuk.co.uk/wp-content/uploads/2018/11/epk-electronic-press-kit.jpg' />
+              <i class='fab fa-apple'></i>
             </div>
             <div className='product-info'>
-              <h1 className='title'>Electronic Press Kit</h1>
-              <h2 className='sub-title'>by professionals</h2>
-              <p className='description'>Create a first impression</p>{" "}
+              <h1 className='title'>Apple Music Promotion</h1>
+              <p className='description'>Get more streams</p>{" "}
               <div className='product-price'>
                 <p>
                   <span>from $</span>30
@@ -111,11 +108,11 @@ export default function Homepage() {
           {/* streaming */}
           <div className='service-card'>
             <div className='product-img'>
-              <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSdkaGxL6M1Bj8LMl6GjIjOLcENnr2W19m3uw&usqp=CAU' />
+              <i class='fab fa-soundcloud'></i>
             </div>
             <div className='product-info'>
-              <h1 className='title'>Streaming Service Promotion</h1>
-              <p className='description'>Reach more listeners!</p>
+              <h1 className='title'>SoundCloud Promotion</h1>
+              <p className='description'>Reach more listeners</p>
               <div className='product-price'>
                 <p>
                   <span>from $</span>30

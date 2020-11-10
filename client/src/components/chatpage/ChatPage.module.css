@@ -55,8 +55,8 @@
 }
 
 .newConversationTitle {
-  font-size: 28px;
-  padding: 1rem;
+  font-size: 26px;
+  padding: 2.7%;
 }
 
 .directChatBody {
@@ -219,7 +219,7 @@
   position: absolute;
   z-index: 2;
   top: 0px;
-  padding: 2rem;
+  padding: 8.8%;
   width: 100%;
   background-color: #1a1a19;
   color: var(--light-color);
@@ -229,9 +229,9 @@
 
 .chatListBody {
   position: absolute;
-  top: 6rem;
+  bottom: 0px;
   width: 100%;
-  height: 88%;
+  height: 84%;
   overflow: auto;
 }
 

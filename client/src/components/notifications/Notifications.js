@@ -11,6 +11,7 @@ import { getProfileById, getCurrentProfile } from "../../actions/profile";
 import TopTenCard from "../trendingcard/TopTenCard";
 // import posts from "../posts/Posts"
 // import post from "../post/Post"
+import Spinner from "../layout/Spinner";
 
 const Notifications = ({
   getCurrentProfile,
@@ -21,24 +22,25 @@ const Notifications = ({
   profile: { profile },
   auth: { user },
 }) => {
-  useEffect(() => {
-    checkComments();
-  }, []);
+  // useEffect(() => {
+  //   checkComments();
+  // }, []);
 
   useEffect(() => {
     getPostsById(match.params.id);
+    // checkComments();
   }, [getPostsById, match.params.id]);
 
-  const [commentsExist, setCommentsExist] = useState(false);
+  const [commentsExist, setCommentsExist] = useState(true);
 
-  const checkComments = () => {
-    posts.forEach(function (post) {
-      if (post.comments.length > 0) {
-        setCommentsExist(true);
-      }
-      return;
-    });
-  };
+  // const checkComments = () => {
+  //   posts.forEach(function (post) {
+  //     if (post.comments.length > 0) {
+  //       setCommentsExist(true);
+  //     }
+  //     return;
+  //   });
+  // };
 
   return (
     <>
@@ -50,26 +52,18 @@ const Notifications = ({
         </div>
         <div className={styles.middleColumn}>
           <div className='comments'>
-            {commentsExist ? (
-              posts
-                .slice(0)
-                .reverse()
-                .map((allPosts) => {
-                  return allPosts.comments.map((comments) => {
-                    return (
-                      <Link to={`/posts/${allPosts._id}`}>
-                        <CommentItem comment={comments} />
-                      </Link>
-                    );
-                  });
-                })
-            ) : (
-              <div className={styles.noDiscussions}>
-                <h1>No Discussions Yet</h1>
-                <br></br>
-                <p>Comments made on any of your posts will appear here.</p>
-              </div>
-            )}
+            {posts
+              .slice(0)
+              .reverse()
+              .map((allPosts) => {
+                return allPosts.comments.map((comments) => {
+                  return (
+                    <Link to={`/posts/${allPosts._id}`}>
+                      <CommentItem comment={comments} />
+                    </Link>
+                  );
+                });
+              })}
           </div>
         </div>
         <TopTenCard />

@@ -1,52 +1,75 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "./formservice.css";
+import styles from "./FormService.module.css";
+import PaypalButtons from "./PaypalButtons";
 
-function FormService() {
+function FormService(props) {
+  const [showPaypal, setShowPaypal] = useState(false);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setShowPaypal(true);
+  }
+
   return (
-    <form>
-      <label for='name'>Name:</label>
-      <br></br>
-      <input
-        className={styles.serviceForm}
-        type='text'
-        id='name'
-        name='name'
-      ></input>
-      <br></br>
-      <label for='email'>Email:</label>
-      <br></br>
-      <input
-        className={styles.serviceForm}
-        type='text'
-        id='email'
-        name='email'
-      ></input>
-      <br></br>
-      <label for='link'>Link:</label>
-      <br></br>
-      <input
-        className={styles.serviceForm}
-        type='text'
-        id='link'
-        name='link'
-        placeholder='Please include the link to your song/video'
-      ></input>
-      <br></br>
-      <label for='Note'>Note:</label>
-      <br></br>
-      <input
-        className={styles.serviceFormNote}
-        type='text'
-        id='note'
-        name='note'
-      ></input>
-      <br></br>
-      <p>
-        *For mixing and mastering please email your stem files to
-        support@millody.com
-      </p>
-    </form>
+    <>
+      {showPaypal ? (
+        <div className={styles.paypalButtons}>
+          <PaypalButtons price={props.price} product={props.product} />
+        </div>
+      ) : (
+        <div className={styles.formContainer}>
+          <form onSubmit={handleSubmit}>
+            <label for='name'>Name:</label>
+            <br></br>
+            <input
+              className={styles.serviceForm}
+              type='text'
+              id='name'
+              name='name'
+            ></input>
+            <br></br>
+            <label for='email'>Email:</label>
+            <br></br>
+            <input
+              className={styles.serviceForm}
+              type='text'
+              id='email'
+              name='email'
+            ></input>
+            <br></br>
+            <label for='link'>Link:</label>
+            <br></br>
+            <input
+              className={styles.serviceForm}
+              type='text'
+              id='link'
+              name='link'
+              placeholder='Please include the link to your song/video'
+            ></input>
+            <br></br>
+            <p className={styles.noteLabel} for='Note'>
+              Note:
+            </p>
+            <textarea
+              className={styles.serviceFormNote}
+              type='text'
+              id='note'
+              name='note'
+            ></textarea>
+            <br></br>
+            <p className={styles.formStar}>
+              *For mixing and mastering please email your stem files to
+              <a className={styles.mailLink} href='mailto:support@millody.com'>
+                {" "}
+                support@millody.com
+              </a>
+            </p>
+            <input className={styles.formSubmit} type='submit' />
+          </form>
+        </div>
+      )}
+    </>
   );
 }
 export default FormService;
