@@ -12,7 +12,7 @@ import {
 const initialState = {
   token: localStorage.getItem("token"),
   isAuthenticated: !!localStorage.getItem("token"),
-  loading: true,
+  loading: false,
   user: localStorage.getItem("USER")
     ? JSON.parse(localStorage.getItem("USER"))
     : null,
