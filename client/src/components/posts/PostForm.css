@@ -3,14 +3,12 @@
   background-color: rgb(28, 28, 28, 0.4);
   margin-bottom: -0.3em;
 } */
-
 .post-form {
   padding: 1.4rem;
   background-color: rgba(28, 28, 28, 0.9);
   border-radius: 8px;
   margin: 5px;
 }
-
 ::placeholder {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -45,34 +43,35 @@
   margin-left: 2%;
 }
 .soundCloudText {
-  width: 91%;
+  position: relative;
+  top: -20px;
+  width: 100%;
   padding: 10px;
   background-color: var(--grey);
   border: none;
   border-radius: 8px;
   outline: none;
   color: white;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  margin-bottom: 0.2rem;
-}
-.youtubeText {
-  width: 91%;
-  padding: 10px;
-  background-color: var(--grey);
-  border-radius: 8px;
-  outline: none;
-  color: white;
-  border: none;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-
+.youtubeText {
+  position: relative;
+  top: -20px;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--grey);
+  border-radius: 8px;
+  outline: none;
+  color: white;
+  border: none;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
 .newPostSubmitContainer {
   display: flex;
   justify-content: flex-end;
 }
-
 .newPostSubmit {
   background: none;
   outline: none;
@@ -88,4 +87,13 @@
 .newPostSubmit:hover {
   background: var(--grey);
   color: var(--light-color);
+}
+.soundcloudLinkNone {
+  display: none;
+}
+.youtubelinkInput {
+  display: none;
+}
+.typeOfLink {
+  border-radius: 8px;
 }

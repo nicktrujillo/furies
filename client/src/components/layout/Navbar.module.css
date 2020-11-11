@@ -8,7 +8,7 @@
   padding: 0.7rem 2rem 0 2rem;
   position: fixed;
   z-index: 2;
-  width: 90%;
+  width: 81%;
   top: 0;
   /* border-bottom: 1px solid var(--primary-color); */
 }
@@ -44,37 +44,29 @@
   justify-content: space-between;
   font-weight: bold;
 }
-
 .middleLink {
   color: var(--light-color);
 }
-
 .middleLink:hover {
   color: var(--primary-color);
 }
-
 .middleLink:active {
   color: var(--light-color);
 }
-
 .middleLink:visited {
   color: var(--light-color);
 }
-
 .rightLink {
   color: var(--light-color);
 }
-
 .rightLink:hover {
   color: var(--primary-color);
 }
-
 .rightLinkGuest {
   color: var(--light-color);
   padding-left: 1em;
   padding-right: 1em;
 }
-
 .rightLinkGuest:hover {
   color: var(--primary-color);
 }

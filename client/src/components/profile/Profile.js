@@ -10,7 +10,7 @@ import styles from "../posts/Posts.module.css";
 import PostItem from "../posts/PostItem";
 import LeftSidebar from "../layout/LeftSidebar";
 import styling from "./profile.css";
-
+import TopTenCard from "../trendingcard/TopTenCard";
 const Profile = ({
   getProfileById,
   profile: { profile },
@@ -21,15 +21,12 @@ const Profile = ({
 }) => {
   console.log(auth);
   console.log(profile);
-
   useEffect(() => {
     getProfileById(match.params.id);
   }, [getProfileById, match.params.id]);
-
   useEffect(() => {
     getPostsById(match.params.id);
   }, [getPostsById, match.params.id]);
-
   const soundcloudOne = "https://w.soundcloud.com/player/?url=";
   const soundCloudThree = "?//api.soundcloud.com/tracks/293";
   const soundcloudWidget = (
@@ -56,7 +53,6 @@ const Profile = ({
               </div>
             </div>
           </div>
-
           <div className='profile-homepage-col-2'>
             {auth.isAuthenticated &&
               auth.loading === false &&
@@ -86,6 +82,9 @@ const Profile = ({
               </div>
             </div>
           </div>
+          <div className='profile-homepage-col-3'>
+            <TopTenCard />
+          </div>
         </>
       )}
     </div>
@@ -111,7 +110,6 @@ export default connect(mapStateToProps, {
   getProfileById,
   getPostsById,
 })(Profile);
-
 // import React, { useEffect } from "react";
 // import PropTypes from "prop-types";
 // import { Link } from "react-router-dom";
@@ -120,12 +118,10 @@ export default connect(mapStateToProps, {
 // import ProfileTop from "./ProfileTop";
 // import ProfileAbout from "./ProfileAbout";
 // import { getProfileById } from "../../actions/profile";
-
 // const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
 //   useEffect(() => {
 //     getProfileById(match.params.id);
 //   }, [getProfileById, match.params.id]);
-
 //   return (
 //     <>
 //       {profile === null ? (
@@ -151,16 +147,13 @@ export default connect(mapStateToProps, {
 //     </>
 //   );
 // };
-
 // Profile.propTypes = {
 //   getProfileById: PropTypes.func.isRequired,
 //   profile: PropTypes.object.isRequired,
 //   auth: PropTypes.object.isRequired,
 // };
-
 // const mapStateToProps = (state) => ({
 //   profile: state.profile,
 //   auth: state.auth,
 // });
-
 // export default connect(mapStateToProps, { getProfileById })(Profile);

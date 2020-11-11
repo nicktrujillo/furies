@@ -4,12 +4,11 @@ import { connect } from "react-redux";
 import { addPost } from "../../actions/post";
 import styles from "./PostForm.css";
 import logo from "../../img/logo.png";
-
 const PostForm = ({ addPost }) => {
   const [text, setText] = useState("");
   const [soundcloud, setSoundcloud] = useState("");
   const [youtube, setYoutube] = useState("");
-
+  const [link, setLink] = useState("");
   return (
     <div className='post-form'>
       <form
@@ -34,28 +33,42 @@ const PostForm = ({ addPost }) => {
             autoComplete='off'
           />
         </div>
-        <div>
-          <input
-            className='soundCloudText'
-            name='text'
-            placeholder='soundcloud link'
-            value={soundcloud}
-            onChange={(e) => setSoundcloud(e.target.value)}
-            autoComplete='off'
-          />
-          <i className='fab fa-soundcloud scIconForm'></i>
-        </div>
-        <div>
-          <input
-            className='youtubeText'
-            name='text'
-            placeholder='youtube link'
-            value={youtube}
-            onChange={(e) => setYoutube(e.target.value)}
-            autoComplete='off'
-          />
-          <i className='fab fa-youtube ytIconForm'></i>
-        </div>
+        <select
+          name='songLinks'
+          id='songs'
+          className='typeOfLink'
+          onChange={(e) => setLink(e.target.value)}
+        >
+          <option value='default' selected>
+            Add Your Music Link
+          </option>
+          <option value='soundcloudLink'>SoundCloud</option>
+          <option value='youtubelink'>YouTube</option>
+        </select>
+        {link == "soundcloudLink" ? (
+          <div id='soundcloudLink' className='soundcloudLink'>
+            <input
+              className='soundCloudText'
+              name='text'
+              placeholder='Add SoundCloud link here'
+              value={soundcloud}
+              onChange={(e) => setSoundcloud(e.target.value)}
+              autoComplete='off'
+            />
+          </div>
+        ) : null}
+        {link == "youtubelink" ? (
+          <div id='youtubelink' className='youtubelink'>
+            <input
+              className='youtubeText'
+              name='text'
+              placeholder='Add YouTube link here'
+              value={youtube}
+              onChange={(e) => setYoutube(e.target.value)}
+              autoComplete='off'
+            />
+          </div>
+        ) : null}
         <div className='newPostSubmitContainer'>
           <input type='submit' className='newPostSubmit' value='Submit' />
         </div>
@@ -63,9 +76,7 @@ const PostForm = ({ addPost }) => {
     </div>
   );
 };
-
 PostForm.propTypes = {
   addPost: PropTypes.func.isRequired,
 };
-
 export default connect(null, { addPost })(PostForm);

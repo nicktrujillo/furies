@@ -1,7 +1,7 @@
 /* profile homepage */
 .profile-page-container {
   display: grid;
-  grid-template-columns: 1.4fr 6fr;
+  grid-template-columns: 1.4fr 4fr 2fr;
   width: 100%;
   height: 93%;
   overflow: auto;
@@ -14,7 +14,11 @@
   grid-column: 2;
   width: 100%;
   padding-bottom: 1rem;
-  padding-top: 0.8rem;
+  padding-top: 0rem;
+}
+.profile-homepage-col-3 {
+  grid-column: 3;
+  width: 100%;
 }
 .card-in-profile {
   color: var(--grey);
@@ -30,6 +34,7 @@
   width: 125px;
   position: relative;
   top: -105px;
+  border: 2px solid var(--light-color);
 }
 .updated-profile-bio-container {
   display: grid;
@@ -81,7 +86,6 @@
   font-size: 2rem;
   padding: 0.5rem;
 }
-
 .editProfile {
   display: flex;
   justify-content: flex-end;
@@ -90,7 +94,6 @@
   margin-top: -4rem;
   /* width: 10%; */
 }
-
 .editProfileButton {
   background-color: rgba(28, 28, 28, 0.97);
   outline: none;
@@ -103,48 +106,39 @@
   cursor: pointer;
   margin: 1rem;
 }
-
 .editProfileButton:hover {
   background: var(--grey);
   color: var(--light-color);
 }
-
 .profileLinksFlex {
   display: flex;
   align-items: center;
   margin-top: 0.8rem;
 }
-
 .profileLinks {
   font-size: 14px;
 }
-
 .profileLinks a {
   margin-right: 0.5rem;
 }
-
 .profileTitle {
   display: flex;
   align-items: center;
   margin-top: 0.6rem;
 }
-
 .titleSeperator {
   font-weight: bolder;
   font-size: 22px;
   color: var(--primary-color);
 }
-
 .profileLocation {
   margin-top: 0.4rem;
   font-weight: bold;
 }
-
 .profileGenres {
   margin-top: 0.6rem;
   display: flex;
 }
-
 /* .profileName {
     color: var(--light-color);
   } */
