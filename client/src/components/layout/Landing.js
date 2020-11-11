@@ -10,8 +10,25 @@ import LeftSidebar from "../layout/LeftSidebar";
 import { getPosts } from "../../actions/post";
 import styles from "../posts/Posts.module.css";
 import TopTenCard from "../trendingcard/TopTenCard";
+import styling from "./landing.css";
 
-const Landing = ({ isAuthenticated, getPosts, post: { posts } }) => {
+const Landing = ({
+  isAuthenticated,
+  getPosts,
+  post: { posts },
+  post: {
+    _id,
+    text,
+    soundcloud,
+    youtube,
+    name,
+    avatar,
+    user,
+    likes,
+    comments,
+    date,
+  },
+}) => {
   useEffect(() => {
     getPosts();
   }, [getPosts]);
@@ -21,12 +38,37 @@ const Landing = ({ isAuthenticated, getPosts, post: { posts } }) => {
   }
 
   return (
-    <>
-      <section className='landing'>
+    <div className={styles.landingContainer}>
+      <div className='container'>
         <div className={styles.postsContainer}>
           <div className={styles.leftColumn}>
             <div className={styles.fixedColumnLeft}>
-              <h1>hi</h1>
+              <>
+                <Link to={`/login`}>
+                  <div className={styles.leftColumnItem}>
+                    <i class='fas fa-user'></i>&nbsp;&nbsp;&nbsp; Profile
+                  </div>
+                </Link>
+
+                <Link to={`/login`}>
+                  <div className={styles.leftColumnItem}>
+                    <i class='fas fa-comments'></i>&nbsp;&nbsp;&nbsp;Discussions
+                  </div>
+                </Link>
+
+                <Link to='/messages'>
+                  <div className={styles.leftColumnItem}>
+                    <i class='fas fa-envelope-open-text'></i>
+                    &nbsp;&nbsp;&nbsp;Messages
+                  </div>
+                </Link>
+
+                <Link to='/dashboard'>
+                  <div className={styles.leftColumnItem}>
+                    <i class='fas fa-cog'></i>&nbsp;&nbsp;&nbsp;Settings
+                  </div>
+                </Link>
+              </>
             </div>
           </div>
           <div className={styles.middleColumn}>
@@ -39,8 +81,9 @@ const Landing = ({ isAuthenticated, getPosts, post: { posts } }) => {
           </div>
           <TopTenCard />
         </div>
-      </section>
-    </>
+      </div>
+    </div>
+
     // <section className='landing'>
     //   <div className='landing-inner'>
     //     <img className='landing-logo' src={logo}></img>
@@ -61,11 +104,18 @@ Landing.propTypes = {
   isAuthenticated: PropTypes.bool,
   getPosts: PropTypes.func.isRequired,
   post: PropTypes.object.isRequired,
+  showActions: true,
+  auth: PropTypes.object.isRequired,
+  addLike: PropTypes.func.isRequired,
+  removeLike: PropTypes.func.isRequired,
+  deletePost: PropTypes.func.isRequired,
+  showActions: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
   post: state.post,
+  auth: state.auth,
 });
 
 export default connect(mapStateToProps, { getPosts })(Landing);

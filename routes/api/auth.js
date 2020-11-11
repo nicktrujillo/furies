@@ -14,6 +14,7 @@ const User = require("../../models/User");
 router.get("/", auth, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select("-password");
+    console.log(user);
     res.json(user);
   } catch (err) {
     console.error(err.message);
@@ -56,13 +57,8 @@ router.post(
           .json({ errors: [{ msg: "Invalid Credentials" }] });
       }
 
-      // Return jsonwebtoken
-      const payload = {
-        user: {
-          id: user.id,
-        },
-      };
-
+      const userObj = user.toObject();
+      const payload = { ...userObj, id: userObj._id };
       jwt.sign(
         payload,
         config.get("jwtSecret"),
@@ -73,7 +69,7 @@ router.post(
         }
       );
     } catch (err) {
-      console.error(err.message);
+      console.error("a", err.message);
       res.status(500).send("Server error");
     }
   }

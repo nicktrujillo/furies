@@ -26,8 +26,8 @@ const Routes = (props) => {
       <Switch>
         <Route exact path='/register' component={Register} />
         <Route exact path='/login' component={Login} />
-        <Route exact path='/profiles' component={Profiles} />
-        <Route exact path='/profile/:id' component={Profile} />
+        <PrivateRoute exact path='/profiles' component={Profiles} />
+        <PrivateRoute exact path='/profile/:id' component={Profile} />
         <Route exact path='/services' component={Homepage} />
         <Route exact path='/youtube' component={Youtube} />
         <Route exact path='/charts' component={Charts} />

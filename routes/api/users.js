@@ -61,11 +61,9 @@ router.post(
       await user.save();
 
       // Return jsonwebtoken
-      const payload = {
-        user: {
-          id: user.id,
-        },
-      };
+
+      const userObj = user.toObject();
+      const payload = { ...userObj, id: userObj._id };
 
       jwt.sign(
         payload,

@@ -11,9 +11,11 @@ import {
 
 const initialState = {
   token: localStorage.getItem("token"),
-  isAuthenticated: null,
+  isAuthenticated: !!localStorage.getItem("token"),
   loading: true,
-  user: null,
+  user: localStorage.getItem("USER")
+    ? JSON.parse(localStorage.getItem("USER"))
+    : null,
 };
 
 export default function (state = initialState, action) {
@@ -30,14 +32,16 @@ export default function (state = initialState, action) {
     case REGISTER_SUCCESS:
       return {
         ...state,
-        ...payload,
+        user: payload.user,
+        token: payload.token,
         isAuthenticated: true,
         loading: false,
       };
     case LOGIN_SUCCESS:
       return {
         ...state,
-        ...payload,
+        user: payload.user,
+        token: payload.token,
         isAuthenticated: true,
         loading: false,
       };
