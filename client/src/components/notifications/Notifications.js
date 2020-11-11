@@ -9,9 +9,11 @@ import styles from "../posts/Posts.module.css";
 import CommentItem from "../post/CommentItem";
 import { getProfileById, getCurrentProfile } from "../../actions/profile";
 import TopTenCard from "../trendingcard/TopTenCard";
+import Moment from "react-moment";
 // import posts from "../posts/Posts"
 // import post from "../post/Post"
 import Spinner from "../layout/Spinner";
+import styling from "../post/comment.css";
 
 const Notifications = ({
   getCurrentProfile,
@@ -30,6 +32,8 @@ const Notifications = ({
     getPostsById(match.params.id);
     // checkComments();
   }, [getPostsById, match.params.id]);
+
+  console.log(posts);
 
   const [commentsExist, setCommentsExist] = useState(true);
 
@@ -59,8 +63,39 @@ const Notifications = ({
                 return allPosts.comments.map((comments) => {
                   return (
                     <Link to={`/posts/${allPosts._id}`}>
-                      <CommentItem comment={comments} />
+                      <div className='post comments-section'>
+                        <div className='commentsNameAndAvi'>
+                          <Link to={`/profile/${comments.user}`}>
+                            <img
+                              className='round-img'
+                              src={comments.avatar}
+                              alt=''
+                            />
+                          </Link>
+                          <Link
+                            className='commentsNameAndDate'
+                            to={`/profile/${comments.user}`}
+                          >
+                            <h4 className='commentsName'>{comments.name}</h4>
+                            <h5 className='commentDescription'>
+                              commented on "{allPosts.text}"
+                            </h5>
+
+                            <p className='post-date'>
+                              <Moment startof='hour' fromNow>
+                                {comments.date}
+                              </Moment>
+                            </p>
+                          </Link>
+                        </div>
+                        <div>
+                          <p className='my-1 commentsText'>{comments.text}</p>
+                        </div>
+                      </div>
                     </Link>
+                    // <Link to={`/posts/${allPosts._id}`}>
+                    //   <CommentItem comment={comments} />
+                    // </Link>
                   );
                 });
               })}

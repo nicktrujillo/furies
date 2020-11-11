@@ -40,6 +40,11 @@ function ChatHome({ getChatList, chatList, auth }) {
                 Start a New Conversation
               </h1>
             </div>
+            <div className={styles.noConversationFlex}>
+              <h3 className={styles.noConversation}>
+                no conversation selected
+              </h3>
+            </div>
           </div>
         </div>
       </div>

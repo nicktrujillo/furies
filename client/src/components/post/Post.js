@@ -8,6 +8,7 @@ import CommentForm from "../post/CommentForm";
 import CommentItem from "../post/CommentItem";
 import { getPost } from "../../actions/post";
 import LeftSidebar from "../layout/LeftSidebar";
+import TopTenCard from "../trendingcard/TopTenCard";
 import styles from "../posts/Posts.module.css";
 import styling from "./comment.css";
 
@@ -27,9 +28,6 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
           </div>
         </div>
         <div className={styles.middleColumn}>
-          <Link to='/posts' className='backHome'>
-            <i class='fa fa-arrow-left' aria-hidden='true'></i> back to posts
-          </Link>
           <PostItem post={post} showActions={false} />
           <CommentForm postId={post._id} />
           <div className='comments'>
@@ -42,25 +40,7 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
             ))}
           </div>
         </div>
-        <div className={styles.rightColumn}>
-          <div className={styles.fixedColumnRight}>
-            <h5 className={styles.trendingTitle}>Trending Weekly Top 10</h5>
-            <div className={styles.trendingSongs}>
-              <ol>
-                <li className={styles.trendingSong}> Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-                <li className={styles.trendingSong}>Nick Lace - Kobe</li>
-              </ol>
-            </div>
-          </div>
-        </div>
+        <TopTenCard />
       </div>
     </>
     // <div className='postPage'>

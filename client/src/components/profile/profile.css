@@ -86,6 +86,9 @@
   font-size: 2rem;
   padding: 0.5rem;
 }
+.profile-section-message:hover {
+  color: var(--primary-color);
+}
 .editProfile {
   display: flex;
   justify-content: flex-end;
@@ -95,7 +98,7 @@
   /* width: 10%; */
 }
 .editProfileButton {
-  background-color: rgba(28, 28, 28, 0.97);
+  /* background-color: rgba(28, 28, 28, 0.97);
   outline: none;
   border: 1px solid var(--primary-color);
   box-shadow: 0 0 2px var(--grey);
@@ -104,11 +107,19 @@
   color: var(--grey);
   margin-right: 0.4rem;
   cursor: pointer;
-  margin: 1rem;
+  margin: 1rem; */
+  font-size: 1.4rem;
+  padding: 0.5rem;
+  margin-right: 0.4rem;
+  cursor: pointer;
+  margin: 0.65rem;
+  position: relative;
+  bottom: 0.6rem;
+
+  cursor: pointer;
 }
 .editProfileButton:hover {
-  background: var(--grey);
-  color: var(--light-color);
+  color: var(--primary-color);
 }
 .profileLinksFlex {
   display: flex;
@@ -116,7 +127,10 @@
   margin-top: 0.8rem;
 }
 .profileLinks {
-  font-size: 14px;
+  font-size: 10px;
+}
+.profileLinks:hover {
+  color: var(--primary-color);
 }
 .profileLinks a {
   margin-right: 0.5rem;

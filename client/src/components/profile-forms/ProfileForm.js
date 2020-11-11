@@ -24,6 +24,7 @@ const ProfileForm = ({
 }) => {
   const [formData, setFormData] = useState(initialState);
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
+
   useEffect(() => {
     if (!profile) getCurrentProfile();
     if (!loading && profile) {
@@ -39,6 +40,7 @@ const ProfileForm = ({
       setFormData(profileData);
     }
   }, [loading, getCurrentProfile, profile]);
+
   const {
     website,
     location,
@@ -51,12 +53,15 @@ const ProfileForm = ({
     youtube,
     instagram,
   } = formData;
+
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
+
   const onSubmit = (e) => {
     e.preventDefault();
     createProfile(formData, history, profile ? true : false);
   };
+
   return (
     <>
       <div className='profileFormContainer'>

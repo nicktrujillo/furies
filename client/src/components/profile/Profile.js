@@ -11,6 +11,7 @@ import PostItem from "../posts/PostItem";
 import LeftSidebar from "../layout/LeftSidebar";
 import styling from "./profile.css";
 import TopTenCard from "../trendingcard/TopTenCard";
+
 const Profile = ({
   getProfileById,
   profile: { profile },
@@ -21,14 +22,18 @@ const Profile = ({
 }) => {
   console.log(auth);
   console.log(profile);
+
   useEffect(() => {
     getProfileById(match.params.id);
   }, [getProfileById, match.params.id]);
+
   useEffect(() => {
     getPostsById(match.params.id);
   }, [getPostsById, match.params.id]);
+
   const soundcloudOne = "https://w.soundcloud.com/player/?url=";
   const soundCloudThree = "?//api.soundcloud.com/tracks/293";
+
   const soundcloudWidget = (
     <iframe
       width='560'
@@ -39,6 +44,7 @@ const Profile = ({
       src={soundcloudOne + posts.soundcloud + soundCloudThree}
     ></iframe>
   );
+
   const youtubeOne = "https://www.youtube.com/embed/";
   return (
     <div className='profile-page-container'>
@@ -59,7 +65,7 @@ const Profile = ({
               auth.user._id === profile.user._id && (
                 <div className='editProfile'>
                   <Link to='/edit-profile' className='editProfileButton'>
-                    Edit Profile
+                    <i class='fas fa-edit'></i>
                   </Link>
                 </div>
               )}
@@ -90,6 +96,7 @@ const Profile = ({
     </div>
   );
 };
+
 Profile.propTypes = {
   getProfileById: PropTypes.func.isRequired,
   getPostsById: PropTypes.func.isRequired,
@@ -98,6 +105,7 @@ Profile.propTypes = {
   getPosts: PropTypes.func.isRequired,
   post: PropTypes.object.isRequired,
 };
+
 const mapStateToProps = (state) => {
   console.log(state);
   return {
@@ -106,10 +114,12 @@ const mapStateToProps = (state) => {
     post: state.post,
   };
 };
+
 export default connect(mapStateToProps, {
   getProfileById,
   getPostsById,
 })(Profile);
+
 // import React, { useEffect } from "react";
 // import PropTypes from "prop-types";
 // import { Link } from "react-router-dom";

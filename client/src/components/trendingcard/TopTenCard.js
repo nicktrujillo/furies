@@ -7,7 +7,7 @@ function TopTenCard() {
   const soundCloudTwo = "https://soundcloud.com/21savage/many-men";
   const soundcloudWidget = (
     <iframe
-      width='250'
+      width='242'
       height='75'
       scrolling='no'
       frameBorder='no'

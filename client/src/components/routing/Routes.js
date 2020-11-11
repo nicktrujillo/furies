@@ -17,7 +17,6 @@ import Notifications from "../notifications/Notifications";
 import ChatPage from "../chatpage/ChatPage";
 import ChatHome from "../chatpage/ChatHome";
 import Charts from "../charts/Charts";
-import Landing from "../layout/Landing";
 
 const Routes = (props) => {
   return (
@@ -26,11 +25,11 @@ const Routes = (props) => {
       <Switch>
         <Route exact path='/register' component={Register} />
         <Route exact path='/login' component={Login} />
-        <PrivateRoute exact path='/profiles' component={Profiles} />
-        <PrivateRoute exact path='/profile/:id' component={Profile} />
         <Route exact path='/services' component={Homepage} />
         <Route exact path='/youtube' component={Youtube} />
         <Route exact path='/charts' component={Charts} />
+        <PrivateRoute exact path='/profiles' component={Profiles} />
+        <PrivateRoute exact path='/profile/:id' component={Profile} />
         <PrivateRoute exact path='/dashboard' component={Dashboard} />
         <PrivateRoute exact path='/create-profile' component={ProfileForm} />
         <PrivateRoute exact path='/edit-profile' component={ProfileForm} />
