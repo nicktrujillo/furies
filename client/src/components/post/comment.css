@@ -46,7 +46,7 @@
   border-radius: 8px;
   overflow: scroll;
   background-color: rgba(28, 28, 28, 0.9);
-  margin: 5px;
+  margin-top: 5px;
   padding: 0 0.8rem 0.4rem 0.8rem;
 }
 .comments-section {
@@ -57,7 +57,7 @@
   margin-top: 10px; */
   background-color: rgba(28, 28, 28, 0.9);
   border-radius: 8px;
-  margin: 5px;
+  margin-top: 5px;
   padding: 1.4rem;
   display: flex;
 }

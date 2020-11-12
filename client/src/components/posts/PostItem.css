@@ -1,7 +1,7 @@
 .postContainer {
   background-color: rgba(28, 28, 28, 0.9);
   border-radius: 8px;
-  margin: 5px;
+  margin-top: 5px;
   padding: 1.4rem;
 }
 .postText {

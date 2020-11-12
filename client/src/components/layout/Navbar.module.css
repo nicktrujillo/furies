@@ -10,7 +10,8 @@
   z-index: 2;
   width: 80%;
   top: 0;
-  font-weight: bolder;
+  font-weight: bold;
+  font-size: 18px;
   /* border-bottom: 1px solid var(--primary-color); */
 }
 .navbarLogo {
@@ -40,16 +41,18 @@
   font-weight: bold;
   margin-left: 1rem;
   position: relative;
-  left: 1rem;
+  left: 1.2rem;
 }
 .rightNavGuest {
   display: flex;
   /* background-color: #1b1b1b; */
   color: #d4d4d4;
-  width: 10%;
-  justify-content: space-between;
+  width: 20%;
+  justify-content: flex-end;
   font-weight: bold;
-  margin-right: 2.3rem;
+  margin-left: 1rem;
+  position: relative;
+  left: 2rem;
 }
 .middleLink {
   color: var(--light-color);

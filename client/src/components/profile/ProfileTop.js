@@ -28,7 +28,15 @@ const ProfileTop = ({
           <div className='profile-page-info'>
             <div className='avatarSectionProfile'>
               <div>
-                <img className='profileAvi' src={avatar} alt='' />
+                <img
+                  className='profileAvi'
+                  src={
+                    avatar
+                      ? avatar
+                      : "//www.gravatar.com/avatar/d3c45204c30f578c0e18bc96502eed0b?s=200&r=pg&d=mm"
+                  }
+                  alt=''
+                />
               </div>
               <div>
                 <Link

@@ -99,7 +99,7 @@ function ChatPage({
                     className={styles.chatAvatar}
                     src={profile.user.avatar}
                   ></img>
-                  <h1>{profile.user.name}</h1>
+                  <p>{profile.user.name}</p>
                 </div>
               </div>
               <div className={styles.directChatBody}>

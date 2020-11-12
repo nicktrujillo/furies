@@ -1,11 +1,12 @@
 // JANNY VERSION:
 import React, { useState } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { login } from "../../actions/auth";
 import "./auth.css";
 const Login = ({ login, isAuthenticated }) => {
+  const history = useHistory();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -15,7 +16,9 @@ const Login = ({ login, isAuthenticated }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   const onSubmit = (e) => {
     e.preventDefault();
-    login(email, password);
+    login(email, password).then(() => {
+      history.push("/posts");
+    });
   };
 
   const enterPressed = (e) => {

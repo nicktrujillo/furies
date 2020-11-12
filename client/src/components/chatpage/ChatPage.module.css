@@ -22,6 +22,7 @@
   grid-template-columns: 1.6fr 3fr;
   display: grid;
   width: 100%;
+  margin-top: 0.37rem;
 }
 
 .fixedChat {
@@ -52,10 +53,13 @@
   padding: 1.4rem;
   color: var(--light-color);
   margin-left: 1%;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .newConversationTitle {
   font-size: 22px;
+  font-weight: bold;
   padding: 2.6%;
 }
 
@@ -227,6 +231,8 @@
   padding: 2.3rem 1.6rem;
   color: var(--light-color);
   margin-left: 1%;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .chatListBody {

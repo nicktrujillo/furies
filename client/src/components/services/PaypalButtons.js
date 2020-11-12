@@ -109,9 +109,11 @@ class PaypalButton extends React.Component {
 
         {paid && (
           <div className='mainPaypal'>
-            <h2 className='thanks'>
-              Thanks for your purchase of {this.props.product}!
-            </h2>
+            <h2 className='thanks'>Thanks for your purchase of</h2>
+            <h2>{this.props.product}!</h2>
+            <p className='thankYouEmail'>
+              For support please email support@millody.com
+            </p>
           </div>
         )}
       </div>

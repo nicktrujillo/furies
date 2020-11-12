@@ -26,7 +26,7 @@ const ProfileForm = ({
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
 
   useEffect(() => {
-    if (!profile) getCurrentProfile();
+    if (profile) getCurrentProfile();
     if (!loading && profile) {
       const profileData = { ...initialState };
       for (const key in profile) {

@@ -1,12 +1,13 @@
 // JANNY VERSION:
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, useHistory } from "react-router-dom";
 import { setAlert } from "../../actions/alert";
 import { register } from "../../actions/auth";
 import PropTypes from "prop-types";
 import "./auth.css";
 const Register = ({ setAlert, register, isAuthenticated }) => {
+  const history = useHistory();
   const [formData, setFormData] = useState({
     name: "",
     avatar: "",
@@ -52,7 +53,9 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     if (password !== password2) {
       setAlert("Passwords do not match", "danger");
     } else {
-      register({ name, avatar, email, password });
+      register({ name, avatar, email, password }).then(() => {
+        history.push("/dashboard");
+      });
       if (uploadingAvatar) return;
     }
   };

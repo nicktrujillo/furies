@@ -33,7 +33,7 @@
   padding-bottom: 2rem;
   height: 84%;
   overflow: auto;
-  margin: 0 auto;
+  margin: 0.3rem auto;
 }
 .rightColumn {
   /* background-color: #252525; */
@@ -44,7 +44,7 @@
 }
 .middleColumn {
   /* background-image: url("https://images.unsplash.com/photo-1516889782132-fb580815f8f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"); */
-  background-image: url("https://images.unsplash.com/photo-1516889782132-fb580815f8f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+  /* background-image: url("https://images.unsplash.com/photo-1516889782132-fb580815f8f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"); */
   background-position-x: 16rem;
   background-size: cover;
   background-attachment: fixed;
@@ -64,7 +64,8 @@
   display: flex;
   justify-content: center;
   background-color: #080613;
-  font-size: 22px;
+  font-size: 18px;
+  font-weight: bold;
   border-bottom: 1px solid #f0e7fc;
 }
 .actualSongs li {
@@ -93,7 +94,8 @@
 }
 .trendingTitle {
   text-align: center;
-  font-size: 21px;
+  font-size: 18px;
+  font-weight: bold;
   padding: 1.4rem;
   margin-bottom: 0.8rem;
   color: var(--light-color);

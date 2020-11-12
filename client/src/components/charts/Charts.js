@@ -21,17 +21,16 @@ function Charts() {
       <div className='charts-row-1'>
         <div className='chartsAvi'></div>
         <div>
-          <p className='charts-subtext'>Chart</p>
           <p className='charts-subtext-2'>Weekly Top 10</p>
         </div>
       </div>
       <div className='charts-row-2'>
         <table className='chartsTable'>
           <tr>
-            <th>#</th>
-            <th>Song</th>
-            <th>Date Added</th>
-            <th>Artist</th>
+            <th className='tableHeader'>#</th>
+            <th className='tableHeader'>Songs</th>
+            <th className='tableHeader'>Date Added</th>
+            <th className='tableHeader'>Artist</th>
           </tr>
           <tr>
             <td>1</td>

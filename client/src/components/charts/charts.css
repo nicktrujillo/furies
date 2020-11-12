@@ -7,12 +7,11 @@
     rgba(143, 101, 246, 1) 0%,
     rgba(25, 25, 26, 1) 100%
   );
-  border-radius: 16px;
+  border-radius: 3px;
   display: grid;
   grid-template-rows: 1fr 1.5% 7fr;
   overflow: auto;
   height: 90%;
-  width: 90%;
   margin: 2rem auto;
 }
 .charts-row-1 {
@@ -32,7 +31,8 @@
   font-size: 25px;
 }
 .charts-subtext-2 {
-  font-size: 104px;
+  font-size: 134px;
+  font-family: "Patua One", Helvetica, sans-serif;
 }
 .charts-row-2 {
   margin: 3%;
@@ -78,4 +78,7 @@
 }
 .charts-length {
   width: 20%;
+}
+.tableHeader {
+  padding-bottom: 25px;
 }

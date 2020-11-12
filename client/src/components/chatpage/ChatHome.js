@@ -29,16 +29,16 @@ function ChatHome({ getChatList, chatList, auth }) {
         </div>
         <div className={styles.chatContainer}>
           <div className={styles.chatList}>
-            <h1 className={styles.chatListHeading}>Messages</h1>
+            <p className={styles.chatListHeading}>Messages</p>
             <div className={styles.chatListBody}>
               <ChatListComponent />
             </div>
           </div>
           <div className={styles.directChat}>
             <div className={styles.directChatHeading}>
-              <h1 className={styles.newConversationTitle}>
+              <p className={styles.newConversationTitle}>
                 Start a New Conversation
-              </h1>
+              </p>
             </div>
             <div className={styles.noConversationFlex}>
               <h3 className={styles.noConversation}>

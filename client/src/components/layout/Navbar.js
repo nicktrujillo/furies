@@ -58,7 +58,10 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
             <div className={styles.rightNav}>{authLinksRight}</div>
           </>
         ) : (
-          <div className={styles.rightNavGuest}>{guestLinks}</div>
+          <>
+            <div className={styles.middleNav}>{authLinksMiddle}</div>
+            <div className={styles.rightNavGuest}>{guestLinks}</div>
+          </>
         )}
       </>
     </div>

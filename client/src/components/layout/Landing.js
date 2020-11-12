@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import logo from "../../img/logo.png";
 import Posts from "../posts/Posts";
-import PostItem from "../posts/PostItem";
+import LandingPostItem from "./LandingPostItem";
 import PostForm from "../posts/PostForm";
 import LeftSidebar from "../layout/LeftSidebar";
 import { getPosts } from "../../actions/post";
@@ -75,7 +75,7 @@ const Landing = ({
             <PostForm />
             <div className='posts'>
               {posts.map((post) => (
-                <PostItem key={post._id} post={post} />
+                <LandingPostItem key={post._id} post={post} />
               ))}
             </div>
           </div>

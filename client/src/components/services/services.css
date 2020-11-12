@@ -5,35 +5,32 @@
   /* overflow: auto; */
 }
 .service-container {
-  margin: auto;
-  width: 80%;
   padding-top: 2rem;
   padding-bottom: 6rem;
 }
 .main {
-  width: 90%;
-  margin: auto;
   display: flex;
   justify-content: space-evenly;
+  /* margin-left: 1.2rem; */
 }
 .service-card {
   width: 29%;
   height: 320px;
   margin: auto;
-  border-radius: 7px;
+  border-radius: 8px;
   -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-  background: var(--grey);
+  background-color: rgba(28, 28, 28, 0.97);
   margin-bottom: 4%;
 }
 .product-img {
   width: 90%;
   margin: 5%;
-  border-radius: 7px;
+  border-radius: 8px;
   height: 8rem;
   /* background-color: var(--primary-color); */
-  background-color: grey;
+  background-color: rgba(28, 28, 28, 0.97);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,7 +52,8 @@
   color: var(--light-color);
 }
 .product-info .title {
-  font-size: 1rem; /* fixing*/
+  font-size: 18px;
+  font-weight: bold;
   margin-bottom: 0.8rem;
 }
 .product-info .sub-title {
@@ -67,7 +65,7 @@
 }
 .product-info .description {
   height: 25%;
-  color: var(--light-color);
+  color: #bdbdbd;
   line-height: 1.5em;
   font-size: 14px;
   font-weight: lighter;
@@ -81,7 +79,7 @@
 .product-price p {
   margin-bottom: 10px;
   font-size: 20px;
-  color: black;
+  color: #bdbdbd;
   font-weight: bold;
 }
 .product-price span {
@@ -115,8 +113,6 @@ a {
   justify-content: space-around;
   width: 95%;
   margin: auto;
-  margin-top: 10%;
-  padding-top: 3rem;
   color: #8d8d8d;
   line-height: 1.5em;
   font-size: 0.8rem;
@@ -124,6 +120,7 @@ a {
   right: 10px;
   /* fixing box unclick */
   z-index: 2;
+  padding-top: 2rem;
 }
 .left-img {
   width: 30%;
@@ -170,6 +167,7 @@ a {
 .bottom-container {
   width: 80%;
   padding-left: 10%;
+  padding-top: 7%;
   position: relative;
   right: 75px;
   bottom: 70px;
@@ -180,8 +178,7 @@ a {
 }
 /* Price Table */
 .wrapper2 {
-  margin-top: 55px;
-  margin-left: 35px; /* Fixing box left */
+  margin-top: 34px;
   text-align: center;
 }
 .pricing_wrapper {
@@ -190,7 +187,7 @@ a {
   flex-wrap: wrap;
 }
 .pricing_item {
-  background: lightgrey;
+  background-color: rgba(28, 28, 28, 0.97);
   margin: 0 18px;
   padding: 15px;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
@@ -200,18 +197,24 @@ a {
   cursor: pointer;
 }
 .type {
+  color: var(--light-color);
   font-size: 26px;
 }
 .pricing_item p {
-  color: #8d8d8d;
-  margin-top: 5px;
+  color: #bdbdbd;
+  margin-top: 14px;
 }
 .pricing-table-price {
-  color: #474747;
+  color: #bdbdbd;
   padding: 20px;
   margin: auto;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 500;
+}
+
+.questions {
+  text-align: center;
+  color: #bdbdbd;
 }
 /* 3 PAYPAL SECTION */
 /* SLIDER CARD on youtube page*/
@@ -290,11 +293,15 @@ a {
 }
 /* CONFIRM PAYMENT */
 .mainPaypal {
-  width: 45%;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
   overflow-x: auto;
   height: calc(100vh - 8.6rem);
+  margin: auto;
+  border-radius: 8px;
+  background-color: rgba(28, 28, 28, 0.97);
+  padding-top: 5rem;
 }
 .images {
   display: flex;
@@ -372,4 +379,10 @@ button:focus {
   height: 20%;
   overflow: auto;
   padding-bottom: 100px;
+}
+
+.thankYouEmail {
+  text-align: center;
+  color: #bdbdbd;
+  padding-top: 5rem;
 }

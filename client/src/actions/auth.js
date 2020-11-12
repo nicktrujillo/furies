@@ -37,7 +37,7 @@ function decodeUserAndToken(token) {
 // Register User
 export const register = (formData) => async (dispatch) => {
   try {
-    const res = await api.post("/users", formData);
+    const res = await api.signup(formData);
     const { user, token } = decodeUserAndToken(res.data.token);
 
     dispatch({
@@ -47,9 +47,9 @@ export const register = (formData) => async (dispatch) => {
         token,
       },
     });
-    dispatch(loadUser());
+    // dispatch(loadUser());
   } catch (err) {
-    const errors = err.response.data.errors;
+    const errors = err.data.errors;
 
     if (errors) {
       errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
@@ -58,7 +58,7 @@ export const register = (formData) => async (dispatch) => {
     dispatch({
       type: REGISTER_FAIL,
     });
-    // window.location.reload();
+    // // window.location.reload();
   }
 };
 
@@ -67,7 +67,8 @@ export const login = (email, password) => async (dispatch) => {
   const body = { email, password };
 
   try {
-    const res = await api.post("/auth", body);
+    // const res = await api.post("/auth", body);
+    const res = await api.login(email, password);
 
     const { user, token } = decodeUserAndToken(res.data.token);
 
@@ -85,7 +86,7 @@ export const login = (email, password) => async (dispatch) => {
 
     // dispatch(loadUser());
   } catch (err) {
-    const errors = err.response.data.errors;
+    const errors = err.data.errors;
     if (errors) {
       errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
     }
