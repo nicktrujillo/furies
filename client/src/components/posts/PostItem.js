@@ -39,7 +39,7 @@ const PostItem = ({
   );
   return (
     <div className='post postContainer'>
-      <div>
+      <div className='nameAndDelete'>
         <Link to={`/profile/${user}`}>
           <div className='nameAndAvi'>
             <img className='round-img' src={avatar} alt='' />
@@ -53,6 +53,16 @@ const PostItem = ({
             </div>
           </div>
         </Link>
+
+        {!auth.loading && user === auth.user._id && (
+          <button
+            onClick={() => deletePost(_id)}
+            type='button'
+            className='deleteButton'
+          >
+            <i className='fas fa-times' />
+          </button>
+        )}
       </div>
       <div>
         <p className='my-1 postText'>{text}</p>
@@ -74,36 +84,35 @@ const PostItem = ({
           <div>
             {showActions && (
               <>
-                <button
-                  onClick={() => addLike(_id)}
-                  type='button'
-                  className='postButton'
-                >
-                  <i className='fas fa-thumbs-up' />{" "}
-                  <span>{likes.length > 0 && <span>{likes.length}</span>}</span>
-                </button>
-                <button
-                  onClick={() => removeLike(_id)}
-                  type='button'
-                  className='postButton'
-                >
-                  <i className='fas fa-thumbs-down' />
-                </button>
-                <Link to={`/posts/${_id}`} className='postButton'>
-                  Discussion{" "}
-                  {comments.length > 0 && (
-                    <span className='comment-count'>{comments.length}</span>
-                  )}
-                </Link>
-                {!auth.loading && user === auth.user._id && (
-                  <button
-                    onClick={() => deletePost(_id)}
-                    type='button'
-                    className='postButton'
-                  >
-                    <i className='fas fa-times' />
-                  </button>
-                )}
+                <div className='commentsAndLikes'>
+                  <div>
+                    <Link to={`/posts/${_id}`} className='postButton'>
+                      Discussion{" "}
+                      {comments.length > 0 && (
+                        <span className='comment-count'>{comments.length}</span>
+                      )}
+                    </Link>
+                  </div>
+                  <div>
+                    <button
+                      onClick={() => addLike(_id)}
+                      type='button'
+                      className='postButton'
+                    >
+                      <i className='fas fa-thumbs-up' />{" "}
+                      <span>
+                        {likes.length > 0 && <span>{likes.length}</span>}
+                      </span>
+                    </button>
+                    <button
+                      onClick={() => removeLike(_id)}
+                      type='button'
+                      className='postButton'
+                    >
+                      <i className='fas fa-thumbs-down' />
+                    </button>
+                  </div>
+                </div>
               </>
             )}
           </div>

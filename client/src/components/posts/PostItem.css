@@ -12,6 +12,7 @@
 .nameAndAvi {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .postItemName {
@@ -24,6 +25,7 @@
   justify-content: center;
   margin-left: 2%;
   margin-top: 1%;
+  width: 20rem;
 }
 
 .postBottom {
@@ -51,4 +53,27 @@
 
 .scWidget {
   filter: opacity(84%) hue-rotate(250deg);
+}
+
+.nameAndDelete {
+  display: flex;
+  justify-content: space-between;
+}
+
+.deleteButton {
+  width: 10%;
+  border: none;
+  background: transparent;
+  color: var(--grey);
+  font-size: 24px;
+  position: relative;
+  bottom: 1.2rem;
+  left: 1rem;
+}
+
+.commentsAndLikes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 35.5rem;
 }
