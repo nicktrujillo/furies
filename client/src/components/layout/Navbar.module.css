@@ -76,6 +76,8 @@
   color: var(--light-color);
   padding-left: 1em;
   padding-right: 1em;
+  font-size: 18px;
+  font-weight: bold;
 }
 .rightLinkGuest:hover {
   color: var(--primary-color);

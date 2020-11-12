@@ -17,7 +17,7 @@ function FormService(props) {
       ) : (
         <div className={styles.formContainer}>
           <form onSubmit={handleSubmit}>
-            <p>Please complete the information below before paying! </p>
+            <p>Please provide the following information before purchase: </p>
             <br></br>
             <input
               placeholder='Name:'
@@ -54,10 +54,8 @@ function FormService(props) {
             ></textarea>
             <br></br>
             <p className={styles.formStar}>
-              * For mixing and mastering please email your stem files to
-              <br />
+              * For mixing and mastering please email your stem files to &nbsp;
               <a className={styles.mailLink} href='mailto:support@millody.com'>
-                {" "}
                 support@millody.com
               </a>
             </p>

@@ -10,15 +10,15 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
   const authLinksMiddle = (
     <>
       <Link to='/posts'>
-        <div className={styles.middleLink}>Home</div>
+        <p className={styles.middleLink}>Home</p>
       </Link>
 
       <Link to='/charts'>
-        <div className={styles.middleLink}>Charts</div>
+        <p className={styles.middleLink}>Charts</p>
       </Link>
 
       <Link to='/services'>
-        <div className={styles.middleLink}>Services</div>
+        <p className={styles.middleLink}>Services</p>
       </Link>
     </>
   );
@@ -26,20 +26,20 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
   const authLinksRight = (
     <>
       <a className={styles.rightLink} onClick={logout} href='/'>
-        <i className='fas fa-sign-out-alt' />{" "}
-        <span className='hide-sm'>Logout</span>
+        <p className='hide-sm'>
+          <i className='fas fa-sign-out-alt' /> Logout
+        </p>
       </a>
     </>
   );
 
   const guestLinks = (
     <>
-      <Link to='/register'>
-        <div className={styles.rightLinkGuest}>Register</div>
-      </Link>
-
       <Link to='/login'>
-        <div className={styles.rightLinkGuest}>Login</div>
+        <p className={styles.rightLinkGuest}>Login</p>
+      </Link>
+      <Link to='/register'>
+        <p className={styles.rightLinkGuest}>Register</p>
       </Link>
     </>
   );

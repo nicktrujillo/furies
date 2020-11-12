@@ -57,15 +57,14 @@
   border-radius: 8px;
 }
 .formStar {
-  line-height: 28px;
+  line-height: 22px;
   font-size: 0.85rem;
-  color: grey;
+  color: #bdbdbd;
+  text-align: center;
+  margin-top: 0.5rem;
 }
 .noteLabel {
   margin-bottom: -20px;
-}
-.mailLink {
-  margin-left: 3%;
 }
 .paypalButtons {
   padding-top: 1rem;

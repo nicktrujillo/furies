@@ -47,6 +47,7 @@
   overflow: scroll;
   background-color: rgba(28, 28, 28, 0.9);
   margin-top: 5px;
+  margin-bottom: 0.75rem;
   padding: 0 0.8rem 0.4rem 0.8rem;
 }
 .comments-section {
@@ -58,6 +59,7 @@
   background-color: rgba(28, 28, 28, 0.9);
   border-radius: 8px;
   margin-top: 5px;
+  margin-bottom: 0.75rem;
   padding: 1.4rem;
   display: flex;
 }
@@ -69,6 +71,7 @@
 
 .commentsName {
   width: 100%;
+  margin-bottom: 0.2rem;
 }
 
 .commentsNameAndAvi {
@@ -100,7 +103,7 @@
   padding-bottom: 2rem;
 } */
 
-.backHome {
+/* .backHome {
   background-color: rgba(28, 28, 28, 0.9);
   outline: none;
   border: 1px solid var(--primary-color);
@@ -118,4 +121,4 @@
 .backHome:hover {
   background: var(--grey);
   color: var(--light-color);
-}
+} */

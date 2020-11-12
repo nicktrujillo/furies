@@ -14,7 +14,7 @@ export default function Homepage() {
             </div>
             <div className='product-info'>
               <h1 className='title'>Mixing and Mastering</h1>
-              <p className='description'>Make your music sound great</p>
+              <p className='description'>Make your music sound professional</p>
               <div className='product-price'>
                 <p>
                   <span>from $</span>30

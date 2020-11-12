@@ -72,7 +72,12 @@ const Landing = ({
             </div>
           </div>
           <div className={styles.middleColumn}>
-            <PostForm />
+            <div className='post-form'>
+              <div className={styles.landingLogoFlex}>
+                <p className={styles.landingWelcome}>Welcome to</p>{" "}
+                <img className={styles.landingLogo} src={logo} />
+              </div>
+            </div>
             <div className='posts'>
               {posts.map((post) => (
                 <LandingPostItem key={post._id} post={post} />

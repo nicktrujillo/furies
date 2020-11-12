@@ -93,7 +93,8 @@ class PaypalButton extends React.Component {
             <div>
               <h4 className='purchaseItem'>
                 {" "}
-                Items: <span className='productInfo'>{this.props.product}</span>
+                Service:{" "}
+                <span className='productInfo'>{this.props.product}</span>
               </h4>
               <h4 className='purchaseAmount'>
                 Total: <span className='productInfo'>${this.props.price}</span>

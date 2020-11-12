@@ -14,7 +14,7 @@
   padding: 0;
 }
 body {
-  margin: 0 10%;
+  margin: 0 11% 0 9%;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   background-color: var(--dark-color);
@@ -296,7 +296,7 @@ button {
 .navbar ul {
   display: flex;
 } */
-.navbar a {
+/* .navbar a {
   color: #fff;
   padding: 0.45rem;
   margin: 0 0.25rem;
@@ -306,7 +306,7 @@ button {
 }
 .navbar .welcome span {
   margin-right: 0.6rem;
-}
+} */
 /* Landing Page */
 .landing {
   position: relative;

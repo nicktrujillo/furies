@@ -29,7 +29,7 @@ const Dashboard = ({
         </div>
         <div className={styles.middleColumn}>
           <>
-            <h1 className={styles.settingsTitle}>Settings</h1>
+            <p className={styles.settingsTitle}>Settings</p>
             {profile !== null ? (
               <>
                 <div className={styles.buttonContainer}>
@@ -38,7 +38,8 @@ const Dashboard = ({
                     className={styles.deleteBtn}
                     onClick={() => deleteAccount()}
                   >
-                    <i className='fas fa-user-minus' /> Delete My Account
+                    <i class='fas fa-trash' />
+                    &nbsp;Delete My Account
                   </button>
                 </div>
               </>

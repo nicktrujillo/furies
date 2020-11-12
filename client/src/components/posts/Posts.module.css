@@ -33,7 +33,7 @@
   padding-bottom: 2rem;
   height: 84%;
   overflow: auto;
-  margin: 0.3rem auto;
+  margin: 0.29rem auto;
 }
 .rightColumn {
   /* background-color: #252525; */
@@ -97,7 +97,7 @@
   font-size: 18px;
   font-weight: bold;
   padding: 1.4rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.4rem;
   color: var(--light-color);
 }
 .trendingSong {
@@ -111,6 +111,7 @@
   /* margin-top: 0.2rem; */
   cursor: pointer;
   align-self: flex-end;
+  color: var(--light-color);
 }
 .scWidget {
   filter: opacity(80%) hue-rotate(250deg);
@@ -118,12 +119,14 @@
 /* -------- SETTINGS --------- */
 .settingsTitle {
   text-align: center;
-  font-size: 38px;
-  padding: 1.5rem;
-  background-color: rgba(28, 28, 28, 0.95);
-  margin-bottom: 1rem;
-  color: var(--grey);
-  border-bottom: 1px solid var(--primary-color);
+  background-color: rgba(28, 28, 28, 0.9);
+  border-radius: 8px;
+  margin-top: 5px;
+  padding: 1.4rem;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  color: var(--light-color);
 }
 .welcome {
   text-align: center;
@@ -133,8 +136,8 @@
 .deleteBtn {
   color: white;
   background-color: rgb(224, 85, 85);
-  border-radius: 16px;
-  padding: 4px 12px;
+  border-radius: 8px;
+  padding: 8px 12px;
   border: none;
   display: flex;
   width: 12rem;
@@ -147,7 +150,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 5%;
+  background-color: rgba(28, 28, 28, 0.9);
+  border-radius: 8px;
+  margin-top: 5px;
+  padding: 1.8rem;
+  height: 81%;
 }
 
 /* ------- Left Sidebar --------- */
@@ -181,4 +188,23 @@
 .landingContainerScroll {
   height: 100%;
   overflow: auto;
+}
+
+.landingLogo {
+  width: 14%;
+  margin-left: 0.5rem;
+  filter: opacity(0.88);
+}
+
+.landingLogoFlex {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: flex-end;
+  padding-top: 0.8rem;
+}
+
+.landingWelcome {
+  font-size: 18px;
+  color: var(--light-color);
 }

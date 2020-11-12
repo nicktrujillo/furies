@@ -4,15 +4,18 @@
   background: linear-gradient(
     1deg,
     rgba(2, 0, 36, 1) 0%,
-    rgba(143, 101, 246, 1) 0%,
+    rgb(124, 77, 245) 0%,
     rgba(25, 25, 26, 1) 100%
   );
-  border-radius: 3px;
+  border-radius: 8px;
   display: grid;
   grid-template-rows: 1fr 1.5% 7fr;
   overflow: auto;
-  height: 90%;
-  margin: 2rem auto;
+  height: 91%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 1.8rem;
+  width: 96.5%;
 }
 .charts-row-1 {
   grid-row: 1;
@@ -21,18 +24,29 @@
 }
 .chartsAvi {
   background-image: url("https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
-  height: 225px;
-  width: 200px;
+  height: 220px;
+  width: 220px;
   background-repeat: no-repeat;
   background-size: cover;
   margin-right: 3%;
+}
+.charts-avi-title {
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 .charts-subtext {
   font-size: 25px;
 }
 .charts-subtext-2 {
-  font-size: 134px;
-  font-family: "Patua One", Helvetica, sans-serif;
+  font-size: 100px;
+  /* font-family: "Patua One", Helvetica, sans-serif; */
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: bolder;
+  padding-bottom: 3rem;
+  color: var(--light-color);
+  letter-spacing: -0.4rem;
+  margin-left: 1.8rem;
 }
 .charts-row-2 {
   margin: 3%;
@@ -81,4 +95,27 @@
 }
 .tableHeader {
   padding-bottom: 25px;
+}
+.tableHeaderSongs {
+  padding-bottom: 25px;
+  padding-left: 3rem;
+}
+.tableHeaderDate {
+  padding-bottom: 25px;
+  padding-left: 4.4rem;
+}
+.tableHeaderArtist {
+  padding-bottom: 25px;
+  padding-left: 0.2rem;
+}
+.chartsSongs {
+  padding-left: 3rem;
+  width: 60%;
+}
+.chartsDates {
+  padding-left: 4.4rem;
+  width: 24%;
+}
+.chartsArtists {
+  padding-left: 0.2rem;
 }

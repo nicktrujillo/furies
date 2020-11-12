@@ -30,14 +30,16 @@ function Youtube() {
               <img src='https://images.unsplash.com/photo-1602274063798-7e74bf76e780?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' />
             </div>
             <div className='right-info'>
-              <h1>YouTube Promotion</h1>
-              <p>
-                Order Youtube Promotion and get your music boosted to thousands
-                of new listeners on the most popular site for on-demand music
-                streaming. Harness the power of online advertising on Youtube to
-                drive music lovers to your songs and get more subscribers,
-                plays, comments and likes.
-              </p>
+              <div className='mainInfo'>
+                <h1>YouTube Promotion</h1>
+                <p>
+                  Order Youtube Promotion and get your music boosted to
+                  thousands of new listeners on the most popular site for
+                  on-demand music streaming. Harness the power of online
+                  advertising on Youtube to drive music lovers to your songs and
+                  get more subscribers, plays, comments and likes.
+                </p>
+              </div>
               {/* <!-- PRICE TABLE --> */}
               <div className='wrapper2'>
                 <div className='pricing_wrapper'>
@@ -90,12 +92,12 @@ function Youtube() {
             <h3 className='empower'>Youtube Promotion will empower you to:</h3>
             <ul className='empower-list'>
               <li className='empower-list'>
-                Expand your fan base and reach new audiences
+                - Expand your fan base and reach new audiences
               </li>
               <li className='empower-list'>
-                Promote your music outside of Millody
+                - Promote your music outside of Millody
               </li>
-              <li className='empower-list'>Get more music purchases</li>
+              <li className='empower-list'>- Get more music purchases</li>
             </ul>
             <h3 className='empower'>How it works</h3>
             <p>
@@ -109,7 +111,10 @@ function Youtube() {
               about the performance and reach of your ads.
             </p>
           </div>
-          <h3 className='questions'>Questions? Email support@millody.com</h3>
+          <h4 className='questions'>
+            Questions? Email{" "}
+            <a href='mailto:support@millody.com'>support@millody.com</a>
+          </h4>
         </div>
       )}
     </>

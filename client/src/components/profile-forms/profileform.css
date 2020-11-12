@@ -26,11 +26,15 @@ textarea,
 select,
 .input {
   margin: 20px auto 5px auto !important;
+  border: none;
+  outline: none;
 }
 .form select,
 textarea,
 input[type="text"] {
   font-size: 18px !important;
+  border: none;
+  outline: none;
 }
 .form {
   position: relative;
@@ -41,7 +45,7 @@ input[type="text"] {
   height: calc(100vh - 8.6rem);
   padding: 5px;
   text-align: center;
-  border-radius: 7px;
+  border-radius: 8px;
 }
 .form .input,
 select,
@@ -59,6 +63,8 @@ textarea {
   padding-bottom: 0;
   border-radius: 8px;
   resize: none;
+  border: none;
+  outline: none;
 }
 .form .message {
   color: #b3b3b3;

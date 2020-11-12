@@ -40,17 +40,17 @@ const PostForm = ({ addPost }) => {
           onChange={(e) => setLink(e.target.value)}
         >
           <option value='default' selected>
-            Add Your Music Link
+            add music link
           </option>
-          <option value='soundcloudLink'>SoundCloud</option>
-          <option value='youtubelink'>YouTube</option>
+          <option value='soundcloudLink'>soundcloud</option>
+          <option value='youtubelink'>youtube</option>
         </select>
         {link == "soundcloudLink" ? (
           <div id='soundcloudLink' className='soundcloudLink'>
             <input
               className='soundCloudText'
               name='text'
-              placeholder='Add SoundCloud link here'
+              placeholder='insert soundcloud link'
               value={soundcloud}
               onChange={(e) => setSoundcloud(e.target.value)}
               autoComplete='off'
@@ -62,7 +62,7 @@ const PostForm = ({ addPost }) => {
             <input
               className='youtubeText'
               name='text'
-              placeholder='Add YouTube link here'
+              placeholder='insert youtube link'
               value={youtube}
               onChange={(e) => setYoutube(e.target.value)}
               autoComplete='off'

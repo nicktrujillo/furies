@@ -9,6 +9,10 @@ const LeftSidebar = ({
     user: { _id },
   },
 }) => {
+  // const { auth, authenticated } = props;
+  // const { _id } = auth || {};
+  // const isAuthenticated = _id ? true : false;
+
   return (
     <>
       <Link to={`/profile/${_id}`}>

@@ -7,11 +7,11 @@ const DashboardActions = () => {
     <div className='dash-buttons'>
       <Link to='/edit-profile'>
         <div className={styles.editButtons}>
-          <button className={styles.editUserBtn}>
-            <i className='fas fa-user-circle settingsEdit' /> Edit User Info
-          </button>
           <button className={styles.editProfileBtn}>
             <i class='fas fa-edit settingsEdit'></i> Edit Profile
+          </button>
+          <button className={styles.editUserBtn}>
+            <i className='fas fa-user-circle settingsEdit' /> Edit Account Info
           </button>
         </div>
       </Link>

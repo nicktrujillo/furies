@@ -19,8 +19,9 @@ function Charts() {
   return (
     <div className='chartsContainer'>
       <div className='charts-row-1'>
-        <div className='chartsAvi'></div>
-        <div>
+        <div className='charts-avi-title'>
+          <div className='chartsAvi'></div>
+
           <p className='charts-subtext-2'>Weekly Top 10</p>
         </div>
       </div>
@@ -28,87 +29,87 @@ function Charts() {
         <table className='chartsTable'>
           <tr>
             <th className='tableHeader'>#</th>
-            <th className='tableHeader'>Songs</th>
-            <th className='tableHeader'>Date Added</th>
-            <th className='tableHeader'>Artist</th>
+            <th className='tableHeaderSongs'>Songs</th>
+            <th className='tableHeaderDate'>Date Added</th>
+            <th className='tableHeaderArtist'>Artist</th>
           </tr>
           <tr>
             <td>1</td>
-            <td>{soundcloudWidget}</td>
-            <td>11-7-2020</td>
-            <td>
+            <td className='chartsSongs'>{soundcloudWidget}</td>
+            <td className='chartsDates'>11-7-2020</td>
+            <td className='chartsArtists'>
               <Link to={`/profile/5fab0fbec29440257f93c954`}> 21 Savage </Link>
             </td>
           </tr>
           <tr>
             <td>2</td>
-            <td>{soundcloudWidget}</td>
-            <td>11-7-2020</td>
-            <td>
+            <td className='chartsSongs'>{soundcloudWidget}</td>
+            <td className='chartsDates'>11-7-2020</td>
+            <td className='chartsArtists'>
               <Link to={`/profile/5fab0fbec29440257f93c954`}> 21 Savage </Link>
             </td>
           </tr>
           <tr>
             <td>3</td>
-            <td>{soundcloudWidget}</td>
-            <td>11-7-2020</td>
-            <td>
+            <td className='chartsSongs'>{soundcloudWidget}</td>
+            <td className='chartsDates'>11-7-2020</td>
+            <td className='chartsArtists'>
               <Link to={`/profile/5fab0fbec29440257f93c954`}> 21 Savage </Link>
             </td>
           </tr>
           <tr>
             <td>4</td>
-            <td>{soundcloudWidget}</td>
-            <td>11-7-2020</td>
-            <td>
+            <td className='chartsSongs'>{soundcloudWidget}</td>
+            <td className='chartsDates'>11-7-2020</td>
+            <td className='chartsArtists'>
               <Link to={`/profile/5fab0fbec29440257f93c954`}> 21 Savage </Link>
             </td>
           </tr>
           <tr>
             <td>5</td>
-            <td>{soundcloudWidget}</td>
-            <td>11-7-2020</td>
-            <td>
+            <td className='chartsSongs'>{soundcloudWidget}</td>
+            <td className='chartsDates'>11-7-2020</td>
+            <td className='chartsArtists'>
               <Link to={`/profile/5fab0fbec29440257f93c954`}> 21 Savage </Link>
             </td>
           </tr>
           <tr>
             <td>6</td>
-            <td>{soundcloudWidget}</td>
-            <td>11-7-2020</td>
-            <td>
+            <td className='chartsSongs'>{soundcloudWidget}</td>
+            <td className='chartsDates'>11-7-2020</td>
+            <td className='chartsArtists'>
               <Link to={`/profile/5fab0fbec29440257f93c954`}> 21 Savage </Link>
             </td>
           </tr>
           <tr>
             <td>7</td>
-            <td>{soundcloudWidget}</td>
-            <td>11-7-2020</td>
-            <td>
+            <td className='chartsSongs'>{soundcloudWidget}</td>
+            <td className='chartsDates'>11-7-2020</td>
+            <td className='chartsArtists'>
               <Link to={`/profile/5fab0fbec29440257f93c954`}> 21 Savage </Link>
             </td>
           </tr>
           <tr>
             <td>8</td>
-            <td>{soundcloudWidget}</td>
-            <td>11-7-2020</td>
-            <td>
+            <td className='chartsSongs'>{soundcloudWidget}</td>
+            <td className='chartsDates'>11-7-2020</td>
+            <td className='chartsArtists'>
               <Link to={`/profile/5fab0fbec29440257f93c954`}> 21 Savage </Link>
             </td>
           </tr>
           <tr>
             <td>9</td>
-            <td>{soundcloudWidget}</td>
-            <td>11-7-2020</td>
-            <td>
+            <td className='chartsSongs'>{soundcloudWidget}</td>
+            <td className='chartsDates'>11-7-2020</td>
+            <td className='chartsArtists'>
               <Link to={`/profile/5fab0fbec29440257f93c954`}> 21 Savage </Link>
             </td>
           </tr>
           <tr>
             <td>10</td>
-            <td>{soundcloudWidget}</td>
-            <td>11-7-2020</td>
-            <td>
+            <td className='chartsSongs'>{soundcloudWidget}</td>
+            <td className='chartsDates'>11-7-2020</td>
+            <td className='chartsArtists'>
               <Link to={`/profile/5fab0fbec29440257f93c954`}> 21 Savage </Link>
             </td>
           </tr>
