@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useParams } from "react-router-dom";
 import io from "socket.io-client";
 import { connect } from "react-redux";
-import { getChats, afterPostMessage } from "../../actions/chat";
+import { getChats, afterPostMessage, getChatList } from "../../actions/chat";
 import { getProfileById } from "../../actions/profile";
 import styles from "./ChatPage.module.css";
 import Moment from "react-moment";
@@ -19,6 +19,7 @@ function ChatPage({
   getProfileById,
   chats,
   auth,
+  getChatList,
   profile: { profile },
 }) {
   const { id } = useParams();
@@ -32,6 +33,7 @@ function ChatPage({
   useEffect(() => {
     socket.on("Output Chat Message", () => {
       getChats(id);
+      getChatList();
     });
   }, []);
 
@@ -163,6 +165,10 @@ function ChatPage({
   );
 }
 
+ChatPage.propTypes = {
+  getChatList: PropTypes.func.isRequired,
+};
+
 const mapStateToProps = (state) => {
   console.log(state);
   return {
@@ -172,7 +178,11 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { getChats, getProfileById })(ChatPage);
+export default connect(mapStateToProps, {
+  getChats,
+  getProfileById,
+  getChatList,
+})(ChatPage);
 
 // export class ChatPage extends Component {
 //   state = {
