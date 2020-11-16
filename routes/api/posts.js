@@ -46,7 +46,7 @@ router.post(
 // @access   Private
 router.get("/", async (req, res) => {
   try {
-    const posts = await Post.find().sort({ date: -1 });
+    const posts = await Post.find().sort({ date: -1 }).limit(100);
     res.json(posts);
   } catch (err) {
     console.error(err.message);
@@ -62,9 +62,9 @@ router.get(
   checkObjectId("user_id"),
   async ({ params: { user_id } }, res) => {
     try {
-      const profile = await Post.find({ user: { $in: [user_id] } }).populate(
-        "user"
-      );
+      const profile = await Post.find({ user: { $in: [user_id] } })
+        .populate("user")
+        .limit(100);
 
       if (!profile) return res.status(400).json({ msg: "Profile not found" });
 

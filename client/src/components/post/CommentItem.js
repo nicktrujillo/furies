@@ -14,31 +14,33 @@ const CommentItem = ({
 }) => (
   <div className='post comments-section'>
     <div>
-      <div className='commentsNameAndAvi'>
-        <Link to={`/profile/${user}`}>
-          <img className='round-img' src={avatar} alt='' />
-        </Link>
-        <Link className='commentsNameAndDate' to={`/profile/${user}`}>
-          <h4 className='commentsName'>{name}</h4>
-          <p className='post-date'>
-            <Moment startof='hour' fromNow>
-              {date}
-            </Moment>
-          </p>
-        </Link>
+      <div className='nameAndDelete'>
+        <div className='commentsNameAndAvi'>
+          <Link to={`/profile/${user}`}>
+            <img className='round-img' src={avatar} alt='' />
+          </Link>
+          <Link className='commentsNameAndDate' to={`/profile/${user}`}>
+            <h4 className='commentsName'>{name}</h4>
+            <p className='post-date'>
+              <Moment startof='hour' fromNow>
+                {date}
+              </Moment>
+            </p>
+          </Link>
+        </div>
+        {!auth.loading && user === auth.user._id && (
+          <button
+            onClick={() => deleteComment(postId, _id)}
+            type='button'
+            className='deleteButton'
+          >
+            <i className='fas fa-times' />
+          </button>
+        )}
       </div>
     </div>
     <div>
       <p className='my-1 commentsText'>{text}</p>
-      {!auth.loading && user === auth.user._id && (
-        <button
-          onClick={() => deleteComment(postId, _id)}
-          type='button'
-          className='btn btn-danger'
-        >
-          <i className='fas fa-times' />
-        </button>
-      )}
     </div>
   </div>
 );

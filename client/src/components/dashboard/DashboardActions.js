@@ -11,7 +11,7 @@ const DashboardActions = () => {
             <i class='fas fa-edit settingsEdit'></i> Edit Profile
           </button>
           <button className={styles.editUserBtn}>
-            <i className='fas fa-user-circle settingsEdit' /> Edit Account Info
+            <i className='fas fa-user-circle settingsEdit' /> Account Info
           </button>
         </div>
       </Link>

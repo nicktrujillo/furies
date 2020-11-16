@@ -27,7 +27,7 @@ function Youtube() {
         <div className='youtubePageContainer'>
           <div className='top-container'>
             <div className='left-img'>
-              <img src='https://images.unsplash.com/photo-1602274063798-7e74bf76e780?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' />
+              <img src='https://images.unsplash.com/photo-1500705077387-65f31ef00c90?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60' />
             </div>
             <div className='right-info'>
               <div className='mainInfo'>

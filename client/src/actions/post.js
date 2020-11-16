@@ -40,7 +40,7 @@ export const getPostsById = (userId) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: POST_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status },
+      payload: { msg: err.message },
     });
   }
 };
@@ -57,7 +57,7 @@ export const addLike = (id) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: POST_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status },
+      payload: { msg: err.message },
     });
   }
 };
@@ -74,7 +74,7 @@ export const removeLike = (id) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: POST_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status },
+      payload: { msg: err.message },
     });
   }
 };

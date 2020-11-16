@@ -77,6 +77,7 @@
 .commentsNameAndAvi {
   display: flex;
   align-items: center;
+  width: 28rem;
 }
 
 .commentsNameAndDate {
@@ -94,6 +95,22 @@
 
 .commentNameAndDescription {
   width: 100%;
+}
+
+.nameAndDelete {
+  display: flex;
+  justify-content: space-between;
+}
+
+.deleteButton {
+  width: 10%;
+  border: none;
+  background: transparent;
+  color: #585858;
+  font-size: 20px;
+  position: relative;
+  bottom: 1.2rem;
+  left: 1rem;
 }
 
 /* .postPage {

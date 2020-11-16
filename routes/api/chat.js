@@ -15,7 +15,7 @@ router.get("/", auth, async ({ user: { id } }, res) => {
     .populate("sender")
     .populate("recipient")
     .sort({ updatedAt: -1 })
-    // .limit(5)
+    .limit(20)
     .exec((err, chats) => {
       console.log(err);
       if (err) return res.status(400).send(err);
@@ -38,7 +38,7 @@ router.get(
       .populate("sender")
       .populate("recipient")
       .sort({ updatedAt: -1 })
-      // .limit(5)
+      .limit(20)
       .exec((err, chats) => {
         console.log(err);
         if (err) return res.status(400).send(err);
