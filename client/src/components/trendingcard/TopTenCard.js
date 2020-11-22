@@ -21,7 +21,7 @@ function TopTenCard() {
                 {" "}
                 <iframe
                   width='242'
-                  height='75'
+                  height='80'
                   scrolling='no'
                   frameBorder='no'
                   allow='autoplay'
@@ -37,7 +37,7 @@ function TopTenCard() {
                 {" "}
                 <iframe
                   width='242'
-                  height='75'
+                  height='80'
                   scrolling='no'
                   frameBorder='no'
                   allow='autoplay'
@@ -53,7 +53,7 @@ function TopTenCard() {
                 {" "}
                 <iframe
                   width='242'
-                  height='75'
+                  height='80'
                   scrolling='no'
                   frameBorder='no'
                   allow='autoplay'
@@ -69,7 +69,7 @@ function TopTenCard() {
                 {" "}
                 <iframe
                   width='242'
-                  height='75'
+                  height='80'
                   scrolling='no'
                   frameBorder='no'
                   allow='autoplay'
@@ -85,7 +85,7 @@ function TopTenCard() {
                 {" "}
                 <iframe
                   width='242'
-                  height='75'
+                  height='80'
                   scrolling='no'
                   frameBorder='no'
                   allow='autoplay'
